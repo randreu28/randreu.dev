@@ -12,7 +12,6 @@
     "@heroicons/react": "^1.0.6",
     "aos": "^2.3.4",
     "baffle": "^0.3.6",
-    "dat.gui": "^0.7.9",
     "glslify-loader": "^2.0.0",
     "gsap": "^3.9.1",
     "next": "12.1.0",

@@ -1,3 +1,45 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@import url('https://fonts.googleapis.com/css2?family=Righteous&display=swap');
+
+@media (min-width: 1024px) {
+    .ecoDeliver{
+      background-image: none; 
+  }
+}
+
+/* Testing */
+.bg-decoration{
+  background-image: url('../public/media/bg.svg');
+  background-size: 200%;
+  background-position-x: center;
+  background-position-y: center;
+  background-repeat: no-repeat;
+}
+
+
+/* Custom scrollbar */
+html::-webkit-scrollbar {
+    width: 6px;
+  }
+
+html::-webkit-scrollbar-track {
+    border-radius: 5px;
+}
+
+html::-webkit-scrollbar-thumb {
+    background: rgb(136, 136, 136);
+    border-radius: 5px;
+  }
+
+html::-webkit-scrollbar-thumb:hover {
+    background: rgb(100, 100, 100);
+    border-radius: 5px;
+  }
+
+html::-webkit-scrollbar-thumb:active {
+    background: rgb(68, 68, 68);
+    border-radius: 5px;
+  }

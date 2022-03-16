@@ -4,7 +4,16 @@ module.exports = {
     "./components/**/*.{js,ts,jsx,tsx}",
   ],
   theme: {
-    extend: {},
+    extend: {
+      fontFamily: {
+        righteous: ['righteous'],
+      },
+      colors: {
+        myPrimary: '#f8665d',/* Orange */
+        mySecondary: '#ef079b',/* Pink */
+        myDark: '#0f172a', /*Very dark purpule  */
+      }
+    },
   },
   plugins: [],
 }

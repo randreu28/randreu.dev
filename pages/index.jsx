@@ -1,28 +1,268 @@
-export default function Home() {
+import React, { useState, useEffect } from "react";
+import Head from "next/head";
+import Image from "next/image";
+import AOS from "aos";
+import "aos/dist/aos.css";
+
+import Navbar, { navigation } from "../components/Navbar";
+import Form from "../components/Form";
+import Footer from "../components/Footer";
+import Particles from "../components/Particles";
+import DynamicText from "../components/DynamicText";
+import Project from "../components/Project";
+
+export default function App() {
+  var [tic, setTic] = useState(0);
+
+  const [isInSection, setSection] = useState(navigation[0].name);
+
+  useEffect(() => {
+    AOS.init();
+    AOS.refresh();
+  }, []);
+
   return (
-    <div className="text-white text-center bg-gray-900 flex h-screen">
-      <div className="m-auto">
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          className="h-16 md:h-24 lg:h-44 text-white mx-auto"
-          fill="none"
-          viewBox="0 0 24 24"
-          stroke="currentColor"
+    <>
+      <Head>
+        <title>Randreu.dev</title>
+        <link rel="shortcut icon" href="/media/logo.svg" />
+        {/* SEO METADATA? */}
+      </Head>
+
+      <Navbar isInSection={isInSection} setSection={setSection} />
+      <Particles tic={tic} isInSection={isInSection} navigation={navigation} />
+      <section id={navigation[0].name} className="h-screen flex font-righteous">
+        <h1 className="text-4xl md:text-5xl lg:text-7xl mx-auto mt-20 text-center p-10 xl:my-auto xl:ml-32 xl:text-left ">
+          Hi, I&apos;m Rubén and I <br />
+          <DynamicText tic={tic} setTic={setTic} />
+        </h1>
+      </section>
+
+      <section id={navigation[1].name} className="container px-6 py-8 mx-auto">
+        <div className="items-center lg:flex">
+          <div
+            data-aos="fade-right"
+            data-aos-delay="250"
+            className="lg:w-1/2 space-y-5"
+          >
+            <h2 className="text-3xl font-bold text-gray-100 border-b-2 border-gray-500 pb-2">
+              Who I am
+            </h2>
+
+            <p className=" text-gray-400 lg:max-w-md text-lg">
+              Hi, my name is{" "}
+              <span className="font-bold underline decoration-blue-400 decoration-wavy decoration-slice text-white">
+                Rubén Chiquin Font{" "}
+              </span>
+              and I am a 20-year-old Multimedia college student, passionate
+              about self-learning and building things for the web. I&apos;m always
+              looking for new oportunities for building accessible, inclusive
+              products and digital experiences.
+              <br />
+              <br />
+              I&apos;ve worked in{" "}
+              <a
+                href={navigation[2].href}
+                className="text-blue-400 underline hover:opacity-80 duration-200"
+              >
+                startups
+              </a>
+              ,{" "}
+              <a
+                href={navigation[2].href}
+                className="text-blue-400 underline hover:opacity-80 duration-200"
+              >
+                universities
+              </a>{" "}
+              and in{" "}
+              <a
+                href={navigation[2].href}
+                className="text-blue-400 underline hover:opacity-80 duration-200"
+              >
+                non-profit institutions
+              </a>
+              , all work related to design, technology and digital tools.
+              <br /> <br />
+              Here are a few technologies I’ve been learning recently:
+            </p>
+            <ul className="list-disc md:columns-2 ml-4 text-gray-400">
+              <li>React</li>
+              <li>TailwindCSS</li>
+              <li>Javascript (ES6+)</li>
+              <li>Three.js</li>
+              <li>Firebase</li>
+              <li>Google Analytics</li>
+            </ul>
+
+            <div className="flex items-center mt-6 -mx-2">
+              <a
+                href={navigation[3].href}
+                className="bg-gradient-to-br from-mySecondary to-myPrimary rounded-lg px-3 py-2 font-bold ml-2 text-white"
+              >
+                Let&apos;s get in touch!
+              </a>
+            </div>
+          </div>
+
+          <div
+            data-aos="fade-left"
+            data-aos-delay="250"
+            className="mt-8 lg:mt-0 lg:w-1/2"
+          >
+            <div className="flex items-center justify-center lg:justify-end">
+              <div className="max-w-lg">
+                <Image
+                  className="object-cover object-center w-full h-64 rounded-md shadow"
+                  src="/media/placeholder.png"
+                  alt=""
+                  width={600}
+                  height={350}
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section
+        id={navigation[2].name}
+        className="container px-6 py-8 mx-auto space-y-10 lg:space-y-20"
+      >
+        <div
+          data-aos="fade-left"
+          data-aos-delay="250"
+          className="items-center lg:flex"
         >
-          <path
-            strokeLinecap="round"
-            strokeLinejoin="round"
-            strokeWidth="2"
-            d="M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z"
-          />
-        </svg>
-        <h1 className='text-white text-center text-xl font-bold sm:text-2xl md:text-3xl'>
-            <span className='opacity-25'>&lt;</span>
-            Website in construction
-            <span className='opacity-25'>/&gt;</span>
-          </h1>
-        <p className="pt-3 text-ms text-center text-gray-400">Please come back later!</p>
-      </div>
-    </div>
+          <div className="mt-8 lg:mt-0 lg:w-1/2"></div>
+
+          <div className="lg:w-1/2 space-y-5">
+            <h2 className="text-3xl text-right w-full font-bold text-gray-100 border-b-2 border-gray-500 pb-2">
+              Some projects I&apos;ve participed in
+            </h2>
+          </div>
+        </div>
+
+        <Project
+          title="Imagine Planet Challenge"
+          img={"/media/ecoDeliver.jpg"}
+          p={
+            <>
+              In my early years of college I got involved in a startup called{" "}
+              <span className="font-bold underline decoration-green-400 decoration-wavy decoration-slice text-white">
+                ecoDeliver,{" "}
+              </span>
+              where I had the fortune to help as a marketing consultant and
+              designer, as I had recently learned about design and marketing
+              principles.
+              <br />
+              <br />
+              Later on we participated and won the Imagine Planet Challenge, a
+              challenge made for newborn sustainable startups, designed for
+              tutoring and networking.
+            </>
+          }
+          link="/ecoDeliver"
+        />
+
+        <Project
+          title="Scholarship in the UPC"
+          img={"/media/upc.jpg"}
+          p={
+            <>
+              In the third year of college I&apos;ve been working at the Vertex
+              centre at the UPC university, where I was tasked to work on the
+              maintenance of the multiple websites of the institution.
+              <br />
+              <br />I was also tasked with setting up and monitoring all the
+              data received from{" "}
+              <span className="font-bold underline decoration-yellow-400 decoration-wavy decoration-slice text-white">
+                Google Analytics{" "}
+              </span>{" "}
+              and making changes accordingly to ensure a good UX.{" "}
+            </>
+          }
+          link="/upc"
+          isEven={true}
+        />
+
+        <Project
+          title="Self-taught projects"
+          img={"/media/react.svg"}
+          p={
+            <>
+              During my time in college, I started noticing my{" "}
+              <span className="font-bold underline decoration-indigo-400 decoration-wavy decoration-slice text-white">
+                preference for coding{" "}
+              </span>{" "}
+              and web development. Multidisciplinar as my career is, the
+              knowledge I was being taught in my classes was not deep enough to
+              satisfy my curiosity, and the moment I realised that I started
+              learning by myself.
+              <br />
+              <br />
+              To achieve my goals, I decided to do a set of small projects, each
+              focusing on improving different aspects of my web development
+              skills, and reunited them all in an easily accessible code
+              repository.
+            </>
+          }
+          link="/myProjects"
+          hasDemo="https://www.rubenchiquin.com/learning-with-react/"
+        />
+        <Project
+          title="GOAC multimedia technician"
+          img={"/media/placeholder.png"}
+          p={
+            <>
+              Contrary to other careers, one of the benefits of studying a
+              design career is the opportunity to show{" "}
+              <a
+                href="https://www.behance.net/RubenChiquin"
+                target="_blank"
+                rel="noreferrer"
+                className="underline text-blue-400 duration-200 hover:opacity-75 "
+              >
+                your personal projects and assignments
+              </a>{" "}
+              to your friends and family. And as a result of that, a friend of a
+              friend, whom I showed a design of mine contacted me for a business
+              opportunity.
+              <br />
+              <br />
+              Such opportunity was to be part of the{" "}
+              <span className="font-bold underline decoration-cyan-400 decoration-wavy decoration-slice text-white">
+                GOAC organisation,{" "}
+              </span>
+              where I was tasked to manage the social media accounts such as
+              their Youtube channel and their blog, as well as design tasks,
+              such as banners, rollups and presentation cards.
+            </>
+          }
+          link="/goac"
+          isEven={true}
+        />
+      </section>
+
+      <section
+        id={navigation[3].name}
+        className="space-y-10 container px-6 py-8 mx-auto"
+      >
+        <div
+          data-aos="fade-right"
+          data-aos-delay="250"
+          className="items-center lg:flex"
+        >
+          <div className="lg:w-1/2 space-y-5">
+            <h2 className="text-3xl w-full font-bold text-white border-b-2 border-gray-500 pb-2">
+              Let&apos;s get in touch!
+            </h2>
+          </div>
+
+          <div className="mt-8 lg:mt-0 lg:w-1/2"></div>
+        </div>
+        <Form />
+      </section>
+      <Footer />
+    </>
   );
 }
