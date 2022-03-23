@@ -11,7 +11,6 @@ export default function Form() {
   useEffect(() => {
     if (state.submitted) {
       handleSubmit.current.reset();
-      console.log("hola");
     }
   }, [state]);
 

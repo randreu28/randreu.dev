@@ -7,14 +7,13 @@ import SmNavbar from "../components/SmNavbar";
 import ProjectPrev from "../components/ProjectPrev";
 
 export default function App() {
-
   return (
     <>
-    <Head>
-      <title>EcoDeliver</title>
-      <link rel="shortcut icon" href="/media/logo.svg" />
-      {/* SEO METADATA */}
-    </Head>
+      <Head>
+        <title>EcoDeliver</title>
+        <link rel="shortcut icon" href="/media/logo.svg" />
+        {/* SEO METADATA */}
+      </Head>
       <SmNavbar />
       <div className="mx-5 md:mx-14 lg:mx-44 py-20">
         <h3 className="text-myPrimary font-semibold">Featured project</h3>
@@ -56,8 +55,8 @@ export default function App() {
                 that I shared with my friends and family.
                 <br />
                 <br />
-                That&apos;s when an acquaintance of mine and a friend of his, both
-                recently graduated engineers who where planning on starting
+                That&apos;s when an acquaintance of mine and a friend of his,
+                both recently graduated engineers who where planning on starting
                 their own startup together, saw my work, approached me and asked
                 for my advice about their brand and their business idea, and I
                 offered to help.
@@ -188,12 +187,12 @@ export default function App() {
             title={<>Schoolarship in the UPC</>}
             description={
               <>
-                In the third year of college I&apos;ve been working at the Vertex
-                centre at the UPC university, where I was tasked to work on the
-                maintenance of the multiple websites of the institution. I was
-                also tasked with setting up and monitoring all the data received
-                from Google Analytics and making changes accordingly to ensure a
-                good UX...
+                In the third year of college I&apos;ve been working at the
+                Vertex centre at the UPC university, where I was tasked to work
+                on the maintenance of the multiple websites of the institution.
+                I was also tasked with setting up and monitoring all the data
+                received from Google Analytics and making changes accordingly to
+                ensure a good UX...
               </>
             }
             link="/upc"
@@ -201,18 +200,18 @@ export default function App() {
           <ProjectPrev
             aos="fade-left"
             aosDelay="250"
-            image="/media/react.svg"
-            title={<>Self-taught projects</>}
+            image="/media/placeholder.png"
+            title={<>GOAC multimedia technician</>}
             description={
               <>
-                During my time in college, I started noticing my preference for
-                coding and web development. Multidisciplinar as my career is,
-                the knowledge I was being taught in my classes was not deep
-                enough to satisfy my curiosity, and the moment I realised that I
-                started learning by myself...
+                A friend of mine saw my work and recommended me. Some time later
+                I was invited to be part of the GOAC organisation, where I was tasked to manage
+                the social media accounts such as their Youtube channel and
+                their blog, as well as design tasks, such as banners, rollups
+                and presentation cards...
               </>
             }
-            link="/myProjects"
+            link="/goac"
           />
         </div>
       </div>

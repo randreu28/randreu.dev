@@ -165,26 +165,26 @@ export default function App() {
                 In my early years of college I got involved in a startup called
                 ecoDeliver, where I had the fortune to help as a marketing
                 consultant and designer. Then I had the chance to participate
-                and won the Imagine Planet Challenge with them...
+                on the Imagine Planet Challenge with them, alongside another...
               </>
             }
-            link="/ecoDeliver"
+            link="/imaginePlanetChallenge"
           />
           <ProjectPrev
             aos="fade-left"
             aosDelay="250"
-            image="/media/react.svg"
-            title={<>Self-taught projects</>}
+            image="/media/upc.jpg"
+            title={<>Schoolarship in the UPC</>}
             description={
               <>
-                During my time in college, I started noticing my preference for
-                coding and web development. Multidisciplinar as my career is,
-                the knowledge I was being taught in my classes was not deep
-                enough to satisfy my curiosity, and the moment I realised that I
-                started learning by myself...
+                In the third year of college I&apos;ve been working at the
+                Vertex centre at the UPC university, where I was tasked to work
+                on the maintenance of the multiple websites of the institution.
+                I was also tasked with setting up and monitoring all the data
+                received from Google Analytics and..
               </>
             }
-            link="/myProjects"
+            link="/upc"
           />
         </div>
       </div>

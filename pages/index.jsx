@@ -1,8 +1,10 @@
 import React, { useState, useEffect } from "react";
 import Head from "next/head";
 import Image from "next/image";
+import Link from "next/link";
 import AOS from "aos";
 import "aos/dist/aos.css";
+import {  FolderIcon } from "@heroicons/react/outline";
 
 import Navbar, { navigation } from "../components/Navbar";
 import Form from "../components/Form";
@@ -55,9 +57,9 @@ export default function App() {
                 Rubén Chiquin Font{" "}
               </span>
               and I am a 20-year-old Multimedia college student, passionate
-              about self-learning and building things for the web. I&apos;m always
-              looking for new oportunities for building accessible, inclusive
-              products and digital experiences.
+              about self-learning and building things for the web. I&apos;m
+              always looking for new oportunities for building accessible,
+              inclusive products and digital experiences.
               <br />
               <br />
               I&apos;ve worked in{" "}
@@ -90,17 +92,23 @@ export default function App() {
               <li>TailwindCSS</li>
               <li>Javascript (ES6+)</li>
               <li>Three.js</li>
-              <li>Firebase</li>
+              <li>Next.js</li>
               <li>Google Analytics</li>
             </ul>
 
-            <div className="flex items-center mt-6 -mx-2">
+            <div className="flex items-center mt-6 -mx-2 space-x-5">
               <a
                 href={navigation[3].href}
                 className="bg-gradient-to-br from-mySecondary to-myPrimary rounded-lg px-3 py-2 font-bold ml-2 text-white"
               >
                 Let&apos;s get in touch!
               </a>
+              <div className="flex space-x-2 ring-gray-300 ring-2 text-gray-300 rounded-lg px-3 py-2 hover:text-myPrimary hover:ring-myPrimary duration-200 font-bold ml-2">
+                <Link href="/myProjects">
+                  <a>Check out my portfolio</a>
+                </Link>
+                <FolderIcon className="h-6 w-6 my-auto" />
+              </div>
             </div>
           </div>
 
@@ -161,7 +169,7 @@ export default function App() {
               tutoring and networking.
             </>
           }
-          link="/ecoDeliver"
+          link="/imaginePlanetChallenge"
         />
 
         <Project
@@ -183,31 +191,6 @@ export default function App() {
           }
           link="/upc"
           isEven={true}
-        />
-
-        <Project
-          title="Self-taught projects"
-          img={"/media/react.svg"}
-          p={
-            <>
-              During my time in college, I started noticing my{" "}
-              <span className="font-bold underline decoration-indigo-400 decoration-wavy decoration-slice text-white">
-                preference for coding{" "}
-              </span>{" "}
-              and web development. Multidisciplinar as my career is, the
-              knowledge I was being taught in my classes was not deep enough to
-              satisfy my curiosity, and the moment I realised that I started
-              learning by myself.
-              <br />
-              <br />
-              To achieve my goals, I decided to do a set of small projects, each
-              focusing on improving different aspects of my web development
-              skills, and reunited them all in an easily accessible code
-              repository.
-            </>
-          }
-          link="/myProjects"
-          hasDemo="https://www.rubenchiquin.com/learning-with-react/"
         />
         <Project
           title="GOAC multimedia technician"
@@ -239,7 +222,6 @@ export default function App() {
             </>
           }
           link="/goac"
-          isEven={true}
         />
       </section>
 
