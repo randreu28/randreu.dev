@@ -38,6 +38,7 @@ export default function Navbar({ isInSection, setSection }) {
         height={35}
         width={70}
         alt="logo"
+        priority
       />
       <li className="list-none space-x-8 my-auto hidden md:inline font-medium text-lg">
         <a
