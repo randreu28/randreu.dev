@@ -6,6 +6,7 @@ import AOS from "aos";
 import "aos/dist/aos.css";
 import { FolderIcon } from "@heroicons/react/outline";
 import { useRouter } from "next/router";
+import { rawContent } from "../content";
 
 import Navbar from "../components/Navbar";
 import Form from "../components/Form";
@@ -41,9 +42,11 @@ export default function App() {
       { name: "Inici", href: "#Inici" },
       { name: "Sobre mi", href: "#Sobre mi" },
       { name: "Els meus projectes", href: "#Els meus projectes" },
-      { name: "Contacta amb mi", href: "#Contacta amb mi" },
+      { name: "Contacta'm", href: "#Contacta'm" },
     ]
   };
+
+  const content  = rawContent[router.locale].index;
 
   const [isInSection, setSection] = useState(navigation[router.locale][0].name);
 
@@ -62,7 +65,7 @@ export default function App() {
         className="h-screen flex font-righteous"
       >
         <h1 className="text-4xl md:text-5xl lg:text-7xl mx-auto mt-20 text-center p-10 xl:my-auto xl:ml-32 xl:text-left ">
-          Hi, I&apos;m Rubén and I <br />
+          {content.title} <br />
           <DynamicText tic={tic} setTic={setTic} />
         </h1>
       </section>
@@ -78,21 +81,11 @@ export default function App() {
             className="lg:w-1/2 space-y-5"
           >
             <h2 className="text-3xl font-bold text-gray-100 border-b-2 border-gray-500 pb-2">
-              Who I am
+              {content.introductionTitle}
             </h2>
 
             <p className=" text-gray-400 lg:max-w-md text-lg">
-              Hi, my name is{" "}
-              <span className="font-bold underline decoration-blue-400 decoration-wavy decoration-slice text-white">
-                Rubén Chiquin Font{" "}
-              </span>
-              and I am a 20-year-old Multimedia college student, passionate
-              about self-learning and building things for the web. I&apos;m
-              always looking for new oportunities for building accessible,
-              inclusive products and digital experiences.
-              <br />
-              <br />
-              I&apos;ve worked in{" "}
+              {content.introduction1}
               <a
                 href={navigation[router.locale][2].href}
                 className="text-blue-400 underline hover:opacity-80 duration-200"
@@ -104,18 +97,16 @@ export default function App() {
                 href={navigation[router.locale][2].href}
                 className="text-blue-400 underline hover:opacity-80 duration-200"
               >
-                universities
+                {content.introduction2}
               </a>{" "}
-              and in{" "}
+              {content.introduction3}{" "}
               <a
                 href={navigation[router.locale][2].href}
                 className="text-blue-400 underline hover:opacity-80 duration-200"
               >
-                non-profit institutions
+                {content.introduction4}
               </a>
-              , all work related to design, technology and digital tools.
-              <br /> <br />
-              Here are a few technologies I’ve been learning recently:
+              {content.introduction5}
             </p>
             <ul className="list-disc md:columns-2 ml-4 text-gray-400">
               <li>React</li>
@@ -126,12 +117,12 @@ export default function App() {
               <li>Google Analytics</li>
             </ul>
 
-            <div className="flex items-center mt-6 -mx-2 space-x-5">
+            <div className="flex flex-col md:flex-row items-start space-y-5 md:space-y-0 mt-6 -mx-2 md:space-x-5">
               <a
                 href={navigation[router.locale][2].href}
                 className="bg-gradient-to-br from-mySecondary to-myPrimary rounded-lg px-3 py-2 font-bold ml-2 text-white"
               >
-                Let&apos;s get in touch!
+                {content.introductionCTA}
               </a>
               <div className="flex space-x-2 ring-gray-300 ring-2 text-gray-300 rounded-lg px-3 py-2 hover:text-myPrimary hover:ring-myPrimary duration-200 font-bold ml-2">
                 <Link href="/myProjects">
