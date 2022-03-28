@@ -2,15 +2,11 @@ import { useEffect, Fragment } from "react";
 import { Popover, Transition } from "@headlessui/react";
 import { MenuIcon, XIcon } from "@heroicons/react/outline";
 import Image from "next/image";
+import { useRouter } from "next/router";
 
-export const navigation = [
-  { name: "Home", href: "#Home" },
-  { name: "About me", href: "#About me" },
-  { name: "My projects", href: "#My projects" },
-  { name: "Contact me", href: "#Contact me" },
-];
+export default function Navbar({ isInSection, setSection, navigation }) {
+  const router = useRouter();
 
-export default function Navbar({ isInSection, setSection }) {
   useEffect(() => {
     const sections = document.querySelectorAll("section");
     window.addEventListener("scroll", () => {
@@ -43,43 +39,43 @@ export default function Navbar({ isInSection, setSection }) {
       <li className="list-none space-x-8 my-auto hidden md:inline font-medium text-lg">
         <a
           className={
-            isInSection === navigation[0].name
+            isInSection === navigation[router.locale][0].name
               ? " text-myPrimary duration-200"
               : "duration-200"
           }
-          href={navigation[0].href}
+          href={navigation[router.locale][0].href}
         >
-          {navigation[0].name}
+          {navigation[router.locale][0].name}
         </a>
         <a
           className={
-            isInSection === navigation[1].name
+            isInSection === navigation[router.locale][1].name
               ? "text-myPrimary duration-200"
               : "duration-200"
           }
-          href={navigation[1].href}
+          href={navigation[router.locale][1].href}
         >
-          {navigation[1].name}
+          {navigation[router.locale][1].name}
         </a>
         <a
           className={
-            isInSection === navigation[2].name
+            isInSection === navigation[router.locale][2].name
               ? "text-myPrimary duration-200"
               : "duration-200"
           }
-          href={navigation[2].href}
+          href={navigation[router.locale][2].href}
         >
-          {navigation[2].name}
+          {navigation[router.locale][2].name}
         </a>
         <a
           className={
-            isInSection === navigation[3].name
+            isInSection === navigation[router.locale][3].name
               ? "text-myPrimary duration-200"
               : "duration-200"
           }
-          href={navigation[3].href}
+          href={navigation[router.locale][3].href}
         >
-          {navigation[3].name}
+          {navigation[router.locale][3].name}
         </a>
       </li>
       <Popover className="md:hidden">
@@ -129,7 +125,7 @@ export default function Navbar({ isInSection, setSection }) {
                 </div>
               </div>
               <div className="px-2 pt-2 pb-3 space-y-1">
-                {navigation.map((item) => (
+                {navigation[router.locale].map((item) => (
                   <Popover.Button
                     className="block text-lg font-medium px-3 py-2 rounded-md hover:opacity-7"
                     key={item.name}

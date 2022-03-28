@@ -4,9 +4,10 @@ import Image from "next/image";
 import Link from "next/link";
 import AOS from "aos";
 import "aos/dist/aos.css";
-import {  FolderIcon } from "@heroicons/react/outline";
+import { FolderIcon } from "@heroicons/react/outline";
+import { useRouter } from "next/router";
 
-import Navbar, { navigation } from "../components/Navbar";
+import Navbar from "../components/Navbar";
 import Form from "../components/Form";
 import Footer from "../components/Footer";
 import Particles from "../components/Particles";
@@ -16,12 +17,35 @@ import Project from "../components/Project";
 export default function App() {
   var [tic, setTic] = useState(0);
 
-  const [isInSection, setSection] = useState(navigation[0].name);
-
   useEffect(() => {
     AOS.init();
     AOS.refresh();
   }, []);
+
+  const router = useRouter();
+
+  const navigation = {
+    en: [
+      { name: "Home", href: "#Home" },
+      { name: "About me", href: "#About me" },
+      { name: "My projects", href: "#My projects" },
+      { name: "Contact me", href: "#Contact me" },
+    ],
+    es: [
+      { name: "Inicio", href: "#Inicio" },
+      { name: "Acerca de mi", href: "#Acerca de mi" },
+      { name: "Mis proyectos", href: "#Mis proyectos" },
+      { name: "Concátame", href: "#Concátame" },
+    ],
+    ca: [
+      { name: "Inici", href: "#Inici" },
+      { name: "Sobre mi", href: "#Sobre mi" },
+      { name: "Els meus projectes", href: "#Els meus projectes" },
+      { name: "Contacta amb mi", href: "#Contacta amb mi" },
+    ]
+  };
+
+  const [isInSection, setSection] = useState(navigation[router.locale][0].name);
 
   return (
     <>
@@ -31,16 +55,22 @@ export default function App() {
         {/* SEO METADATA? */}
       </Head>
 
-      <Navbar isInSection={isInSection} setSection={setSection} />
+      <Navbar isInSection={isInSection} setSection={setSection} navigation={navigation} />
       <Particles tic={tic} isInSection={isInSection} navigation={navigation} />
-      <section id={navigation[0].name} className="h-screen flex font-righteous">
+      <section
+        id={navigation[router.locale][0].name}
+        className="h-screen flex font-righteous"
+      >
         <h1 className="text-4xl md:text-5xl lg:text-7xl mx-auto mt-20 text-center p-10 xl:my-auto xl:ml-32 xl:text-left ">
           Hi, I&apos;m Rubén and I <br />
           <DynamicText tic={tic} setTic={setTic} />
         </h1>
       </section>
 
-      <section id={navigation[1].name} className="container px-6 py-8 mx-auto">
+      <section
+        id={navigation[router.locale][1].name}
+        className="container px-6 py-8 mx-auto"
+      >
         <div className="items-center lg:flex">
           <div
             data-aos="fade-right"
@@ -64,21 +94,21 @@ export default function App() {
               <br />
               I&apos;ve worked in{" "}
               <a
-                href={navigation[2].href}
+                href={navigation[router.locale][2].href}
                 className="text-blue-400 underline hover:opacity-80 duration-200"
               >
                 startups
               </a>
               ,{" "}
               <a
-                href={navigation[2].href}
+                href={navigation[router.locale][2].href}
                 className="text-blue-400 underline hover:opacity-80 duration-200"
               >
                 universities
               </a>{" "}
               and in{" "}
               <a
-                href={navigation[2].href}
+                href={navigation[router.locale][2].href}
                 className="text-blue-400 underline hover:opacity-80 duration-200"
               >
                 non-profit institutions
@@ -98,7 +128,7 @@ export default function App() {
 
             <div className="flex items-center mt-6 -mx-2 space-x-5">
               <a
-                href={navigation[3].href}
+                href={navigation[router.locale][2].href}
                 className="bg-gradient-to-br from-mySecondary to-myPrimary rounded-lg px-3 py-2 font-bold ml-2 text-white"
               >
                 Let&apos;s get in touch!
@@ -133,7 +163,7 @@ export default function App() {
       </section>
 
       <section
-        id={navigation[2].name}
+        id={navigation[router.locale][2].name}
         className="container px-6 py-8 mx-auto space-y-10 lg:space-y-20"
       >
         <div
@@ -226,7 +256,7 @@ export default function App() {
       </section>
 
       <section
-        id={navigation[3].name}
+        id={navigation[router.locale][3].name}
         className="space-y-10 container px-6 py-8 mx-auto"
       >
         <div
