@@ -1,8 +1,13 @@
 import React, { useEffect, useRef } from "react";
 import { useForm } from "@formcarry/react";
+import { index } from "../content";
+import { useRouter } from "next/router";
 
 export default function Form() {
   const handleSubmit = useRef();
+  const router = useRouter();
+
+  const content = index[router.locale];
 
   const { state, submit } = useForm({
     id: "e8938LqnpHt",
@@ -26,7 +31,7 @@ export default function Form() {
       <input
         required
         className="bg-gray-800 placeholder-white placeholder-opacity-50 rounded p-2 text-lg col-span-2 sm:col-span-1"
-        placeholder="Name"
+        placeholder={content.formName}
         type="text"
         name="name"
       />
@@ -42,7 +47,7 @@ export default function Form() {
       <input
         required
         className="bg-gray-800 placeholder-white placeholder-opacity-50 col-span-2 rounded p-2 text-lg"
-        placeholder="Subject"
+        placeholder={content.formSubject}
         type="text"
         name="subject"
       />
@@ -50,7 +55,7 @@ export default function Form() {
       <textarea
         required
         className="bg-gray-800 placeholder-white placeholder-opacity-50 col-span-2 rounded p-2 h-36 text-lg md:h-40 lg:h-52 xl:h-56"
-        placeholder="Message"
+        placeholder={content.formMessage}
         type="text"
         name="message"
       />
@@ -65,7 +70,7 @@ export default function Form() {
             type="submit"
             className="items-center px-2 py-2 text-lg leading-6 font-medium rounded-md text-gray-300 bg-gray-800 hover:text-myPrimary focus:border-myPrimary transition ease-in-out duration-500"
           >
-            Send
+            {content.formBtn0}
           </button>
         ) : null}
 
@@ -95,7 +100,7 @@ export default function Form() {
                 d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"
               ></path>
             </svg>
-            Processing
+            {content.formBtn1}
           </button>
         ) : null}
         {state.submitted ? (
@@ -103,7 +108,7 @@ export default function Form() {
             disabled
             className="items-center px-2 py-2 text-lg leading-6 font-medium rounded-md text-gray-300 bg-green-700 opacity-50 focus:border-myPrimary transition ease-in-out duration-500"
           >
-            Sent
+            {content.formBtn2}
           </button>
         ) : null}
 

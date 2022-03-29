@@ -1,15 +1,14 @@
 import React, { useRef, useEffect } from "react";
 import baffle from "baffle";
 import { useRouter } from "next/router";
-import { rawContent } from "../content";
-
+import { index } from "../content";
 
 export default function BaffleName({ tic, setTic }) {
   const dynamicText = useRef();
   const router = useRouter();
 
   useEffect(() => {
-    const myWords = rawContent[router.locale].index.dynamicText
+    const myWords = index[router.locale].dynamicText
 
     const baffler = baffle(dynamicText.current);
     baffler.options.characters = "ᾏστυφχΓΔϊϋόͶώ/<>?";
@@ -23,7 +22,7 @@ export default function BaffleName({ tic, setTic }) {
         tic = 0;
         setTic(0);
       } else {
-        tic++;
+        ++tic;
         setTic(tic);
       }
       baffler.text((currentText) => myWords[tic]);

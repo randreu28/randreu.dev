@@ -3,11 +3,12 @@ import * as THREE from "three";
 import { GLTFLoader } from "three/examples/jsm/loaders/GLTFLoader.js";
 import gsap from "gsap";
 import { useRouter } from "next/router";
+import { navigation } from "../content";
 
 import bufferVertexShader from "../public/media/buffer/vertex.glsl";
 import bufferFragmentShader from "../public/media/buffer/fragment.glsl"; /* Needed to eject create-react-app for this */
 
-export default function Particles({ tic, isInSection, navigation }) {
+export default function Particles({ tic, isInSection }) {
   // Canvas
   const ref = useRef();
   const router = useRouter();

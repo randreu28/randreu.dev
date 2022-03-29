@@ -6,7 +6,7 @@ import AOS from "aos";
 import "aos/dist/aos.css";
 import { FolderIcon } from "@heroicons/react/outline";
 import { useRouter } from "next/router";
-import { rawContent } from "../content";
+import { index, navigation } from "../content";
 
 import Navbar from "../components/Navbar";
 import Form from "../components/Form";
@@ -25,28 +25,7 @@ export default function App() {
 
   const router = useRouter();
 
-  const navigation = {
-    en: [
-      { name: "Home", href: "#Home" },
-      { name: "About me", href: "#About me" },
-      { name: "My projects", href: "#My projects" },
-      { name: "Contact me", href: "#Contact me" },
-    ],
-    es: [
-      { name: "Inicio", href: "#Inicio" },
-      { name: "Acerca de mi", href: "#Acerca de mi" },
-      { name: "Mis proyectos", href: "#Mis proyectos" },
-      { name: "Concátame", href: "#Concátame" },
-    ],
-    ca: [
-      { name: "Inici", href: "#Inici" },
-      { name: "Sobre mi", href: "#Sobre mi" },
-      { name: "Els meus projectes", href: "#Els meus projectes" },
-      { name: "Contacta'm", href: "#Contacta'm" },
-    ]
-  };
-
-  const content  = rawContent[router.locale].index;
+  const content = index[router.locale];
 
   const [isInSection, setSection] = useState(navigation[router.locale][0].name);
 
@@ -58,8 +37,12 @@ export default function App() {
         {/* SEO METADATA? */}
       </Head>
 
-      <Navbar isInSection={isInSection} setSection={setSection} navigation={navigation} />
-      <Particles tic={tic} isInSection={isInSection} navigation={navigation} />
+      <Navbar
+        isInSection={isInSection}
+        setSection={setSection}
+        navigation={navigation}
+      />
+      <Particles tic={tic} isInSection={isInSection} />
       <section
         id={navigation[router.locale][0].name}
         className="h-screen flex font-righteous"
@@ -81,11 +64,18 @@ export default function App() {
             className="lg:w-1/2 space-y-5"
           >
             <h2 className="text-3xl font-bold text-gray-100 border-b-2 border-gray-500 pb-2">
-              {content.introductionTitle}
+              {content.introTitle}
             </h2>
 
             <p className=" text-gray-400 lg:max-w-md text-lg">
-              {content.introduction1}
+              {content.intro1}
+              <span className="font-bold underline decoration-blue-400 decoration-wavy decoration-slice text-white">
+                Rubén Chiquin Font{" "}
+              </span>
+              {content.intro2}
+              <br />
+              <br />
+              {content.intro3}
               <a
                 href={navigation[router.locale][2].href}
                 className="text-blue-400 underline hover:opacity-80 duration-200"
@@ -97,16 +87,18 @@ export default function App() {
                 href={navigation[router.locale][2].href}
                 className="text-blue-400 underline hover:opacity-80 duration-200"
               >
-                {content.introduction2}
+                {content.intro4}
               </a>{" "}
-              {content.introduction3}{" "}
+              {content.intro5}
               <a
                 href={navigation[router.locale][2].href}
                 className="text-blue-400 underline hover:opacity-80 duration-200"
               >
-                {content.introduction4}
+                {content.intro6}
               </a>
-              {content.introduction5}
+              {content.intro7}
+              <br/><br/>
+              {content.intro8}
             </p>
             <ul className="list-disc md:columns-2 ml-4 text-gray-400">
               <li>React</li>
@@ -119,14 +111,14 @@ export default function App() {
 
             <div className="flex flex-col md:flex-row items-start space-y-5 md:space-y-0 mt-6 -mx-2 md:space-x-5">
               <a
-                href={navigation[router.locale][2].href}
+                href={navigation[router.locale][3].href}
                 className="bg-gradient-to-br from-mySecondary to-myPrimary rounded-lg px-3 py-2 font-bold ml-2 text-white"
               >
-                {content.introductionCTA}
+                {content.introBtn1}
               </a>
               <div className="flex space-x-2 ring-gray-300 ring-2 text-gray-300 rounded-lg px-3 py-2 hover:text-myPrimary hover:ring-myPrimary duration-200 font-bold ml-2">
                 <Link href="/myProjects">
-                  <a>Check out my portfolio</a>
+                  <a>{content.introBtn2}</a>
                 </Link>
                 <FolderIcon className="h-6 w-6 my-auto" />
               </div>
@@ -166,82 +158,29 @@ export default function App() {
 
           <div className="lg:w-1/2 space-y-5">
             <h2 className="text-3xl text-right w-full font-bold text-gray-100 border-b-2 border-gray-500 pb-2">
-              Some projects I&apos;ve participed in
+              {content.projTitle}
             </h2>
           </div>
         </div>
 
         <Project
-          title="Imagine Planet Challenge"
+          title={content.proj1Title}
           img={"/media/ecoDeliver.jpg"}
-          p={
-            <>
-              In my early years of college I got involved in a startup called{" "}
-              <span className="font-bold underline decoration-green-400 decoration-wavy decoration-slice text-white">
-                ecoDeliver,{" "}
-              </span>
-              where I had the fortune to help as a marketing consultant and
-              designer, as I had recently learned about design and marketing
-              principles.
-              <br />
-              <br />
-              Later on we participated and won the Imagine Planet Challenge, a
-              challenge made for newborn sustainable startups, designed for
-              tutoring and networking.
-            </>
-          }
+          p={content.proj1}
           link="/imaginePlanetChallenge"
         />
 
         <Project
-          title="Scholarship in the UPC"
+          title={content.proj2Title}
           img={"/media/upc.jpg"}
-          p={
-            <>
-              In the third year of college I&apos;ve been working at the Vertex
-              centre at the UPC university, where I was tasked to work on the
-              maintenance of the multiple websites of the institution.
-              <br />
-              <br />I was also tasked with setting up and monitoring all the
-              data received from{" "}
-              <span className="font-bold underline decoration-yellow-400 decoration-wavy decoration-slice text-white">
-                Google Analytics{" "}
-              </span>{" "}
-              and making changes accordingly to ensure a good UX.{" "}
-            </>
-          }
+          p={content.proj2}
           link="/upc"
           isEven={true}
         />
         <Project
-          title="GOAC multimedia technician"
+          title={content.proj3Title}
           img={"/media/placeholder.png"}
-          p={
-            <>
-              Contrary to other careers, one of the benefits of studying a
-              design career is the opportunity to show{" "}
-              <a
-                href="https://www.behance.net/RubenChiquin"
-                target="_blank"
-                rel="noreferrer"
-                className="underline text-blue-400 duration-200 hover:opacity-75 "
-              >
-                your personal projects and assignments
-              </a>{" "}
-              to your friends and family. And as a result of that, a friend of a
-              friend, whom I showed a design of mine contacted me for a business
-              opportunity.
-              <br />
-              <br />
-              Such opportunity was to be part of the{" "}
-              <span className="font-bold underline decoration-cyan-400 decoration-wavy decoration-slice text-white">
-                GOAC organisation,{" "}
-              </span>
-              where I was tasked to manage the social media accounts such as
-              their Youtube channel and their blog, as well as design tasks,
-              such as banners, rollups and presentation cards.
-            </>
-          }
+          p={content.proj3}
           link="/goac"
         />
       </section>
@@ -257,7 +196,7 @@ export default function App() {
         >
           <div className="lg:w-1/2 space-y-5">
             <h2 className="text-3xl w-full font-bold text-white border-b-2 border-gray-500 pb-2">
-              Let&apos;s get in touch!
+              {content.contactTitle}
             </h2>
           </div>
 

@@ -3,8 +3,9 @@ import { Popover, Transition } from "@headlessui/react";
 import { MenuIcon, XIcon } from "@heroicons/react/outline";
 import Image from "next/image";
 import { useRouter } from "next/router";
+import { navigation } from "../content";
 
-export default function Navbar({ isInSection, setSection, navigation }) {
+export default function Navbar({ isInSection, setSection }) {
   const router = useRouter();
 
   useEffect(() => {
