@@ -442,56 +442,57 @@ export const imaginePlanetChallenge = {
     ),
   },
   es: {
-    featured: "Featured project",
+    featured: "Proyecto destacado",
     title: "Imagine Planet Challenge",
 
-    imgText1: "Extract from the ecoDeliver Brand Guidelines",
-    imgText2: "Winning the Imagine Planet Challenge",
-    imgText3: "Presentation at Los Jameos Del Agua",
+    imgText1: "Extracto de las directrices de marca corporativa de ecoDeliver",
+    imgText2: "Ganando el Imagine Planet Challenge",
+    imgText3: "Presentación en Los Jameos Del Agua",
 
-    subtitle1: "An opportunity with ecoDeliver",
+    subtitle1: "Una oportunidad con ecoDeliver",
     p1: (
       <>
-        Back in my early years of college, I started to learn about design
-        principles, the creation of good brand guidelines, marketing strategies
-        among other things. Being that the case, I started compiling a{" "}
+        En los primeros años de mi carrera, empecé a estudiar acerca de los
+        principios del diseño, la creación de buenas imagenes corporativas, 
+        estrategias de marketing, entre otras cosas. Siendo ese el caso, empece a recopilar una{" "}
         <a
           className="text-blue-400 underline hover:opacity-75 duration-200"
           href="https://www.behance.net/RubenChiquin"
           target="_blank"
           rel="noreferrer"
         >
-          collection of small design projects
+          colección de pequeños proyectos
         </a>{" "}
-        that I shared with my friends and family.
+        que compartí con mis familiares y amigos.
         <br />
         <br />
-        That&apos;s when an acquaintance of mine and a friend of his, both
-        recently graduated engineers who where planning on starting their own
-        startup together, saw my work, approached me and asked for my advice
-        about their brand and their business idea, and I offered to help.
-        <br />
-        <br />I thought they had a great project in hands and while I was taking
-        classes at college, I spent part of my time designing{" "}
+        Fue ahí cuando un conocido y su amigo, ambos ingenieros recién graduados quienes
+        estaban planeando en empezar su propia startup juntos, vió mi trabajo y contactó
+        conmigo y me pidió mi consejo acerca de su marca corporativa y su idea de negocio,
+        y yo me ofrecí a ayudarles.
+        <br/>
+        <br/>
+        Pensé que tenían un gran proyecto entre manos, y mientras cursaba mis clases
+        en la universidad, utilicé parte de mi tiempo diseñando{" "}
         <a
           className="text-blue-400 underline hover:opacity-75 duration-200"
           href="https://www.behance.net/gallery/125864213/ecoDeliver-Brand-Guidlines-20"
           target="_blank"
           rel="noreferrer"
         >
-          their brand guidelines and logo
+          su marca corporativa y logo
         </a>
-        , which they liked a lot and ended up adopting as their own.
+        , la cual acabó gustandoles mucho y la adoptaron como suya.
       </>
     ),
 
-    subtitle2: "The challenge",
+    subtitle2: "El reto",
     p2: (
       <>
         <br />
-        The ecoDeliver startup project consisted on a 100% ecoFriendly package
-        delivery platform, and looking for ways to bring the project forwards,
-        ecoDeliver got involved in a competition called the{" "}
+        El proyecto de la startup ecoDeliver consistía en un sistema de entrega
+        de paquetería 100% amigable al ambiente, y buscando maneras de mover el proyecto adelante,
+        ecoDeliver se involucró en la competición llamado el{" "}
         <a
           className="text-blue-400 underline hover:opacity-75 duration-200"
           href="https://vimeo.com/570039624"
@@ -500,45 +501,45 @@ export const imaginePlanetChallenge = {
         >
           Imagine Planet Challenge
         </a>
-        , a challenge made for newborn sustainable startups, designed for
-        tutoring and networking.
+        , un evento hecho para startups sostenibles recién nacidas,
+        diseñada para mentoría y networking.
         <br />
         <br />
-        The event consisted on 10 startups, each one with the oportunity of
-        explaining their ideas and goals that could benefit the enviroment in
-        front of an audience and a very qualified jury, who would decide who
-        would be premiated with a 3 weeks trip to Lanzarote, where there would
-        be all sort of planned activities and mentoring for the winning team.
+        El evento consistía en 10 startups, cada uno con la oportunidad de 
+        explicar sus ideas y metas que beneficiarían el medio ambiente en 
+        frente de una audiencia y de un jurado muy bien cualificado para el trabajo, quien
+        decidiría quién sería premiado con un viaje de 3 semanas a Lanzarote, en donde
+        se llevarían a cabo todo tipo de actividades planificadas y mentoría para el equipo ganador.
       </>
     ),
 
     p3: (
       <>
         <p className="text-gray-400">
-          Much to our delight, we, alongside another startup called Kidalos, won
-          the challenge and enjoyed a{" "}
+          Afortunadamente, nosotros, junto a otra startup llamda Kidalos,
+          ganamos la competición y tuvimos la oportunidad de disfrutar una{" "}
           <a
             className="text-blue-400 underline hover:opacity-75 duration-200"
             href="https://vimeo.com/612344678"
             target="_blank"
             rel="noreferrer"
           >
-            very enriching experience in Lanzarote
+            muy enriquecedora experiencia en Lanzarote
           </a>
-          , where we had the pleasure to meet very relevant people, such as{" "}
+          , donde tuvimos el placer de conocer a personas muy relevantes, tales como{" "}
           <a
             className="text-blue-400 underline hover:opacity-75 duration-200"
             href="https://caixabank.com/comunicacion/noticia/ecodeliver-y-kidalos-ganan-la-primera-edicion-del-imaginplanet-challenge_es.html?id=42880#"
             target="_blank"
             rel="noreferrer"
           >
-            Benjami Puigdevall, the CEO of Imagine Bank
+            Benjami Puigdevall, el CEO de Imagine Bank
           </a>
-          , among many others who accompanied us throughout the journey.
+          , entre muchos otros que nos acompañaron a lo largo de nuestro viaje.
         </p>
         <p className="text-gray-400">
-          At the end of the trip, we had to present one last time
-          ecoDeliver&apos;s idea to an audience. The event took place at{" "}
+          Al acabar el evento, tuvimos que presentar una última vez
+          la idea del proyecto de ecoDeliver a una audiencia. El evento se celebró en{" "}
           <a
             className="text-blue-400 underline hover:opacity-75 duration-200"
             href="https://vimeo.com/580269013"
@@ -547,65 +548,65 @@ export const imaginePlanetChallenge = {
           >
             Los Jameos del Agua
           </a>
-          , a very iconic place in Lanzarote, and in there we shared our
-          business idea while being recorded and watched for hundreds of people,
-          including Benjamin Perdomo, Managing Director of the Art, Culture and
-          Tourism center in Lanzarote.
+          , un lugar turístico muy icónico de Lanzarote en donde compartimos
+          nuestra idea de negocio mientras eramos grabados y vistos por cientos de personas,
+          incluido Benjamin Perdomo, el Gerente Director de Arte, Cultura yTurismo de Lanzarote. 
         </p>
       </>
     ),
   },
   ca: {
-    featured: "Featured project",
+    featured: "Projecte destacat",
     title: "Imagine Planet Challenge",
 
-    imgText1: "Extract from the ecoDeliver Brand Guidelines",
-    imgText2: "Winning the Imagine Planet Challenge",
-    imgText3: "Presentation at Los Jameos Del Agua",
+    imgText1: "Extracte de les directrius de la marca d'ecoDeliver",
+    imgText2: "Guanyant el Imagine Planet Challenge",
+    imgText3: "Presentació a Los Jameos Del Agua",
 
-    subtitle1: "An opportunity with ecoDeliver",
+    subtitle1: "Una oportunitat amb ecoDeliver",
     p1: (
       <>
-        Back in my early years of college, I started to learn about design
-        principles, the creation of good brand guidelines, marketing strategies
-        among other things. Being that the case, I started compiling a{" "}
+        En els primers anys de la meva carrera, vaig començar a estudiar sobre els
+        principis del disseny, la creació de bones imatges corporatives, estratègies de màrqueting,
+        entre altres coses. Sent aquest el cas, vaig començar a recopilar una {" "}
         <a
           className="text-blue-400 underline hover:opacity-75 duration-200"
           href="https://www.behance.net/RubenChiquin"
           target="_blank"
           rel="noreferrer"
         >
-          collection of small design projects
+          Col&middot;lecció de petits projectes de disseny
         </a>{" "}
-        that I shared with my friends and family.
+        que vaig compartir amb els meus amics i familiars.
         <br />
         <br />
-        That&apos;s when an acquaintance of mine and a friend of his, both
-        recently graduated engineers who where planning on starting their own
-        startup together, saw my work, approached me and asked for my advice
-        about their brand and their business idea, and I offered to help.
+        Va ser llavors quan un conegut meu i un amic seu, tots dos
+        enginyers recentment graduats que planejaven començar la seva
+        startup junts, van veure la meva feina, em van contactar i em van demanar consell
+        sobre la seva marca i la seva idea de negoci, i em vaig oferir a ajudar.
         <br />
-        <br />I thought they had a great project in hands and while I was taking
-        classes at college, I spent part of my time designing{" "}
+        <br />
+        Em semblaba que tenien un gran projecte entre mans i mentre estava fent
+        classes a la universitat, vaig dedicar part del meu temps dissenyant{" "}
         <a
           className="text-blue-400 underline hover:opacity-75 duration-200"
           href="https://www.behance.net/gallery/125864213/ecoDeliver-Brand-Guidlines-20"
           target="_blank"
           rel="noreferrer"
         >
-          their brand guidelines and logo
+          la seva marca coroprativa i el seu logotip
         </a>
-        , which they liked a lot and ended up adopting as their own.
+        , el qual els hi va agradar molt i van acabar adoptant com a propi.
       </>
     ),
 
-    subtitle2: "The challenge",
+    subtitle2: "El repte",
     p2: (
       <>
         <br />
-        The ecoDeliver startup project consisted on a 100% ecoFriendly package
-        delivery platform, and looking for ways to bring the project forwards,
-        ecoDeliver got involved in a competition called the{" "}
+        El projecte de la startup ecoDeliver consistia en  un sistema de paqueteria amigable
+        a l'ambient i buscant maneres de tirar endavant el projecte,
+        ecoDeliver es va involucrar en un concurs anomenat {" "}
         <a
           className="text-blue-400 underline hover:opacity-75 duration-200"
           href="https://vimeo.com/570039624"
@@ -614,45 +615,45 @@ export const imaginePlanetChallenge = {
         >
           Imagine Planet Challenge
         </a>
-        , a challenge made for newborn sustainable startups, designed for
-        tutoring and networking.
+        , un repte fet per a startups sostenibles nounats, pensat per a
+        tutoria i networking.
         <br />
         <br />
-        The event consisted on 10 startups, each one with the oportunity of
-        explaining their ideas and goals that could benefit the enviroment in
-        front of an audience and a very qualified jury, who would decide who
-        would be premiated with a 3 weeks trip to Lanzarote, where there would
-        be all sort of planned activities and mentoring for the winning team.
+        L'esdeveniment va constar de 10 startups, cadascuna amb l'oportunitat de
+        explicant les seves idees i objectius que podrien beneficiar el medi ambient
+        davant un públic i un jurat molt qualificat, que decidiria qui
+        es premiaria amb un viatge de 3 setmanes a Lanzarote, on es farien
+        tot tipus d'activitats planificades i mentoria per a l'equip guanyador.
       </>
     ),
 
     p3: (
       <>
         <p className="text-gray-400">
-          Much to our delight, we, alongside another startup called Kidalos, won
-          the challenge and enjoyed a{" "}
+          Afortunadament, vam guanyar el repte nosaltres, juntament amb una altra
+          startup anomenada Kidalos i vam gaudir d'una{" "}
           <a
             className="text-blue-400 underline hover:opacity-75 duration-200"
             href="https://vimeo.com/612344678"
             target="_blank"
             rel="noreferrer"
           >
-            very enriching experience in Lanzarote
+            experiència molt enriquidora a Lanzarote
           </a>
-          , where we had the pleasure to meet very relevant people, such as{" "}
+          , on vam tenir el plaer de conèixer gent molt rellevant, com ara{" "}
           <a
             className="text-blue-400 underline hover:opacity-75 duration-200"
             href="https://caixabank.com/comunicacion/noticia/ecodeliver-y-kidalos-ganan-la-primera-edicion-del-imaginplanet-challenge_es.html?id=42880#"
             target="_blank"
             rel="noreferrer"
           >
-            Benjami Puigdevall, the CEO of Imagine Bank
+            Benjami Puigdevall, el CEO de Imagine Bank
           </a>
-          , among many others who accompanied us throughout the journey.
+          , entre molts altres que ens van acompanyar durant tot el trajecte.
         </p>
         <p className="text-gray-400">
-          At the end of the trip, we had to present one last time
-          ecoDeliver&apos;s idea to an audience. The event took place at{" "}
+          En acabar el viatge, vam haver de presentar una darrera vegada
+          La idea d'ecoDeliver davant de un públic. L'esdeveniment va tenir lloc a {" "}
           <a
             className="text-blue-400 underline hover:opacity-75 duration-200"
             href="https://vimeo.com/580269013"
@@ -661,10 +662,10 @@ export const imaginePlanetChallenge = {
           >
             Los Jameos del Agua
           </a>
-          , a very iconic place in Lanzarote, and in there we shared our
-          business idea while being recorded and watched for hundreds of people,
-          including Benjamin Perdomo, Managing Director of the Art, Culture and
-          Tourism center in Lanzarote.
+          , un lloc turistic molt emblemàtic de Lanzarote, i allà vam compartir el nostre
+          idea de negoci mentre ens gravan i miraven centenars de persones,
+          entre els quals hi era en Benjamin Perdomo, director general d'Art, Cultura i
+          Centre de Turisme a Lanzarote.
         </p>
       </>
     ),
@@ -700,34 +701,32 @@ export const projPrev = {
       "In my early years of college I got involved in a startup called ecoDeliver, where I had the fortune to help as a marketing consultant and designer. Then I had the chance to participate on the Imagine Planet Challenge with them, alongside another...",
   },
   es: {
-    title: "Other projects",
+    title: "Otros proyectos",
     
-    upcTitle: "Schoolarship in the UPC",
+    upcTitle: "Beca de aprendizaje en la UPC",
     upcDescription:
-      "In the third year of college I've been working at the Vertex centre at the UPC university, where I was tasked to work on the maintenance of the multiple websites of the institution. I was also tasked with setting up and monitoring all the data received from Google Analytics and making changes accordingly to ensure a good UX...",
+      "En el tercer año de la carrera estuve trabajando en el centro Vertex de la universidad UPC, donde me encargaron trabajar en el mantenimiento de los múltiples sitios web de la institución. También tuve la tarea de configurar y monitorear todos los datos recibidos de Google Analytics y hacer los cambios correspondientes para garantizar una buena UX...",
 
     goacTitle: "GOAC",
     goacDescription:
-      " A friend of mine saw my work and recommended me. Some time later I was invited to be part of the GOAC organisation, where I was tasked to manage the social media accounts such as their Youtube channel and their blog, as well as design tasks, such as banners, rollups and presentation cards...",
+      " Un amigo mío vio mi trabajo y me recomendó. Tiempo después me invitaron a formar parte de la organización GOAC, donde me encomendaron la gestión de las cuentas de redes sociales como su canal de Youtube y su blog, así como tareas de diseño, como banners, rollups y tarjetas de presentación...",
 
     ipcTitle: "Imagine Planet Challenge",
     ipcDescription:
-      "In my early years of college I got involved in a startup called ecoDeliver, where I had the fortune to help as a marketing consultant and designer. Then I had the chance to participate on the Imagine Planet Challenge with them, alongside another...",
+      "En mis primeros años de universidad me involucré en una startup llamada ecoDeliver, donde tuve la fortuna de ayudar como consultor de marketing y diseñador. Luego tuve la oportunidad de participar en el Imagine Planet Challenge con ellos, junto a otro...",
   },
   ca: {
-    title: "Other projects",
+    title: "Altres projecte",
     
-    upcTitle: "Schoolarship in the UPC",
+    upcTitle: "Beca d'apranantatge a l'UPC",
     upcDescription:
-      "In the third year of college I've been working at the Vertex centre at the UPC university, where I was tasked to work on the maintenance of the multiple websites of the institution. I was also tasked with setting up and monitoring all the data received from Google Analytics and making changes accordingly to ensure a good UX...",
-
+      "A tercer curs de la universitat he estat treballant al centre Vertex de la UPC, on em van encarregar el manteniment de les múltiples webs de la institució. També em van encarregar la configuració i el seguiment de totes les dades rebudes de Google Analytics i fer els canvis en conseqüència per garantir una bona UX...",
     goacTitle: "GOAC",
     goacDescription:
-      " A friend of mine saw my work and recommended me. Some time later I was invited to be part of the GOAC organisation, where I was tasked to manage the social media accounts such as their Youtube channel and their blog, as well as design tasks, such as banners, rollups and presentation cards...",
-
+      "Un amic meu va veure la meva feina i em va recomanar. Temps després em van convidar a formar part de l'organització GOAC, on em van encarregar la gestió dels comptes de les xarxes socials com el seu canal de Youtube i el seu blog, així com tasques de disseny, com ara banners, rollups i targetes de presentació...",
     ipcTitle: "Imagine Planet Challenge",
     ipcDescription:
-      "In my early years of college I got involved in a startup called ecoDeliver, where I had the fortune to help as a marketing consultant and designer. Then I had the chance to participate on the Imagine Planet Challenge with them, alongside another...",
+      "En els meus primers anys a la universitat em vaig involucrar en una startup anomenada ecoDeliver, on vaig tenir la sort d'ajudar com a consultor de màrqueting i dissenyador. Després vaig tenir l'oportunitat de participar amb ells al Imagine Planet Challenge, al costat d'un altre...",
   },
 };
 
