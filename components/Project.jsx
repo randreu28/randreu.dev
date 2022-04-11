@@ -32,7 +32,7 @@ export default function Project({ title, p, img, link, isEven, hasDemo }) {
         <br />
         <p className="text-gray-400">{p}</p>
         <div className="flex items-center mt-6 -mx-2 space-x-5">
-          <Link href={link}>
+          <Link href={link} >
             <a className="bg-gradient-to-br from-mySecondary to-myPrimary rounded-lg px-3 py-2 font-bold ml-2 duration-200 text-white">
               {content.projBtn}
             </a>
@@ -68,7 +68,7 @@ export default function Project({ title, p, img, link, isEven, hasDemo }) {
               <h1 className="text-2xl font-bold pb-5">{title}</h1>
               <p className="max-w-md ml-auto text-gray-400">{p}</p>
               <div className="flex items-center justify-end mr-1 mt-6 space-x-5 -mx-2">
-                <Link href={link}>
+                <Link href={link} >
                   <a className="bg-gradient-to-br from-mySecondary to-myPrimary rounded-lg px-3 py-2 font-bold ml-2 text-white">
                     {content.projBtn}
                   </a>
@@ -92,7 +92,7 @@ export default function Project({ title, p, img, link, isEven, hasDemo }) {
               <h1 className="text-2xl font-bold pb-5">{title}</h1>
               <p className="max-w-md text-gray-400">{p}</p>
               <div className="flex items-center mt-6 -mx-2 space-x-5">
-                <Link href={link}>
+                <Link href={link} >
                   <a className="bg-gradient-to-br from-mySecondary to-myPrimary rounded-lg px-3 py-2 font-bold ml-2 text-white">
                   {content.projBtn}
                   </a>

@@ -27,7 +27,7 @@ export default function App() {
 
   const content = index[router.locale];
 
-  const [isInSection, setSection] = useState(navigation[router.locale][0].name);
+  const [isInSection, setSection] = useState(navigation[router.locale].main[0].name);
 
   return (
     <>
@@ -44,17 +44,17 @@ export default function App() {
       />
       <Particles tic={tic} isInSection={isInSection} />
       <section
-        id={navigation[router.locale][0].name}
+        id={navigation[router.locale].main[0].href}
         className="h-screen flex font-righteous"
       >
-        <h1 className="text-4xl md:text-5xl lg:text-7xl mx-auto mt-20 text-center p-10 xl:my-auto xl:ml-32 xl:text-left ">
+        <h1 className="text-4xl md:text-5xl lg:text-6xl mx-auto mt-20 text-center p-10 xl:my-auto xl:ml-32 xl:text-left ">
           {content.title} <br />
           <DynamicText tic={tic} setTic={setTic} />
         </h1>
       </section>
 
       <section
-        id={navigation[router.locale][1].name}
+        id={navigation[router.locale].main[1].href}
         className="container px-6 py-8 mx-auto"
       >
         <div className="items-center lg:flex">
@@ -77,21 +77,21 @@ export default function App() {
               <br />
               {content.intro3}
               <a
-                href={navigation[router.locale][2].href}
+                href={navigation[router.locale].main[2].href}
                 className="text-blue-400 underline hover:opacity-80 duration-200"
               >
                 startups
               </a>
               ,{" "}
               <a
-                href={navigation[router.locale][2].href}
+                href={navigation[router.locale].main[2].href}
                 className="text-blue-400 underline hover:opacity-80 duration-200"
               >
                 {content.intro4}
               </a>{" "}
               {content.intro5}
               <a
-                href={navigation[router.locale][2].href}
+                href={navigation[router.locale].main[2].href}
                 className="text-blue-400 underline hover:opacity-80 duration-200"
               >
                 {content.intro6}
@@ -111,7 +111,7 @@ export default function App() {
 
             <div className="flex flex-col md:flex-row items-start space-y-5 md:space-y-0 mt-6 -mx-2 md:space-x-5">
               <a
-                href={navigation[router.locale][3].href}
+                href={"#" + navigation[router.locale].main[3].href}
                 className="bg-gradient-to-br from-mySecondary to-myPrimary rounded-lg px-3 py-2 font-bold ml-2 text-white"
               >
                 {content.introBtn1}
@@ -146,7 +146,7 @@ export default function App() {
       </section>
 
       <section
-        id={navigation[router.locale][2].name}
+        id={navigation[router.locale].main[2].href}
         className="container px-6 py-8 mx-auto space-y-10 lg:space-y-20"
       >
         <div
@@ -186,7 +186,7 @@ export default function App() {
       </section>
 
       <section
-        id={navigation[router.locale][3].name}
+        id={navigation[router.locale].main[3].href}
         className="space-y-10 container px-6 py-8 mx-auto"
       >
         <div

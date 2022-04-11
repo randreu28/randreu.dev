@@ -2,7 +2,7 @@ import { Html, Head, Main, NextScript } from "next/document";
 
 export default function Document() {
   return (
-    <Html lang="en"> {/* At least until I implent i18n routing..*/}
+    <Html className="scroll-smooth">
       <Head />
       <body className="bg-myDark text-white overflow-x-hidden">
         <Main />

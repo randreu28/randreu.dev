@@ -1,22 +1,31 @@
 export const navigation = {
-  en: [
-    { name: "Home", href: "#Home" },
-    { name: "About me", href: "#About me" },
-    { name: "My projects", href: "#My projects" },
-    { name: "Contact me", href: "#Contact me" },
+  en: {
+    main: [
+    { name: "Home", href: "Home" },
+    { name: "About me", href: "About-me" },
+    { name: "Projects", href: "Projects" },
+    { name: "Contact me", href: "Contact-me" },
   ],
-  es: [
-    { name: "Inicio", href: "#Inicio" },
-    { name: "Acerca de mi", href: "#Acerca de mi" },
-    { name: "Mis proyectos", href: "#Mis proyectos" },
-    { name: "Concátame", href: "#Concátame" },
+  portfolio: "Portfolio"
+},
+  es: { 
+    main:[
+    { name: "Inicio", href: "Inicio" },
+    { name: "Sobre mi", href: "Sobre-mi" },
+    { name: "Proyectos", href: "Proyectos" },
+    { name: "Concátame", href: "Concátame" },
   ],
-  ca: [
-    { name: "Inici", href: "#Inici" },
-    { name: "Sobre mi", href: "#Sobre mi" },
-    { name: "Els meus projectes", href: "#Els meus projectes" },
-    { name: "Contacta'm", href: "#Contacta'm" },
+  portfolio: "Portafolio"
+},
+  ca: {
+    main:[
+    { name: "Inici", href: "Inici" },
+    { name: "Sobre mi", href: "Sobre-mi" },
+    { name: "Projectes", href: "Projectes" },
+    { name: "Contacta'm", href: "Contacta'm" },
   ],
+  portfolio: "Portafoli"
+},
 };
 
 export const index = {
@@ -40,7 +49,7 @@ export const index = {
     intro7: ", all work related to design, technology and digital tools.",
     intro8: "Here are a few technologies I've been learning recently:",
     introBtn1: "Let's get in touch!",
-    introBtn2: "Check out my portfolio",
+    introBtn2: "My portfolio",
 
     projTitle: "Some projects I've participed in",
     projPrev: "Featured project",
@@ -117,7 +126,7 @@ export const index = {
     formBtn2: "Sent",
   },
   es: {
-    title: "Hola, me llamo Rubén y yo",
+    title: "Hola, soy Rubén y yo",
     dynamicText: [
       "diseño experiencias",
       "pienso creativamente",
@@ -138,7 +147,7 @@ export const index = {
     intro8:
       "Aquí hay algunas de las tecnologías que he estado estudiando recientemente:",
     introBtn1: "Concáctame!",
-    introBtn2: "Echale un vistazo a mi portfolio",
+    introBtn2: "Mi portafolio",
 
     projTitle: "Algunos proyectos en los que he participado",
     projPrev: "Proyecto destacado",
@@ -238,7 +247,7 @@ export const index = {
     intro8:
       "Aqui hi son algunas de las tecnologies que he estat estudiant recentment:",
     introBtn1: "Contacta'm!",
-    introBtn2: "Mira el meu portfoli",
+    introBtn2: "El meu portfoli",
 
     projTitle: "Alguns projectes en els que he participat",
     projPrev: "Projecte destacat",
@@ -453,8 +462,9 @@ export const imaginePlanetChallenge = {
     p1: (
       <>
         En los primeros años de mi carrera, empecé a estudiar acerca de los
-        principios del diseño, la creación de buenas imagenes corporativas, 
-        estrategias de marketing, entre otras cosas. Siendo ese el caso, empece a recopilar una{" "}
+        principios del diseño, la creación de buenas imagenes corporativas,
+        estrategias de marketing, entre otras cosas. Siendo ese el caso, empece
+        a recopilar una{" "}
         <a
           className="text-blue-400 underline hover:opacity-75 duration-200"
           href="https://www.behance.net/RubenChiquin"
@@ -466,14 +476,14 @@ export const imaginePlanetChallenge = {
         que compartí con mis familiares y amigos.
         <br />
         <br />
-        Fue ahí cuando un conocido y su amigo, ambos ingenieros recién graduados quienes
-        estaban planeando en empezar su propia startup juntos, vió mi trabajo y contactó
-        conmigo y me pidió mi consejo acerca de su marca corporativa y su idea de negocio,
-        y yo me ofrecí a ayudarles.
-        <br/>
-        <br/>
-        Pensé que tenían un gran proyecto entre manos, y mientras cursaba mis clases
-        en la universidad, utilicé parte de mi tiempo diseñando{" "}
+        Fue ahí cuando un conocido y su amigo, ambos ingenieros recién graduados
+        quienes estaban planeando en empezar su propia startup juntos, vió mi
+        trabajo y contactó conmigo y me pidió mi consejo acerca de su marca
+        corporativa y su idea de negocio, y yo me ofrecí a ayudarles.
+        <br />
+        <br />
+        Pensé que tenían un gran proyecto entre manos, y mientras cursaba mis
+        clases en la universidad, utilicé parte de mi tiempo diseñando{" "}
         <a
           className="text-blue-400 underline hover:opacity-75 duration-200"
           href="https://www.behance.net/gallery/125864213/ecoDeliver-Brand-Guidlines-20"
@@ -491,8 +501,8 @@ export const imaginePlanetChallenge = {
       <>
         <br />
         El proyecto de la startup ecoDeliver consistía en un sistema de entrega
-        de paquetería 100% amigable al ambiente, y buscando maneras de mover el proyecto adelante,
-        ecoDeliver se involucró en la competición llamado el{" "}
+        de paquetería 100% amigable al ambiente, y buscando maneras de mover el
+        proyecto adelante, ecoDeliver se involucró en la competición llamado el{" "}
         <a
           className="text-blue-400 underline hover:opacity-75 duration-200"
           href="https://vimeo.com/570039624"
@@ -501,15 +511,16 @@ export const imaginePlanetChallenge = {
         >
           Imagine Planet Challenge
         </a>
-        , un evento hecho para startups sostenibles recién nacidas,
-        diseñada para mentoría y networking.
+        , un evento hecho para startups sostenibles recién nacidas, diseñada
+        para mentoría y networking.
         <br />
         <br />
-        El evento consistía en 10 startups, cada uno con la oportunidad de 
-        explicar sus ideas y metas que beneficiarían el medio ambiente en 
-        frente de una audiencia y de un jurado muy bien cualificado para el trabajo, quien
-        decidiría quién sería premiado con un viaje de 3 semanas a Lanzarote, en donde
-        se llevarían a cabo todo tipo de actividades planificadas y mentoría para el equipo ganador.
+        El evento consistía en 10 startups, cada uno con la oportunidad de
+        explicar sus ideas y metas que beneficiarían el medio ambiente en frente
+        de una audiencia y de un jurado muy bien cualificado para el trabajo,
+        quien decidiría quién sería premiado con un viaje de 3 semanas a
+        Lanzarote, en donde se llevarían a cabo todo tipo de actividades
+        planificadas y mentoría para el equipo ganador.
       </>
     ),
 
@@ -526,7 +537,8 @@ export const imaginePlanetChallenge = {
           >
             muy enriquecedora experiencia en Lanzarote
           </a>
-          , donde tuvimos el placer de conocer a personas muy relevantes, tales como{" "}
+          , donde tuvimos el placer de conocer a personas muy relevantes, tales
+          como{" "}
           <a
             className="text-blue-400 underline hover:opacity-75 duration-200"
             href="https://caixabank.com/comunicacion/noticia/ecodeliver-y-kidalos-ganan-la-primera-edicion-del-imaginplanet-challenge_es.html?id=42880#"
@@ -538,8 +550,8 @@ export const imaginePlanetChallenge = {
           , entre muchos otros que nos acompañaron a lo largo de nuestro viaje.
         </p>
         <p className="text-gray-400">
-          Al acabar el evento, tuvimos que presentar una última vez
-          la idea del proyecto de ecoDeliver a una audiencia. El evento se celebró en{" "}
+          Al acabar el evento, tuvimos que presentar una última vez la idea del
+          proyecto de ecoDeliver a una audiencia. El evento se celebró en{" "}
           <a
             className="text-blue-400 underline hover:opacity-75 duration-200"
             href="https://vimeo.com/580269013"
@@ -549,8 +561,9 @@ export const imaginePlanetChallenge = {
             Los Jameos del Agua
           </a>
           , un lugar turístico muy icónico de Lanzarote en donde compartimos
-          nuestra idea de negocio mientras eramos grabados y vistos por cientos de personas,
-          incluido Benjamin Perdomo, el Gerente Director de Arte, Cultura yTurismo de Lanzarote. 
+          nuestra idea de negocio mientras eramos grabados y vistos por cientos
+          de personas, incluido Benjamin Perdomo, el Gerente Director de Arte,
+          Cultura yTurismo de Lanzarote.
         </p>
       </>
     ),
@@ -566,9 +579,10 @@ export const imaginePlanetChallenge = {
     subtitle1: "Una oportunitat amb ecoDeliver",
     p1: (
       <>
-        En els primers anys de la meva carrera, vaig començar a estudiar sobre els
-        principis del disseny, la creació de bones imatges corporatives, estratègies de màrqueting,
-        entre altres coses. Sent aquest el cas, vaig començar a recopilar una {" "}
+        En els primers anys de la meva carrera, vaig començar a estudiar sobre
+        els principis del disseny, la creació de bones imatges corporatives,
+        estratègies de màrqueting, entre altres coses. Sent aquest el cas, vaig
+        començar a recopilar una{" "}
         <a
           className="text-blue-400 underline hover:opacity-75 duration-200"
           href="https://www.behance.net/RubenChiquin"
@@ -580,10 +594,10 @@ export const imaginePlanetChallenge = {
         que vaig compartir amb els meus amics i familiars.
         <br />
         <br />
-        Va ser llavors quan un conegut meu i un amic seu, tots dos
-        enginyers recentment graduats que planejaven començar la seva
-        startup junts, van veure la meva feina, em van contactar i em van demanar consell
-        sobre la seva marca i la seva idea de negoci, i em vaig oferir a ajudar.
+        Va ser llavors quan un conegut meu i un amic seu, tots dos enginyers
+        recentment graduats que planejaven començar la seva startup junts, van
+        veure la meva feina, em van contactar i em van demanar consell sobre la
+        seva marca i la seva idea de negoci, i em vaig oferir a ajudar.
         <br />
         <br />
         Em semblaba que tenien un gran projecte entre mans i mentre estava fent
@@ -604,9 +618,9 @@ export const imaginePlanetChallenge = {
     p2: (
       <>
         <br />
-        El projecte de la startup ecoDeliver consistia en  un sistema de paqueteria amigable
-        a l'ambient i buscant maneres de tirar endavant el projecte,
-        ecoDeliver es va involucrar en un concurs anomenat {" "}
+        El projecte de la startup ecoDeliver consistia en un sistema de
+        paqueteria amigable a l'ambient i buscant maneres de tirar endavant el
+        projecte, ecoDeliver es va involucrar en un concurs anomenat{" "}
         <a
           className="text-blue-400 underline hover:opacity-75 duration-200"
           href="https://vimeo.com/570039624"
@@ -615,23 +629,23 @@ export const imaginePlanetChallenge = {
         >
           Imagine Planet Challenge
         </a>
-        , un repte fet per a startups sostenibles nounats, pensat per a
-        tutoria i networking.
+        , un repte fet per a startups sostenibles nounats, pensat per a tutoria
+        i networking.
         <br />
         <br />
         L'esdeveniment va constar de 10 startups, cadascuna amb l'oportunitat de
-        explicant les seves idees i objectius que podrien beneficiar el medi ambient
-        davant un públic i un jurat molt qualificat, que decidiria qui
-        es premiaria amb un viatge de 3 setmanes a Lanzarote, on es farien
-        tot tipus d'activitats planificades i mentoria per a l'equip guanyador.
+        explicant les seves idees i objectius que podrien beneficiar el medi
+        ambient davant un públic i un jurat molt qualificat, que decidiria qui
+        es premiaria amb un viatge de 3 setmanes a Lanzarote, on es farien tot
+        tipus d'activitats planificades i mentoria per a l'equip guanyador.
       </>
     ),
 
     p3: (
       <>
         <p className="text-gray-400">
-          Afortunadament, vam guanyar el repte nosaltres, juntament amb una altra
-          startup anomenada Kidalos i vam gaudir d'una{" "}
+          Afortunadament, vam guanyar el repte nosaltres, juntament amb una
+          altra startup anomenada Kidalos i vam gaudir d'una{" "}
           <a
             className="text-blue-400 underline hover:opacity-75 duration-200"
             href="https://vimeo.com/612344678"
@@ -652,8 +666,8 @@ export const imaginePlanetChallenge = {
           , entre molts altres que ens van acompanyar durant tot el trajecte.
         </p>
         <p className="text-gray-400">
-          En acabar el viatge, vam haver de presentar una darrera vegada
-          La idea d'ecoDeliver davant de un públic. L'esdeveniment va tenir lloc a {" "}
+          En acabar el viatge, vam haver de presentar una darrera vegada La idea
+          d'ecoDeliver davant de un públic. L'esdeveniment va tenir lloc a{" "}
           <a
             className="text-blue-400 underline hover:opacity-75 duration-200"
             href="https://vimeo.com/580269013"
@@ -662,10 +676,10 @@ export const imaginePlanetChallenge = {
           >
             Los Jameos del Agua
           </a>
-          , un lloc turistic molt emblemàtic de Lanzarote, i allà vam compartir el nostre
-          idea de negoci mentre ens gravan i miraven centenars de persones,
-          entre els quals hi era en Benjamin Perdomo, director general d'Art, Cultura i
-          Centre de Turisme a Lanzarote.
+          , un lloc turistic molt emblemàtic de Lanzarote, i allà vam compartir
+          el nostre idea de negoci mentre ens gravan i miraven centenars de
+          persones, entre els quals hi era en Benjamin Perdomo, director general
+          d'Art, Cultura i Centre de Turisme a Lanzarote.
         </p>
       </>
     ),
@@ -687,7 +701,7 @@ export const goac = {
 export const projPrev = {
   en: {
     title: "Other projects",
-    
+
     upcTitle: "Schoolarship in the UPC",
     upcDescription:
       "In the third year of college I've been working at the Vertex centre at the UPC university, where I was tasked to work on the maintenance of the multiple websites of the institution. I was also tasked with setting up and monitoring all the data received from Google Analytics and making changes accordingly to ensure a good UX...",
@@ -699,10 +713,13 @@ export const projPrev = {
     ipcTitle: "Imagine Planet Challenge",
     ipcDescription:
       "In my early years of college I got involved in a startup called ecoDeliver, where I had the fortune to help as a marketing consultant and designer. Then I had the chance to participate on the Imagine Planet Challenge with them, alongside another...",
+
+    featuredProject: "Featured project",
+    readMore: "Read more",
   },
   es: {
     title: "Otros proyectos",
-    
+
     upcTitle: "Beca de aprendizaje en la UPC",
     upcDescription:
       "En el tercer año de la carrera estuve trabajando en el centro Vertex de la universidad UPC, donde me encargaron trabajar en el mantenimiento de los múltiples sitios web de la institución. También tuve la tarea de configurar y monitorear todos los datos recibidos de Google Analytics y hacer los cambios correspondientes para garantizar una buena UX...",
@@ -714,10 +731,13 @@ export const projPrev = {
     ipcTitle: "Imagine Planet Challenge",
     ipcDescription:
       "En mis primeros años de universidad me involucré en una startup llamada ecoDeliver, donde tuve la fortuna de ayudar como consultor de marketing y diseñador. Luego tuve la oportunidad de participar en el Imagine Planet Challenge con ellos, junto a otro...",
+
+    featuredProject: "Proyecto destacado",
+    readMore: "Leer más",
   },
   ca: {
-    title: "Altres projecte",
-    
+    title: "Altres projectes",
+
     upcTitle: "Beca d'apranantatge a l'UPC",
     upcDescription:
       "A tercer curs de la universitat he estat treballant al centre Vertex de la UPC, on em van encarregar el manteniment de les múltiples webs de la institució. També em van encarregar la configuració i el seguiment de totes les dades rebudes de Google Analytics i fer els canvis en conseqüència per garantir una bona UX...",
@@ -727,6 +747,9 @@ export const projPrev = {
     ipcTitle: "Imagine Planet Challenge",
     ipcDescription:
       "En els meus primers anys a la universitat em vaig involucrar en una startup anomenada ecoDeliver, on vaig tenir la sort d'ajudar com a consultor de màrqueting i dissenyador. Després vaig tenir l'oportunitat de participar amb ells al Imagine Planet Challenge, al costat d'un altre...",
+
+    featuredProject: "Projecte destacat",
+    readMore: "Veure més",
   },
 };
 

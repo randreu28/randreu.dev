@@ -1,9 +1,13 @@
 import { useEffect, Fragment } from "react";
 import { Popover, Transition } from "@headlessui/react";
 import { MenuIcon, XIcon } from "@heroicons/react/outline";
+import { Menu } from "@headlessui/react";
+import { TranslateIcon, ChevronDownIcon } from "@heroicons/react/outline";
+
 import Image from "next/image";
 import { useRouter } from "next/router";
 import { navigation } from "../content";
+import Link from "next/link";
 
 export default function Navbar({ isInSection, setSection }) {
   const router = useRouter();
@@ -22,13 +26,8 @@ export default function Navbar({ isInSection, setSection }) {
     });
   }, [setSection]);
 
-  useEffect(() => {
-    let html = document.getElementsByTagName("html")[0];
-    html.classList = "scroll-smooth";
-  }, []);
-
   return (
-    <nav className="fixed justify-between flex w-full py-5 px-10 md:px-[10vh] lg:px-[20vh] z-[99999] bg-myDark">
+    <nav className="fixed justify-between flex w-full py-5 px-5 lg:px-[10vh] xl:px-[20vh] z-[99999] bg-myDark">
       <Image
         className="my-auto h-10"
         src="/media/logo.svg"
@@ -37,47 +36,68 @@ export default function Navbar({ isInSection, setSection }) {
         alt="logo"
         priority
       />
-      <li className="list-none space-x-8 my-auto hidden md:inline font-medium text-lg">
-        <a
-          className={
-            isInSection === navigation[router.locale][0].name
-              ? " text-myPrimary duration-200"
-              : "duration-200"
-          }
-          href={navigation[router.locale][0].href}
-        >
-          {navigation[router.locale][0].name}
-        </a>
-        <a
-          className={
-            isInSection === navigation[router.locale][1].name
-              ? "text-myPrimary duration-200"
-              : "duration-200"
-          }
-          href={navigation[router.locale][1].href}
-        >
-          {navigation[router.locale][1].name}
-        </a>
-        <a
-          className={
-            isInSection === navigation[router.locale][2].name
-              ? "text-myPrimary duration-200"
-              : "duration-200"
-          }
-          href={navigation[router.locale][2].href}
-        >
-          {navigation[router.locale][2].name}
-        </a>
-        <a
-          className={
-            isInSection === navigation[router.locale][3].name
-              ? "text-myPrimary duration-200"
-              : "duration-200"
-          }
-          href={navigation[router.locale][3].href}
-        >
-          {navigation[router.locale][3].name}
-        </a>
+      <li className="list-none hidden md:inline font-medium text-lg divide-x space-x-8 divide-gray-600 my-auto">
+        <span className="space-x-8 my-auto">
+          {navigation[router.locale].main.map((i) => (
+            <a
+              className={
+                isInSection === i.href
+                  ? " text-myPrimary duration-200"
+                  : "duration-200"
+              }
+              href={"#" + i.href}
+              key={i.name}
+            >
+              {i.name}
+            </a>
+          ))}
+        </span>
+        <Link href="/myProjects">
+          <a className="pl-8">{navigation[router.locale].portfolio}</a>
+        </Link>
+        <Menu as="div" className="relative inline-block">
+          <Menu.Button className="pl-6 align-sub">
+            <span className="flex flex-row space-x-1">
+              <TranslateIcon className="h-6 w-6" />
+              <ChevronDownIcon className="h-4 w-4 my-auto" />
+            </span>
+          </Menu.Button>
+          <Transition
+            as={Fragment}
+            enter="transition ease-out duration-100"
+            enterFrom="transform opacity-0 scale-95"
+            enterTo="transform opacity-100 scale-100"
+            leave="transition ease-in duration-75"
+            leaveFrom="transform opacity-100 scale-100"
+            leaveTo="transform opacity-0 scale-95"
+          >
+            <Menu.Items className="absolute origin-top-right w-fit right-0 p-1 px-2 divide-y divide-gray-700 space-y-2 mt-2  flex flex-col bg-myDark rounded-md border-[1px]">
+              <Menu.Item>
+                <button className="font-medium hover:opacity-75 duration-200">
+                  <Link href="" scroll={false} locale="en">
+                    <a>English</a>
+                  </Link>
+                </button>
+              </Menu.Item>
+
+              <Menu.Item>
+                <button className="font-medium hover:opacity-75 duration-200">
+                  <Link href="" scroll={false} locale="es">
+                    <a>Español</a>
+                  </Link>
+                </button>
+              </Menu.Item>
+
+              <Menu.Item>
+                <button className="font-medium hover:opacity-75 duration-200">
+                  <Link href="" scroll={false} locale="ca">
+                    <a>Catalá</a>
+                  </Link>
+                </button>
+              </Menu.Item>
+            </Menu.Items>
+          </Transition>
+        </Menu>
       </li>
       <Popover className="md:hidden">
         <nav
@@ -87,7 +107,7 @@ export default function Navbar({ isInSection, setSection }) {
           <div className="flex items-center flex-grow flex-shrink-0 lg:flex-grow-0">
             <div className="flex items-center justify-between w-full lg:w-auto">
               <div className="-mr-2 flex items-center">
-                <Popover.Button className="bg-myDark rounded-md p-2 inline-flex items-center justify-center  hover:opacity-75focus:outline-none focus:ring-2 focus:ring-inset focus:ring-myPrimary">
+                <Popover.Button className="bg-myDark rounded-md p-2 inline-flex items-center justify-center hover:opacity-75focus:outline-none focus:ring-2 focus:ring-inset focus:ring-myPrimary">
                   <span className="sr-only">Open main menu</span>
                   <MenuIcon className="h-6 w-6" aria-hidden="true" />
                 </Popover.Button>
@@ -126,16 +146,66 @@ export default function Navbar({ isInSection, setSection }) {
                 </div>
               </div>
               <div className="px-2 pt-2 pb-3 space-y-1">
-                {navigation[router.locale].map((item) => (
+                {navigation[router.locale].main.map((item) => (
                   <Popover.Button
-                    className="block text-lg font-medium px-3 py-2 rounded-md hover:opacity-7"
+                    className="block text-lg font-medium px-3 py-2 hover:opacity-75 duration-300"
                     key={item.name}
-                    href={item.href}
+                    href={"#" + item.href}
                     as="a"
                   >
                     {item.name}
                   </Popover.Button>
                 ))}
+
+                <Link href="myProjects">
+                  <a className="block text-lg font-medium px-3 py-2 hover:opacity-75 duration-300">
+                    {navigation[router.locale].portfolio}
+                  </a>
+                </Link>
+
+                <Menu as="div" className="px-3 py-2">
+                  <Menu.Button className="align-sub">
+                    <span className="flex flex-row space-x-1">
+                      <TranslateIcon className="h-6 w-6" />
+                      <ChevronDownIcon className="h-4 w-4 my-auto" />
+                    </span>
+                  </Menu.Button>
+                  <Transition
+                    as={Fragment}
+                    enter="transition ease-out duration-100"
+                    enterFrom="transform opacity-0 scale-95"
+                    enterTo="transform opacity-100 scale-100"
+                    leave="transition ease-in duration-75"
+                    leaveFrom="transform opacity-100 scale-100"
+                    leaveTo="transform opacity-0 scale-95"
+                  >
+                    <Menu.Items className="px-3 py-2 space-y-3 mt-2 flex flex-col text-left font-medium">
+                      <Menu.Item>
+                        <button className="font-medium hover:opacity-75 duration-200 text-left">
+                          <Link href="" scroll={false} locale="en">
+                            <a>English</a>
+                          </Link>
+                        </button>
+                      </Menu.Item>
+
+                      <Menu.Item>
+                        <button className="font-medium hover:opacity-75 duration-200 text-left">
+                          <Link href="" scroll={false} locale="es">
+                            <a>Español</a>
+                          </Link>
+                        </button>
+                      </Menu.Item>
+
+                      <Menu.Item>
+                        <button className="font-medium hover:opacity-75 duration-200 text-left">
+                          <Link href="" scroll={false} locale="ca">
+                            <a>Catalá</a>
+                          </Link>
+                        </button>
+                      </Menu.Item>
+                    </Menu.Items>
+                  </Transition>
+                </Menu>
               </div>
             </div>
           </Popover.Panel>

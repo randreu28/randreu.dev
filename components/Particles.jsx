@@ -305,26 +305,26 @@ export default function Particles({ tic, isInSection }) {
 
   useEffect(() => {
     switch (isInSection) {
-      case navigation[router.locale][0].name:
+      case navigation[router.locale].main[0].href:
         gsap.to(parameters, {
           randomState: 1.0,
           duration: 3.0,
           ease: "circ.out",
         });
         break;
-      case navigation[router.locale][1].name:
+      case navigation[router.locale].main[1].href:
         gsap.to(parameters, {
           randomState: 0.0,
           duration: 3.0,
         });
         break;
-      case navigation[router.locale][2].name:
+      case navigation[router.locale].main[2].href:
         gsap.to(parameters, {
           randomState: 0.0,
           duration: 3.0,
         });
         break;
-      case navigation[router.locale][3].name:
+      case navigation[router.locale].main[3].href:
         gsap.to(parameters, {
           randomState: 0.0,
           duration: 3.0,

@@ -1,9 +1,11 @@
 import React, { useEffect } from "react";
 import Link from "next/link";
 import Image from "next/image";
+import { useRouter } from "next/router";
 
 import AOS from "aos";
 import "aos/dist/aos.css";
+import { projPrev } from "../content";
 
 export default function ProjectPrev({
   image,
@@ -13,6 +15,9 @@ export default function ProjectPrev({
   aos,
   aosDelay,
 }) {
+  const router = useRouter();
+  const content = projPrev[router.locale];
+
   useEffect(() => {
     AOS.init();
     AOS.refresh();
@@ -36,7 +41,7 @@ export default function ProjectPrev({
       </div>
       <div>
         <h3 className="text-myPrimary font-semibold text-sm pt-3">
-          Featured project
+          {content.featuredProject}
         </h3>
         <h1 className="text-2xl font-bold pb-5">{title}</h1>
         <p className="text-gray-400">{description}</p>
@@ -44,7 +49,7 @@ export default function ProjectPrev({
         <br />
         <Link href={link}>
           <a className="bg-gradient-to-br from-mySecondary to-myPrimary rounded-lg px-3 py-2 font-bold duration-200">
-            Read more
+            {content.readMore}
           </a>
         </Link>
       </div>

@@ -15,7 +15,7 @@ export default function App() {
       <link rel="shortcut icon" href="/media/logo.svg" />
       {/* SEO METADATA */}
     </Head>
-      <SmNavbar />
+      <SmNavbar isActive="Projects"/>
       <div className="mx-5 md:mx-14 lg:mx-44 py-20">
         <h3 className="text-myPrimary font-semibold">Featured project</h3>
         <h1 className="text-4xl font-bold pb-5">Scholarship at the UPC</h1>

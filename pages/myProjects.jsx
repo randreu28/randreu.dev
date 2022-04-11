@@ -1,9 +1,13 @@
 import Head from "next/head";
 
+import SmNavbar from "../components/SmNavbar"
+import Footer from "../components/Footer";
+
 export default function myProjects() {
   return (
     <>
       <Head></Head>
+      <SmNavbar isActive="Portfolio"/>
       <div className="flex h-screen">
         <div className="m-auto">
           <svg
@@ -27,6 +31,7 @@ export default function myProjects() {
           </p>
         </div>
       </div>
+      <Footer/>
     </>
   );
 }
