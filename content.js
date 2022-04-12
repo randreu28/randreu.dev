@@ -1,31 +1,31 @@
 export const navigation = {
   en: {
     main: [
-    { name: "Home", href: "Home" },
-    { name: "About me", href: "About-me" },
-    { name: "Projects", href: "Projects" },
-    { name: "Contact me", href: "Contact-me" },
-  ],
-  portfolio: "Portfolio"
-},
-  es: { 
-    main:[
-    { name: "Inicio", href: "Inicio" },
-    { name: "Sobre mi", href: "Sobre-mi" },
-    { name: "Proyectos", href: "Proyectos" },
-    { name: "Concátame", href: "Concátame" },
-  ],
-  portfolio: "Portafolio"
-},
+      { name: "Home", href: "Home" },
+      { name: "About me", href: "About-me" },
+      { name: "Projects", href: "Projects" },
+      { name: "Contact me", href: "Contact-me" },
+    ],
+    portfolio: "Portfolio",
+  },
+  es: {
+    main: [
+      { name: "Inicio", href: "Inicio" },
+      { name: "Sobre mi", href: "Sobre-mi" },
+      { name: "Proyectos", href: "Proyectos" },
+      { name: "Concátame", href: "Concátame" },
+    ],
+    portfolio: "Portafolio",
+  },
   ca: {
-    main:[
-    { name: "Inici", href: "Inici" },
-    { name: "Sobre mi", href: "Sobre-mi" },
-    { name: "Projectes", href: "Projectes" },
-    { name: "Contacta'm", href: "Contacta'm" },
-  ],
-  portfolio: "Portafoli"
-},
+    main: [
+      { name: "Inici", href: "Inici" },
+      { name: "Sobre mi", href: "Sobre-mi" },
+      { name: "Projectes", href: "Projectes" },
+      { name: "Contacta'm", href: "Contacta'm" },
+    ],
+    portfolio: "Portafoli",
+  },
 };
 
 export const index = {
@@ -753,4 +753,443 @@ export const projPrev = {
   },
 };
 
+export const portfolio = {
+  en: {
+    title: "Welcome to my portfolio!",
+    subtitle: (
+      <>
+        These are a couple of small{" "}
+        <a
+          target="_blank"
+          rel="noreferrer"
+          className="underline text-blue-400"
+          href="https://reactjs.org"
+        >
+          React
+        </a>{" "}
+        projects that I have been doing on my free time. I hope they are as
+        interesting as they were to me programming them!
+      </>
+    ),
+    cards: [
+      {
+        title: "Mysterious 3D Portal",
+        date: "19/02/2021",
+        src: "/media/portal-prev.png",
+        href: "/portfolio/portal",
+        tag1: "#Three.js",
+        tag2: "#3D modeling",
+        tag3: "#3DLoaders",
+        text: (
+          <>
+            This project consisted on modeling a 3D Scene and loading in on the
+            web using{" "}
+            <a
+              className="underline text-blue-400"
+              href="https://threejs.org"
+              target="_blank"
+              rel="noreferrer"
+            >
+              Three.js
+            </a>
+            . Thanks to Bruno Simon and his{" "}
+            <a
+              className="underline text-blue-400"
+              href="https://threejs-journey.com"
+              rel="noreferrer"
+              target="_blank"
+            >
+              Three.js course
+            </a>{" "}
+            for making this possible!
+          </>
+        ),
+        inDev: false,
+      },
+      {
+        title: "To do List",
+        date: "27/12/2021",
+        src: "/media/toDo-prev.png",
+        href: "/portfolio/todo-list",
+        tag1: "#CRUD",
+        tag2: "#Drag&Drop",
+        tag3: "#Filtering",
+        text: (
+          <>
+            This small project consists of a to do list, with all the common
+            funcionalities that cover the CRUD standards, and the use of the
+            react-beautiful-dnd library.
+          </>
+        ),
+        inDev: false,
+      },
+      {
+        title: "Cat generator",
+        date: "22/12/2021",
+        src: "/media/kitty-prev.webp",
+        href: "/portfolio/cat-generator",
+        tag1: "#API Fetching",
+        tag2: "#InfiniteScroll",
+        tag3: "##JSPromises",
+        text: (
+          <>
+            The challenge was about creating an infinite picture gallery of
+            cats, with the help of a random cat picture generatior, with the
+            intention to learn how to use an API.
+          </>
+        ),
+        inDev: false,
+      },
+      {
+        title: "Job Listing",
+        date: "20/12/2021",
+        src: "/media/jobListing-prev.jpg",
+        href: "/portfolio/job-listing",
+        tag1: "#Headless UI",
+        tag2: "#Conditional Rendering",
+        tag3: "#Array Methods",
+        text: (
+          <>
+            The challenge consisted on creating a list of job cards using
+            components that can be filtered according to their category.
+          </>
+        ),
+        inDev: false,
+      },
+      {
+        title: "Tip calculator",
+        date: "14/12/2021",
+        src: "/media/calc-prev.jpg",
+        href: "/portfolio/tip-calculator",
+        tag1: "#React Hooks",
+        tag2: "#Modals",
+        tag3: "#UseState",
+        text: (
+          <>
+            This simple challenge was about learning react states and
+            integrating simple javascript calculations into react.
+          </>
+        ),
+        inDev: false,
+      },
+      {
+        title: "Blogr landing page",
+        date: "06/12/2021",
+        src: "/media/blogr-prev.jpg",
+        href: "/portfolio/blogr",
+        tag1: "#Tailwind 3.0",
+        tag2: "#Responsive design",
+        tag3: "#PostCSS",
+        text: (
+          <>
+            The challenge provided by{" "}
+            <a
+              className="underline text-blue-400"
+              href="https://www.frontendmentor.io"
+              target="_blank"
+              rel="noreferrer"
+            >
+              Frontend Mentor
+            </a>
+            ,was to build out a landing page and get it looking as close to the
+            design files as possible.
+          </>
+        ),
+        inDev: false,
+      },
+    ],
+    cta: "See more"
+  },
+  es: {
+    title: "Bienvenido a mi portafolio!",
+    subtitle: (
+      <>
+        Esto es una recopliación de pequeños proyectos de{" "}
+        <a
+          target="_blank"
+          rel="noreferrer"
+          className="underline text-blue-400"
+          href="https://reactjs.org"
+        >
+          React
+        </a>{" "}
+        que he estado haciendo en mi tiempo libre. Espero que sean tan
+        interesantes como los fue para mi programarlos!
+      </>
+    ),
+    cards: [
+      {
+        title: "Portal misterioso 3D",
+        date: "19/02/2021",
+        src: "/media/portal-prev.png",
+        href: "/portfolio/portal",
+        tag1: "#Three.js",
+        tag2: "#Modelado 3D",
+        tag3: "#3DLoaders",
+        text: (
+          <>
+            Este proyecto consistió en modelar y montar en la web usando{" "}
+            <a
+              className="underline text-blue-400"
+              href="https://threejs.org"
+              target="_blank"
+              rel="noreferrer"
+            >
+              Three.js
+            </a>
+            . Gracias a Bruno Simon y a su{" "}
+            <a
+              className="underline text-blue-400"
+              href="https://threejs-journey.com"
+              rel="noreferrer"
+              target="_blank"
+            >
+              curso de Three.js
+            </a>{" "}
+            por hacer esto posible!
+          </>
+        ),
+        inDev: false,
+      },
+      {
+        title: "Lista de tareas",
+        date: "27/12/2021",
+        src: "/media/toDo-prev.png",
+        href: "/portfolio/todo-list",
+        tag1: "#CRUD",
+        tag2: "#Drag&Drop",
+        tag3: "#Filtering",
+        text: (
+          <>
+            Este pequeño proyecto consiste en una lista de tareas, con todos los
+            elementos comunes funcionalidades que cubren los estándares CRUD, y
+            el uso de la librería react-beautiful-dnd
+          </>
+        ),
+        inDev: false,
+      },
+      {
+        title: "Generador de gatos",
+        date: "22/12/2021",
+        src: "/media/kitty-prev.webp",
+        href: "/portfolio/cat-generator",
+        tag1: "#API Fetching",
+        tag2: "#Scroll infinito",
+        tag3: "#Promesas de JS",
+        text: (
+          <>
+            El desafío consistía en crear una galería de imágenes infinita de
+            gatos, con la ayuda de un generador de imágenes de gatos al azar,
+            con la intención de aprender a usar una API.
+          </>
+        ),
+        inDev: false,
+      },
+      {
+        title: "Listado de ofertas de trabajo",
+        date: "20/12/2021",
+        src: "/media/jobListing-prev.jpg",
+        href: "/portfolio/job-listing",
+        tag1: "#Headless UI",
+        tag2: "#Rendering condicional",
+        tag3: "#Array Methods",
+        text: (
+          <>
+            El reto consistía en crear una lista de tarjetas de trabajo
+            utilizando componentes que se pueden filtrar según su categoría.
+          </>
+        ),
+        inDev: false,
+      },
+      {
+        title: "Calculadora de propina",
+        date: "14/12/2021",
+        src: "/media/calc-prev.jpg",
+        href: "/portfolio/tip-calculator",
+        tag1: "#React Hooks",
+        tag2: "#Modals",
+        tag3: "#UseState",
+        text: (
+          <>
+            Este sencillo desafío consistía en aprender estados de reacción,
+            integrando cálculos simples de javascript en react.
+          </>
+        ),
+        inDev: false,
+      },
+      {
+        title: "Landing page Blogr",
+        date: "06/12/2021",
+        src: "/media/blogr-prev.jpg",
+        href: "/portfolio/blogr",
+        tag1: "#Tailwind 3.0",
+        tag2: "#Responsive design",
+        tag3: "#PostCSS",
+        text: (
+          <>
+            Este reto proporcionado por{" "}
+            <a
+              className="underline text-blue-400"
+              href="https://www.frontendmentor.io"
+              target="_blank"
+              rel="noreferrer"
+            >
+              Frontend Mentor
+            </a>
+            ,consistia en crear una landing page que tuviese una estética lo más
+            parecida posible a los archivos de diseños proporcionados.
+          </>
+        ),
+        inDev: false,
+      },
+    ],
+    cta: "Ver más"
+  },
+  ca: {
+    title: "Benvingut al meu portafoli!",
+    subtitle: (
+      <>
+        Això és una recopliació de petits projectes de{" "}
+        <a
+          target="_blank"
+          rel="noreferrer"
+          className="underline text-blue-400"
+          href="https://reactjs.org"
+        >
+          React
+        </a>{" "}
+        que he estat fent en el meu temps lliure. Espero que siguin tan
+        interessants com va ser per a mi programar-los!
+      </>
+    ),
+    cards: [
+      {
+        title: "Portal misteriós 3D",
+        date: "19/02/2021",
+        src: "/media/portal-prev.png",
+        href: "/portfolio/portal",
+        tag1: "#Three.js",
+        tag2: "#Modelado 3D",
+        tag3: "#3DLoaders",
+        text: (
+          <>
+            Aquest projecte va consistir a modelar i muntar-lo a la web fent
+            servir{" "}
+            <a
+              className="underline text-blue-400"
+              href="https://threejs.org"
+              target="_blank"
+              rel="noreferrer"
+            >
+              Three.js
+            </a>
+            . Gràcies a Bruno Simon i al seu{" "}
+            <a
+              className="underline text-blue-400"
+              href="https://threejs-journey.com"
+              rel="noreferrer"
+              target="_blank"
+            >
+              curs de Three.js
+            </a>{" "}
+            per fer això possible!
+          </>
+        ),
+        inDev: false,
+      },
+      {
+        title: "Llista de tasques",
+        date: "27/12/2021",
+        src: "/media/toDo-prev.png",
+        href: "/portfolio/todo-list",
+        tag1: "#CRUD",
+        tag2: "#Drag&Drop",
+        tag3: "#Filtering",
+        text: (
+          <>
+            Aquest petit projecte consisteix en una llista de tasques, amb tots
+            els elements comuns funcionalitats que cobreixen els estàndards
+            CRUD, i l'ús de la llibreria react-beautiful-dnd
+          </>
+        ),
+        inDev: false,
+      },
+      {
+        title: "Generador de gats",
+        date: "22/12/2021",
+        src: "/media/kitty-prev.webp",
+        href: "/portfolio/cat-generator",
+        tag1: "#API Fetching",
+        tag2: "#Scroll infinit",
+        tag3: "#Promeses de JS",
+        text: (
+          <>
+            El repte consistia en crear una galeria d'imatges infinita de gats,
+            amb l'ajuda d'un generador d'imatges de gats a l'atzar, amb la
+            intenció d'aprendre a fer servir una API.
+          </>
+        ),
+        inDev: false,
+      },
+      {
+        title: "Llistat d'ofertes de feina",
+        date: "20/12/2021",
+        src: "/media/jobListing-prev.jpg",
+        href: "/portfolio/job-listing",
+        tag1: "#Headless UI",
+        tag2: "#Rendering condicional",
+        tag3: "#Array Methods",
+        text: (
+          <>
+            El repte consistia a crear una llista de targetes amb ofertes de treball
+            utilitzant components que es poden filtrar segons la categoria.
+          </>
+        ),
+        inDev: false,
+      },
+      {
+        title: "Calculadora de propina",
+        date: "14/12/2021",
+        src: "/media/calc-prev.jpg",
+        href: "/portfolio/tip-calculator",
+        tag1: "#React Hooks",
+        tag2: "#Modals",
+        tag3: "#UseState",
+        text: (
+          <>
+           Aquest senzill desafiament consistia a aprendre estats de react,
+            integrant càlculs simples de javascript a react.
+          </>
+        ),
+        inDev: false,
+      },
+      {
+        title: "Landing page Blogr",
+        date: "06/12/2021",
+        src: "/media/blogr-prev.jpg",
+        href: "/portfolio/blogr",
+        tag1: "#Tailwind 3.0",
+        tag2: "#Responsive design",
+        tag3: "#PostCSS",
+        text: (
+          <>
+            Aquest repte proporcionat per{" "}
+            <a
+              className="underline text-blue-400"
+              href="https://www.frontendmentor.io"
+              target="_blank"
+              rel="noreferrer"
+            >
+              Frontend Mentor
+            </a>
+            ,consistia en crear una landing page que tingués una estètica el més
+            semblant possible als fitxers de disseny proporcionats.
+          </>
+        ),
+        inDev: false,
+      },
+    ],
+    cta: "Veure més"
+  },
+};
 /* SEO content yet to be determined */

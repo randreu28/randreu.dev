@@ -117,7 +117,7 @@ export default function App() {
                 {content.introBtn1}
               </a>
               <div className="flex space-x-2 ring-gray-300 ring-2 text-gray-300 rounded-lg px-3 py-2 hover:text-myPrimary hover:ring-myPrimary duration-200 font-bold ml-2">
-                <Link href="/myProjects">
+                <Link href="/portfolio">
                   <a>{content.introBtn2}</a>
                 </Link>
                 <FolderIcon className="h-6 w-6 my-auto" />
@@ -167,21 +167,21 @@ export default function App() {
           title={content.proj1Title}
           img={"/media/ecoDeliver.jpg"}
           p={content.proj1}
-          link="/imaginePlanetChallenge"
+          link="/projects/imaginePlanetChallenge"
         />
 
         <Project
           title={content.proj2Title}
           img={"/media/upc.jpg"}
           p={content.proj2}
-          link="/upc"
+          link="/projects/upc"
           isEven={true}
         />
         <Project
           title={content.proj3Title}
           img={"/media/placeholder.png"}
           p={content.proj3}
-          link="/goac"
+          link="/projects/goac"
         />
       </section>
 

@@ -2,9 +2,9 @@ import React from "react";
 import Head from "next/head";
 import Image from "next/image";
 
-import Footer from "../components/Footer";
-import SmNavbar from "../components/SmNavbar";
-import ProjectPrev from "../components/ProjectPrev";
+import Footer from "../../components/Footer";
+import SmNavbar from "../../components/SmNavbar";
+import ProjectPrev from "../../components/ProjectPrev";
 
 export default function App() {
 

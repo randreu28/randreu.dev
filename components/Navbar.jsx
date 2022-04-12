@@ -52,7 +52,7 @@ export default function Navbar({ isInSection, setSection }) {
             </a>
           ))}
         </span>
-        <Link href="/myProjects">
+        <Link href="/portfolio">
           <a className="pl-8">{navigation[router.locale].portfolio}</a>
         </Link>
         <Menu as="div" className="relative inline-block">
@@ -157,7 +157,7 @@ export default function Navbar({ isInSection, setSection }) {
                   </Popover.Button>
                 ))}
 
-                <Link href="myProjects">
+                <Link href="portfolio">
                   <a className="block text-lg font-medium px-3 py-2 hover:opacity-75 duration-300">
                     {navigation[router.locale].portfolio}
                   </a>

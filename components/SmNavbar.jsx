@@ -53,7 +53,7 @@ export default function Navbar({ isActive }) {
             </a>
           </Link>
         </span>
-        <Link href="/myProjects">
+        <Link href="/portfolio">
           <a
             className={
               isActive === "Portfolio" ? "pl-8 text-myPrimary" : "pl-8"

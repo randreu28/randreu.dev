@@ -2,11 +2,11 @@ import React from "react";
 import Image from "next/image";
 import Head from "next/head";
 import { useRouter } from "next/router";
-import { imaginePlanetChallenge, projPrev } from "../content";
+import { imaginePlanetChallenge, projPrev } from "../../content";
 
-import Footer from "../components/Footer";
-import SmNavbar from "../components/SmNavbar";
-import ProjectPrev from "../components/ProjectPrev";
+import Footer from "../../components/Footer";
+import SmNavbar from "../../components/SmNavbar";
+import ProjectPrev from "../../components/ProjectPrev";
 
 export default function App() {
   const router = useRouter();
