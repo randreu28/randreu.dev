@@ -12,7 +12,10 @@ export default function Portfolio() {
   const content = portfolio[router.locale];
   return (
     <>
-      <Head></Head>
+      <Head>
+        <title>Portfolio</title>
+      <body className="bg-myDark text-white overflow-x-hidden"/>
+      </Head>
       <SmNavbar isActive="Portfolio" />
       <br />
       <br />

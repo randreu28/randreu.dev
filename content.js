@@ -126,7 +126,7 @@ export const index = {
     formBtn2: "Sent",
   },
   es: {
-    title: "Hola, soy Rubén y yo",
+    title: "Hola, soy Rubén y ...",
     dynamicText: [
       "diseño experiencias",
       "pienso creativamente",
@@ -226,7 +226,7 @@ export const index = {
     formBtn2: "Enviado",
   },
   ca: {
-    title: "Hola, em dic Rubén i jo",
+    title: "Hola, em dic Rubén i",
     dynamicText: [
       "dissenyo experiencies",
       "penso creativament",

@@ -1,23 +1,63 @@
 @import url('https://fonts.googleapis.com/css2?family=Righteous&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Overpass:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap'); /*Portfolio*/
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&display=swap'); /*Portfolio*/
 
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-
-@media (min-width: 1024px) {
-    .ecoDeliver{
-      background-image: none; 
-  }
+/* Portfolio*/
+.bg-Blogr{
+    background-image: url('/../media/bg-pattern-intro-desktop.svg'); 
+    background-size: 200%;
+    background-position-x: 28%;
+    background-position-y: center;
+    background-repeat: no-repeat;
+    @apply bg-[hsl(356,100%,66%)];
 }
 
-/* Testing */
-.bg-decoration{
-  background-image: url('../public/media/bg.svg');
-  background-size: 200%;
-  background-position-x: center;
-  background-position-y: center;
-  background-repeat: no-repeat;
+.bg-Blogr1{
+    background-image: url('/../media/bg-pattern-circles.svg'); 
+    background-size: 80%;
+    background-position-x: -60%;
+    background-position-y: 170%;
+    background-repeat: no-repeat;
+    @apply bg-[hsl(237,17%,21%)];
+    
+}
+
+@media (min-width: 768px) {
+
+    .rounded-bl-big {
+    border-bottom-left-radius: 5rem
+    }
+}
+
+/* Eliminates default behaviours for input='number' */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+} 
+
+.bg-job{
+    background-image: url('/../media/bg-header-desktop.svg');
+}
+
+.bg-ToDo {
+    background-image: url('https://images.unsplash.com/photo-1485470733090-0aae1788d5af?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1517&q=80');
+    background-size: auto;
+    background-position-x: center;
+    background-repeat-y: no-repeat;
+    }
+
+@media (min-width: 1500px) { /* 2xl */
+    .bg-ToDo{
+        background-image: url('https://images.unsplash.com/photo-1485470733090-0aae1788d5af?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1517&q=80');
+        background-size: cover;
+        background-position-x: center;
+        background-repeat-y: no-repeat;
+    }
 }
 
 

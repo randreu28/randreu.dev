@@ -106,7 +106,7 @@ export default function Navbar({ isActive }) {
           </Transition>
         </Menu>
       </li>
-      {/* <Popover className="md:hidden">
+      <Popover className="md:hidden">
         <nav
           className="relative flex items-center justify-between sm:h-10 lg:justify-start"
           aria-label="Global"
@@ -217,7 +217,7 @@ export default function Navbar({ isActive }) {
             </div>
           </Popover.Panel>
         </Transition>
-      </Popover> */}
+      </Popover>
     </nav>
   );
 }
