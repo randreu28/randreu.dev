@@ -13,7 +13,7 @@ export const navigation = {
       { name: "Inicio", href: "Inicio" },
       { name: "Sobre mi", href: "Sobre-mi" },
       { name: "Proyectos", href: "Proyectos" },
-      { name: "Concátame", href: "Concátame" },
+      { name: "Concátame", href: "Concatame" },
     ],
     portfolio: "Portafolio",
   },

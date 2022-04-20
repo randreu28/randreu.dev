@@ -30,14 +30,14 @@ I'm a 20 years old student at the [Center of Image and Multimedia Technology (CI
 
 The project runs on the popular [React][React] framework [Next][Next]. It uses [Vercel][Vercel] for deployment, [Tailwindcss][Tailwindcss] for styling and [Threejs][Threejs] for 3d effects, among many other dependencies. 
 
-Before anything else, be sure to have [nodejs and the npm package manager installed][Nodejs]. If you're familiar with React,<br> then this should be familiar with you. After cloning the repo, on your console, run:
+Before anything else, be sure to have [nodejs and the yarn package manager installed][Nodejs]. If you're familiar with React,<br> then this should be familiar with you. After cloning the repo, on your console, run:
 
 ```sh
-npm ci
+yarn install --frozen-lockfile
 ```
 
 ```sh
-npm run dev
+yarn dev
 ```
 
 
