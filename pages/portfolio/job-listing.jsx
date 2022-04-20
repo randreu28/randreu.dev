@@ -1,5 +1,5 @@
 import { Menu, Transition } from "@headlessui/react";
-import { Fragment, useState } from "react";
+import { Fragment, useState, useEffect } from "react";
 import { ChevronDownIcon } from "@heroicons/react/solid";
 
 import Tag from "../../components/Tag";
@@ -13,6 +13,10 @@ export default function JobListing() {
   const [isBackEnd, setIsBackEnd] = useState(false);
 
   const [isReact, setIsReact] = useState(false);
+
+  useEffect(() => {
+    document.getElementsByTagName("body")[0].classList="bg-white";
+  }, [])
 
   return (
     <>

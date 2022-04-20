@@ -21,6 +21,7 @@ export default function App() {
   useEffect(() => {
     AOS.init();
     AOS.refresh();
+    document.getElementsByTagName("html")[0].classList="scroll-smooth";
   }, []);
 
   const router = useRouter();

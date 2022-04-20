@@ -14,7 +14,6 @@ export default function Portfolio() {
     <>
       <Head>
         <title>Portfolio</title>
-      <body className="bg-myDark text-white overflow-x-hidden"/>
       </Head>
       <SmNavbar isActive="Portfolio" />
       <br />
