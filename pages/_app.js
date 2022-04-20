@@ -6,12 +6,14 @@ function MyApp({ Component, pageProps }) {
   const router = useRouter();
 
   useEffect(() => { /* On route change, check url and edit <body> style accordingly */
+    
+    const body = document.getElementsByTagName("body")[0];
     const handleRouteChange = (url) => {
       if(url == "/portfolio/job-listing"){
-        document.getElementsByTagName("body")[0].classList="bg-white";
+        body.classList="bg-white";
       }
       else{
-        document.getElementsByTagName("body")[0].classList="bg-myDark text-white overflow-x-hidden"
+        body.classList="bg-myDark text-white overflow-x-hidden"
       }
     }
 
