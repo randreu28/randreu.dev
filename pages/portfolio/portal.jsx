@@ -1,18 +1,262 @@
-export default function portal() {
-  return (
-    <div className='flex h-screen'>
-      <div className='m-auto'>
-        <svg xmlns='http://www.w3.org/2000/svg' className='h-16 md:h-24 lg:h-44 text-white mx-auto mb-10' fill='none'
-          viewBox='0 0 24 24' stroke='currentColor'>
-          <path strokeLinecap='round' strokeLinejoin='round' strokeWidth='2'
-            d='M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z' />
-        </svg>
-        <p className='text-white text-center text-xl font-bold sm:text-2xl md:text-3xl'>
-          <span className='opacity-25'>&lt;</span>
-          Project in construction
-          <span className='opacity-25'>/&gt;</span>
-        </p>
-      </div>
-    </div>
-  )
+import React, { useEffect, useRef } from "react";
+import { useRouter } from "next/router";
+
+import portalFrag from "../../public/three/shaders/portal/fragment.glsl";
+import portalVert from "../../public/three/shaders/portal/vertex.glsl";
+
+import firefilesFrag from "../../public/three/shaders/fireflies/fragment.glsl";
+import firefilesVert from "../../public/three/shaders/fireflies/vertex.glsl";
+
+import * as dat from "lil-gui";
+import * as THREE from "three";
+import { OrbitControls } from "three/examples/jsm/controls/OrbitControls.js";
+import { GLTFLoader } from "three/examples/jsm/loaders/GLTFLoader.js";
+import { DRACOLoader } from "three/examples/jsm/loaders/DRACOLoader.js";
+
+export default function App() {
+  const ref = useRef();
+  const router = useRouter();
+
+  useEffect(() => {
+    const canvas = ref.current;
+
+    router.beforePopState(({ }) => {
+      gui.destroy(); /* Destroys gui before route change */
+      return true;
+    });
+
+    /**
+     * Base
+     */
+    // Debug
+    const debugObject = {};
+    const gui = new dat.GUI({
+      width: 400,
+    });
+    // Scene
+    const scene = new THREE.Scene();
+
+    /**
+     * Loaders
+     */
+    // Texture loader
+    const textureLoader = new THREE.TextureLoader();
+
+    // Draco loader
+    const dracoLoader = new DRACOLoader();
+    dracoLoader.setDecoderPath("draco/");
+
+    // GLTF loader
+    const gltfLoader = new GLTFLoader();
+    gltfLoader.setDRACOLoader(dracoLoader);
+
+    /**
+     * Textures
+     */
+    const bakedTexture = textureLoader.load("/three/textures/portal-baked.jpg");
+    bakedTexture.flipY = false;
+    bakedTexture.encoding = THREE.sRGBEncoding;
+    /**
+     * Materials
+     */
+    // Baked material
+    const bakedMaterial = new THREE.MeshBasicMaterial({ map: bakedTexture });
+
+    // Pole light material
+    const poleLightMaterial = new THREE.MeshBasicMaterial({ color: 0xffffe5 });
+
+    // Portal light material
+    debugObject.portalColorStart = "#000000";
+    debugObject.portalColorEnd = "#29472d";
+
+    gui.addColor(debugObject, "portalColorStart").onChange(() => {
+      portalLightMaterial.uniforms.uColorStart.value.set(
+        debugObject.portalColorStart
+      );
+    });
+
+    gui.addColor(debugObject, "portalColorEnd").onChange(() => {
+      portalLightMaterial.uniforms.uColorEnd.value.set(
+        debugObject.portalColorEnd
+      );
+    });
+
+    const portalLightMaterial = new THREE.ShaderMaterial({
+      uniforms: {
+        uTime: { value: 0 },
+        uColorStart: { value: new THREE.Color(debugObject.portalColorStart) },
+        uColorEnd: { value: new THREE.Color(debugObject.portalColorEnd) },
+      },
+      vertexShader: portalVert,
+      fragmentShader: portalFrag,
+    });
+
+    /**
+     * Model
+     */
+    gltfLoader.load("/three/models/portal.glb", (gltf) => {
+      scene.add(gltf.scene);
+
+      // Get each object
+      const bakedMesh = gltf.scene.children.find(
+        (child) => child.name === "baked"
+      );
+      const portalLightMesh = gltf.scene.children.find(
+        (child) => child.name === "portalLight"
+      );
+      const poleLightAMesh = gltf.scene.children.find(
+        (child) => child.name === "poleLightA"
+      );
+      const poleLightBMesh = gltf.scene.children.find(
+        (child) => child.name === "poleLightB"
+      );
+
+      // Apply materials
+      bakedMesh.material = bakedMaterial;
+      portalLightMesh.material = portalLightMaterial;
+      poleLightAMesh.material = poleLightMaterial;
+      poleLightBMesh.material = poleLightMaterial;
+    });
+
+    /**
+     * Fireflies
+     */
+    // Geometry
+    const firefliesGeometry = new THREE.BufferGeometry();
+    const firefliesCount = 30;
+    const positionArray = new Float32Array(firefliesCount * 3);
+    const scaleArray = new Float32Array(firefliesCount);
+
+    for (let i = 0; i < firefliesCount; i++) {
+      positionArray[i * 3 + 0] = (Math.random() - 0.5) * 4;
+      positionArray[i * 3 + 1] = Math.random() * 1.5;
+      positionArray[i * 3 + 2] = (Math.random() - 0.5) * 4;
+
+      scaleArray[i] = Math.random();
+    }
+
+    firefliesGeometry.setAttribute(
+      "position",
+      new THREE.BufferAttribute(positionArray, 3)
+    );
+    firefliesGeometry.setAttribute(
+      "aScale",
+      new THREE.BufferAttribute(scaleArray, 1)
+    );
+
+    // Material
+    const firefliesMaterial = new THREE.ShaderMaterial({
+      uniforms: {
+        uTime: { value: 0 },
+        uPixelRatio: { value: Math.min(window.devicePixelRatio, 2) },
+        uSize: { value: 100 },
+      },
+      vertexShader: firefilesVert,
+      fragmentShader: firefilesFrag,
+      transparent: true,
+      blending: THREE.AdditiveBlending,
+      depthWrite: false,
+    });
+
+    gui
+      .add(firefliesMaterial.uniforms.uSize, "value")
+      .min(0)
+      .max(500)
+      .step(1)
+      .name("firefliesSize");
+
+    // Points
+    const fireflies = new THREE.Points(firefliesGeometry, firefliesMaterial);
+    scene.add(fireflies);
+
+    /**
+     * Sizes
+     */
+    const sizes = {
+      width: window.innerWidth,
+      height: window.innerHeight,
+    };
+
+    window.addEventListener("resize", () => {
+      // Update sizes
+      sizes.width = window.innerWidth;
+      sizes.height = window.innerHeight;
+
+      // Update camera
+      camera.aspect = sizes.width / sizes.height;
+      camera.updateProjectionMatrix();
+
+      // Update renderer
+      renderer.setSize(sizes.width, sizes.height);
+      renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
+
+      // Update fireflies
+      firefliesMaterial.uniforms.uPixelRatio.value = Math.min(
+        window.devicePixelRatio,
+        2
+      );
+    });
+
+    /**
+     * Camera
+     */
+    // Base camera
+    const camera = new THREE.PerspectiveCamera(
+      45,
+      sizes.width / sizes.height,
+      0.1,
+      100
+    );
+    camera.position.x = 4;
+    camera.position.y = 2;
+    camera.position.z = 4;
+    scene.add(camera);
+
+    // Controls
+    const controls = new OrbitControls(camera, canvas);
+    controls.enableDamping = true;
+
+    /**
+     * Renderer
+     */
+    const renderer = new THREE.WebGLRenderer({
+      canvas: canvas,
+      antialias: true,
+    });
+    renderer.outputEncoding = THREE.sRGBEncoding;
+    renderer.setSize(sizes.width, sizes.height);
+    renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
+
+    debugObject.clearColor = "#161f27";
+    renderer.setClearColor(debugObject.clearColor);
+    gui.addColor(debugObject, "clearColor").onChange(() => {
+      renderer.setClearColor(debugObject.clearColor);
+    });
+
+    /**
+     * Animate
+     */
+    const clock = new THREE.Clock();
+
+    const tick = () => {
+      const elapsedTime = clock.getElapsedTime();
+
+      // Update materials
+      portalLightMaterial.uniforms.uTime.value = elapsedTime;
+      firefliesMaterial.uniforms.uTime.value = elapsedTime;
+
+      // Update controls
+      controls.update();
+
+      // Render
+      renderer.render(scene, camera);
+
+      // Call tick again on the next frame
+      window.requestAnimationFrame(tick);
+    };
+
+    tick();
+  }, []);
+
+  return <canvas className="-z-10" ref={ref} />;
 }

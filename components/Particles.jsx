@@ -5,8 +5,8 @@ import gsap from "gsap";
 import { useRouter } from "next/router";
 import { navigation } from "../content";
 
-import bufferVertexShader from "../public/media/buffer/vertex.glsl";
-import bufferFragmentShader from "../public/media/buffer/fragment.glsl"; /* Needed to eject create-react-app for this */
+import bufferVertexShader from "../public/three/shaders/buffer/vertex.glsl";
+import bufferFragmentShader from "../public/three/shaders/buffer/fragment.glsl"; /* Needed to eject create-react-app for this */
 
 export default function Particles({ tic, isInSection }) {
   // Canvas
@@ -118,7 +118,7 @@ export default function Particles({ tic, isInSection }) {
 
     const gltfLoader = new GLTFLoader();
 
-    gltfLoader.load("./models/king.glb", (gltf) => {
+    gltfLoader.load("/three/models/king.glb", (gltf) => {
       const geometry3Attribute = new THREE.BufferAttribute(
         gltf.scene.children[0].geometry.attributes.position.array,
         3
@@ -126,7 +126,7 @@ export default function Particles({ tic, isInSection }) {
       geometry.setAttribute("position3", geometry3Attribute);
     });
 
-    gltfLoader.load("./models/rocket.glb", (gltf) => {
+    gltfLoader.load("/three/models/rocket.glb", (gltf) => {
       const geometry4Attribute = new THREE.BufferAttribute(
         gltf.scene.children[0].geometry.attributes.position.array,
         3
@@ -134,7 +134,7 @@ export default function Particles({ tic, isInSection }) {
       geometry.setAttribute("position4", geometry4Attribute);
     });
 
-    gltfLoader.load("./models/lightbulb.glb", (gltf) => {
+    gltfLoader.load("/three/models/lightbulb.glb", (gltf) => {
       const geometry5Attribute = new THREE.BufferAttribute(
         gltf.scene.children[0].geometry.attributes.position.array,
         3
