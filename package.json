@@ -14,13 +14,10 @@
     "baffle": "^0.3.6",
     "glslify-loader": "^2.0.0",
     "gsap": "^3.10.4",
-    "lil-gui": "^0.16.1",
     "next": "12.2.0",
     "raw-loader": "^4.0.2",
     "react": "18.2.0",
-    "react-beautiful-dnd": "^13.1.0",
     "react-dom": "18.2.0",
-    "react-infinite-scroll-component": "^6.1.0",
     "three": "^0.142.0"
   },
   "devDependencies": {

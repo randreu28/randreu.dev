@@ -899,6 +899,7 @@ export const portfolio = {
       },
     ],
     cta: "See more",
+    webHolder: "In developement",
   },
   es: {
     title: "Bienvenido a mi portafolio!",
@@ -1044,6 +1045,7 @@ export const portfolio = {
       },
     ],
     cta: "Ver más",
+    webHolder: "En construcción",
   },
   ca: {
     title: "Benvingut al meu portafoli!",
@@ -1191,6 +1193,7 @@ export const portfolio = {
       },
     ],
     cta: "Veure més",
+    webHolder: "En construcció",
   },
 };
 /* SEO content yet to be determined */
