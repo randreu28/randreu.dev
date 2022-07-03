@@ -103,7 +103,7 @@ export default function App() {
               consequuntur.
             </div>
             <div className="space-y-3">
-            <Image
+              <Image
                 className="object-cover object-center w-full h-auto my-auto self-center"
                 src="/media/placeholder.png"
                 alt=""
@@ -176,11 +176,11 @@ export default function App() {
             title={<>Schoolarship in the UPC</>}
             description={
               <>
-                In the third year of college I&apos;ve been working at the Vertex
-                centre at the UPC university, where I was tasked to work on the
-                maintenance of the multiple websites of the institution. I was
-                also tasked with setting up and monitoring all the data received
-                from Google Analytics and...
+                In the third year of college I&apos;ve been working at the
+                Vertex centre at the UPC university, where I was tasked to work
+                on the maintenance of the multiple websites of the institution.
+                I was also tasked with setting up and monitoring all the data
+                received from Google Analytics and...
               </>
             }
             link="/upc"

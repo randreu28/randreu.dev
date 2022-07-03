@@ -20,7 +20,7 @@ export default function App() {
   useEffect(() => {
     const canvas = ref.current;
 
-    router.beforePopState(({ }) => {
+    router.beforePopState(({}) => {
       gui.destroy(); /* Destroys gui before route change */
       return true;
     });

@@ -8,7 +8,7 @@ export default function BaffleName({ tic, setTic }) {
   const router = useRouter();
 
   useEffect(() => {
-    const myWords = index[router.locale].dynamicText
+    const myWords = index[router.locale].dynamicText;
 
     const baffler = baffle(dynamicText.current);
     baffler.options.characters = "ᾏστυφχΓΔϊϋόͶώ/<>?";

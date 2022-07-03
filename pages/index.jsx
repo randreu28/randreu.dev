@@ -21,14 +21,16 @@ export default function App() {
   useEffect(() => {
     AOS.init();
     AOS.refresh();
-    document.getElementsByTagName("html")[0].classList="scroll-smooth";
+    document.getElementsByTagName("html")[0].classList = "scroll-smooth";
   }, []);
 
   const router = useRouter();
 
   const content = index[router.locale];
 
-  const [isInSection, setSection] = useState(navigation[router.locale].main[0].name);
+  const [isInSection, setSection] = useState(
+    navigation[router.locale].main[0].name
+  );
 
   return (
     <>
@@ -98,7 +100,8 @@ export default function App() {
                 {content.intro6}
               </a>
               {content.intro7}
-              <br/><br/>
+              <br />
+              <br />
               {content.intro8}
             </p>
             <ul className="list-disc md:columns-2 ml-4 text-gray-400">

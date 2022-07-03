@@ -6,7 +6,9 @@ export default function blogr() {
       <Head>
         <title>Blogr</title>
       </Head>
-      <div className="bg-white"> {/* Pseudo-body wrapper */}
+      <div className="bg-white">
+        {" "}
+        {/* Pseudo-body wrapper */}
         <div className="bg-Blogr h-screen rounded-bl-3xl rounded-bl-big p-5 font-extrabold">
           <nav className="flex justify-between">
             <div className="flex">
@@ -126,11 +128,11 @@ export default function blogr() {
             </h1>
             <p className="font-overpass text-BlogrDarkishBlue text-center lg:text-left">
               Blog features an exceedengly intuitive interface which lets you
-              focus on one thing: creating content. The editor supports management
-              for multiple blogs and allows easy manipulation of embeds such as
-              images, videos and markdowns. Extensibly with plugins and theme
-              provide easy ways to add functionality or change the looks of the
-              blog.
+              focus on one thing: creating content. The editor supports
+              management for multiple blogs and allows easy manipulation of
+              embeds such as images, videos and markdowns. Extensibly with
+              plugins and theme provide easy ways to add functionality or change
+              the looks of the blog.
             </p>
             <br />
             <h1 className="text-BlogrDarkBlue font-overpass font-medium text-3xl py-5 text-center lg:text-left">
@@ -164,8 +166,8 @@ export default function blogr() {
             <p className="font-overpass text-center lg:text-left">
               With reliability and speed in mind, worldwide data centers provide
               the backbone for ultra-fast connectivity. This ensures your site
-              will load instantly, no matter where your readers are, keeping your
-              site competitive
+              will load instantly, no matter where your readers are, keeping
+              your site competitive
             </p>
           </div>
         </div>

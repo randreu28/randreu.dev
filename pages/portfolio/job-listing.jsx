@@ -15,13 +15,13 @@ export default function JobListing() {
   const [isReact, setIsReact] = useState(false);
 
   useEffect(() => {
-    document.getElementsByTagName("body")[0].classList="bg-white";
-  }, [])
+    document.getElementsByTagName("body")[0].classList = "bg-white";
+  }, []);
 
   return (
     <>
       <div className="bg-job w-full py-12 bg-LightCyan"></div>
-      
+
       <div className="bg-white rounded drop-shadow-xl hidden md:flex p-5 -translate-y-1/2 mx-20 lg:mx-28 justify-between">
         <div className="flex-row flex space-x-4">
           {isJunior ? (

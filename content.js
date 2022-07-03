@@ -898,7 +898,7 @@ export const portfolio = {
         inDev: false,
       },
     ],
-    cta: "See more"
+    cta: "See more",
   },
   es: {
     title: "Bienvenido a mi portafolio!",
@@ -1043,7 +1043,7 @@ export const portfolio = {
         inDev: false,
       },
     ],
-    cta: "Ver más"
+    cta: "Ver más",
   },
   ca: {
     title: "Benvingut al meu portafoli!",
@@ -1141,8 +1141,9 @@ export const portfolio = {
         tag3: "#Array Methods",
         text: (
           <>
-            El repte consistia a crear una llista de targetes amb ofertes de treball
-            utilitzant components que es poden filtrar segons la categoria.
+            El repte consistia a crear una llista de targetes amb ofertes de
+            treball utilitzant components que es poden filtrar segons la
+            categoria.
           </>
         ),
         inDev: false,
@@ -1157,7 +1158,7 @@ export const portfolio = {
         tag3: "#UseState",
         text: (
           <>
-           Aquest senzill desafiament consistia a aprendre estats de react,
+            Aquest senzill desafiament consistia a aprendre estats de react,
             integrant càlculs simples de javascript a react.
           </>
         ),
@@ -1189,7 +1190,7 @@ export const portfolio = {
         inDev: false,
       },
     ],
-    cta: "Veure més"
+    cta: "Veure més",
   },
 };
 /* SEO content yet to be determined */

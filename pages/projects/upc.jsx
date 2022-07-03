@@ -7,15 +7,14 @@ import SmNavbar from "../../components/SmNavbar";
 import ProjectPrev from "../../components/ProjectPrev";
 
 export default function App() {
-
   return (
     <>
-    <Head>
-      <title>Upc</title>
-      <link rel="shortcut icon" href="/media/logo.svg" />
-      {/* SEO METADATA */}
-    </Head>
-      <SmNavbar isActive="Projects"/>
+      <Head>
+        <title>Upc</title>
+        <link rel="shortcut icon" href="/media/logo.svg" />
+        {/* SEO METADATA */}
+      </Head>
+      <SmNavbar isActive="Projects" />
       <div className="mx-5 md:mx-14 lg:mx-44 py-20">
         <h3 className="text-myPrimary font-semibold">Featured project</h3>
         <h1 className="text-4xl font-bold pb-5">Scholarship at the UPC</h1>
@@ -104,7 +103,7 @@ export default function App() {
               consequuntur.
             </div>
             <div className="space-y-3">
-            <Image
+              <Image
                 className="object-cover object-center w-full h-auto my-auto self-center"
                 src="/media/placeholder.png"
                 alt=""
@@ -164,8 +163,8 @@ export default function App() {
               <>
                 In my early years of college I got involved in a startup called
                 ecoDeliver, where I had the fortune to help as a marketing
-                consultant and designer. Then I had the chance to participate
-                on the Imagine Planet Challenge with them, alongside another...
+                consultant and designer. Then I had the chance to participate on
+                the Imagine Planet Challenge with them, alongside another...
               </>
             }
             link="/imaginePlanetChallenge"
