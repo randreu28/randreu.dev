@@ -250,9 +250,12 @@ export default function Particles({ tic, isInSection }) {
     };
 
     tick();
+  }, [parameters]);
 
+  useEffect(() => {
     //Welcome animation
     gsap.to(parameters, {
+      delay: 0.5,
       randomState: 1.0,
       duration: 3.0,
       ease: "circ.out",
@@ -263,7 +266,7 @@ export default function Particles({ tic, isInSection }) {
       duration: 3.0,
       ease: "circ.out",
     });
-  }, [parameters]);
+  }, []);
 
   useEffect(() => {
     switch (tic) {
@@ -303,38 +306,36 @@ export default function Particles({ tic, isInSection }) {
     }
   }, [tic, parameters]);
 
-  useEffect(() => {
-    switch (isInSection) {
-      case navigation[router.locale].main[0].href:
-        gsap.to(parameters, {
-          randomState: 1.0,
-          duration: 3.0,
-          ease: "circ.out",
-        });
-        break;
-      case navigation[router.locale].main[1].href:
-        gsap.to(parameters, {
-          randomState: 0.0,
-          duration: 3.0,
-        });
-        break;
-      case navigation[router.locale].main[2].href:
-        gsap.to(parameters, {
-          randomState: 0.0,
-          duration: 3.0,
-        });
-        break;
-      case navigation[router.locale].main[3].href:
-        gsap.to(parameters, {
-          randomState: 0.0,
-          duration: 3.0,
-        });
-        break;
-      default:
-        console.error("expected navigation value");
-        break;
-    }
-  }, [isInSection, navigation, parameters]);
+  switch (isInSection) {
+    case navigation[router.locale].main[0].href:
+      gsap.to(parameters, {
+        randomState: 1.0,
+        duration: 3.0,
+        ease: "circ.out",
+      });
+      break;
+    case navigation[router.locale].main[1].href:
+      gsap.to(parameters, {
+        randomState: 0.0,
+        duration: 3.0,
+      });
+      break;
+    case navigation[router.locale].main[2].href:
+      gsap.to(parameters, {
+        randomState: 0.0,
+        duration: 3.0,
+      });
+      break;
+    case navigation[router.locale].main[3].href:
+      gsap.to(parameters, {
+        randomState: 0.0,
+        duration: 3.0,
+      });
+      break;
+    default:
+      console.error("expected navigation value");
+      break;
+  }
 
   return <canvas className="fixed -z-10" ref={ref} />;
 }
