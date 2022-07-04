@@ -103,6 +103,7 @@ export default function App() {
             title={content1.upcTitle}
             description={content1.upcDescription}
             link="/projects/upc"
+            hasDemo="https://impulsa.upc.edu/"
           />
           <ProjectPrev
             aos="fade-left"
@@ -111,6 +112,7 @@ export default function App() {
             title={content1.ipcTitle}
             description={content1.ipcDescription}
             link="/projects/imaginePlanetChallenge"
+            //hasDemo="http://www.ecodeliver.es/"
           />
         </div>
       </div>

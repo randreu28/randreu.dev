@@ -81,7 +81,7 @@ export default function Project({ title, p, img, link, isEven, hasDemo }) {
                     href={hasDemo}
                     className="flex space-x-2 ring-gray-300 ring-2 text-gray-300 rounded-lg px-3 py-2 hover:text-myPrimary hover:ring-myPrimary duration-200 font-bold ml-2 "
                   >
-                    <p className="my-auto">{content.projBtn1}</p>
+                    <p className="my-auto">Demo</p>
                     <ExternalLinkIcon className="h-5 my-auto" />
                   </a>
                 ) : null}
@@ -109,7 +109,7 @@ export default function Project({ title, p, img, link, isEven, hasDemo }) {
                     rel="noreferrer"
                     className="flex space-x-2 ring-gray-300 ring-2 text-gray-300 rounded-lg px-3 py-2 hover:text-myPrimary hover:ring-myPrimary duration-200 font-bold ml-2 "
                   >
-                    <p className="my-auto">{content.projBtn1}</p>
+                    <p className="my-auto">Demo</p>
                     <ExternalLinkIcon className="h-5 my-auto" />
                   </a>
                 ) : null}

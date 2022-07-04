@@ -2,6 +2,7 @@ import React, { useEffect } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import { useRouter } from "next/router";
+import { ExternalLinkIcon } from "@heroicons/react/outline";
 
 import AOS from "aos";
 import "aos/dist/aos.css";
@@ -14,6 +15,7 @@ export default function ProjectPrev({
   link,
   aos,
   aosDelay,
+  hasDemo,
 }) {
   const router = useRouter();
   const content = projPrev[router.locale];
@@ -25,7 +27,7 @@ export default function ProjectPrev({
 
   return (
     <div
-      className="bg-gray-800 text-white rounded p-5 pb-8 justify-between flex flex-col"
+      className="bg-gray-800 text-white rounded p-5 justify-between flex flex-col"
       data-aos={aos}
       data-aos-delay={aosDelay}
     >
@@ -45,13 +47,23 @@ export default function ProjectPrev({
         </h3>
         <h1 className="text-2xl font-bold pb-5">{title}</h1>
         <p className="text-gray-400">{description}</p>
-        <br />
-        <br />
-        <Link href={link}>
-          <a className="bg-gradient-to-br from-mySecondary to-myPrimary rounded-lg px-3 py-2 font-bold duration-200">
-            {content.readMore}
-          </a>
-        </Link>
+        <div className="flex items-center mt-6 space-x-5">
+          <Link href={link}>
+            <a className="bg-gradient-to-br from-mySecondary to-myPrimary rounded-lg px-3 py-2 font-bold duration-200">
+              {content.readMore}
+            </a>
+          </Link>
+          {hasDemo ? (
+            <a
+              target={"_blank"}
+              href={hasDemo}
+              className="flex space-x-2 ring-gray-300 ring-2 text-gray-300 rounded-lg px-3 py-2 hover:text-myPrimary hover:ring-myPrimary duration-200 font-bold ml-2 "
+            >
+              <p className="my-auto">Demo</p>
+              <ExternalLinkIcon className="h-5 my-auto" />
+            </a>
+          ) : null}
+        </div>
       </div>
     </div>
   );

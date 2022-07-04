@@ -62,7 +62,6 @@ export const index = {
     projTitle: "Some projects I've participated in",
     projPrev: "Featured project",
     projBtn: "See more",
-    projBtn1: "Live demo",
 
     proj1Title: "Imagine Planet Challenge",
     proj1: (
@@ -185,7 +184,6 @@ export const index = {
     projTitle: "Algunos proyectos en los que he participado",
     projPrev: "Proyecto destacado",
     projBtn: "Ver más",
-    projBtn1: "Demo en vivo",
 
     proj1Title: "Imagine Planet Challenge",
     proj1: (
@@ -310,7 +308,6 @@ export const index = {
     projTitle: "Alguns projectes en els que he participat",
     projPrev: "Projecte destacat",
     projBtn: "Veure més",
-    projBtn1: "Demo en directe",
 
     proj1Title: "Imagine Planet Challenge",
     proj1: (
@@ -776,6 +773,7 @@ export const projPrev = {
 
     featuredProject: "Featured project",
     readMore: "Read more",
+    btnText: "",
   },
   es: {
     title: "Otros proyectos",
@@ -816,6 +814,7 @@ export const projPrev = {
 
     featuredProject: "Proyecto destacado",
     readMore: "Leer más",
+    btnText: "",
   },
   ca: {
     title: "Altres projectes",
