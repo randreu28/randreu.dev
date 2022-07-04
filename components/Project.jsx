@@ -39,6 +39,7 @@ export default function Project({ title, p, img, link, isEven, hasDemo }) {
           {hasDemo ? (
             <a
               target={"_blank"}
+              rel={"noreferrer"}
               href={hasDemo}
               className="flex space-x-2 ring-gray-300 ring-2 text-gray-300 rounded-lg px-3 py-2 hover:text-myPrimary hover:ring-myPrimary duration-200 font-bold ml-2 "
             >
@@ -78,6 +79,7 @@ export default function Project({ title, p, img, link, isEven, hasDemo }) {
                 {hasDemo ? (
                   <a
                     target={"_blank"}
+                    rel={"noreferrer"}
                     href={hasDemo}
                     className="flex space-x-2 ring-gray-300 ring-2 text-gray-300 rounded-lg px-3 py-2 hover:text-myPrimary hover:ring-myPrimary duration-200 font-bold ml-2 "
                   >
@@ -106,7 +108,7 @@ export default function Project({ title, p, img, link, isEven, hasDemo }) {
                   <a
                     href={hasDemo}
                     target="_blank"
-                    rel="noreferrer"
+                    rel={"noreferrer"}
                     className="flex space-x-2 ring-gray-300 ring-2 text-gray-300 rounded-lg px-3 py-2 hover:text-myPrimary hover:ring-myPrimary duration-200 font-bold ml-2 "
                   >
                     <p className="my-auto">Demo</p>

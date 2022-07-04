@@ -56,6 +56,7 @@ export default function ProjectPrev({
           {hasDemo ? (
             <a
               target={"_blank"}
+              rel={"noreferrer"}
               href={hasDemo}
               className="flex space-x-2 ring-gray-300 ring-2 text-gray-300 rounded-lg px-3 py-2 hover:text-myPrimary hover:ring-myPrimary duration-200 font-bold ml-2 "
             >
