@@ -1,6 +1,9 @@
-import React from "react";
+import { useRouter } from "next/router";
+import { footer } from "../content";
 
 export default function Footer() {
+  const router = useRouter();
+  const content = footer[router.locale];
   return (
     <footer className="bg-gray-800">
       <div className="max-w-6xl m-auto flex flex-col sm:flex-row justify-between pt-2 px-3 text-gray-500">
@@ -64,7 +67,7 @@ export default function Footer() {
       </div>
       <div>
         <div className="flex pb-5 px-3 m-auto pt-5 border-t border-gray-500 text-gray-500 text-sm flex-col md:flex-row max-w-6xl">
-          © Copyright 2020. All Rights Reserved.
+          {content.text}
         </div>
       </div>
     </footer>
