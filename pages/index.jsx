@@ -150,7 +150,7 @@ export default function App() {
           p={content.proj2}
           link="/projects/upc"
           isEven={true}
-          hasDemo={"https://impulsa.upc.edu/"}
+          //hasDemo={"https://impulsa.upc.edu/"}
         />
 
         {/* <Another upcoming project/> */}
