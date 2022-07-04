@@ -82,7 +82,13 @@ export default function Navbar({ isActive }) {
               <Menu.Item>
                 <button className="font-medium hover:opacity-75 duration-200">
                   <Link href="" scroll={false} locale="en">
-                    <a>English</a>
+                    <a
+                      className={
+                        router.locale == "en" ? "text-myPrimary" : null
+                      }
+                    >
+                      English
+                    </a>
                   </Link>
                 </button>
               </Menu.Item>
@@ -90,7 +96,13 @@ export default function Navbar({ isActive }) {
               <Menu.Item>
                 <button className="font-medium hover:opacity-75 duration-200">
                   <Link href="" scroll={false} locale="es">
-                    <a>Español</a>
+                    <a
+                      className={
+                        router.locale == "es" ? "text-myPrimary" : null
+                      }
+                    >
+                      Español
+                    </a>
                   </Link>
                 </button>
               </Menu.Item>
@@ -98,7 +110,13 @@ export default function Navbar({ isActive }) {
               <Menu.Item>
                 <button className="font-medium hover:opacity-75 duration-200">
                   <Link href="" scroll={false} locale="ca">
-                    <a>Catalá</a>
+                    <a
+                      className={
+                        router.locale == "ca" ? "text-myPrimary" : null
+                      }
+                    >
+                      Catalá
+                    </a>
                   </Link>
                 </button>
               </Menu.Item>
