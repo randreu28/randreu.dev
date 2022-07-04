@@ -71,44 +71,13 @@ export default function App() {
             </h2>
 
             <p className=" text-gray-400 lg:max-w-md text-lg">
-              {content.intro1}
-              <span className="font-bold underline decoration-blue-400 decoration-wavy decoration-slice text-white">
-                Rubén Chiquin Font{" "}
-              </span>
-              {content.intro2}
-              <br />
-              <br />
-              {content.intro3}
-              <a
-                href={navigation[router.locale].main[2].href}
-                className="text-blue-400 underline hover:opacity-80 duration-200"
-              >
-                startups
-              </a>
-              ,{" "}
-              <a
-                href={navigation[router.locale].main[2].href}
-                className="text-blue-400 underline hover:opacity-80 duration-200"
-              >
-                {content.intro4}
-              </a>{" "}
-              {content.intro5}
-              <a
-                href={navigation[router.locale].main[2].href}
-                className="text-blue-400 underline hover:opacity-80 duration-200"
-              >
-                {content.intro6}
-              </a>
-              {content.intro7}
-              <br />
-              <br />
-              {content.intro8}
+              {content.introText}
             </p>
             <ul className="list-disc md:columns-2 ml-4 text-gray-400">
               <li>React</li>
               <li>TailwindCSS</li>
               <li>Javascript (ES6+)</li>
-              <li>Three.js</li>
+              <li>Three.js / R3F</li>
               <li>Next.js</li>
               <li>Google Analytics</li>
             </ul>
@@ -172,6 +141,7 @@ export default function App() {
           img={"/media/ecoDeliver.jpg"}
           p={content.proj1}
           link="/projects/imaginePlanetChallenge"
+          //hasDemo={"http://www.ecodeliver.es/"}
         />
 
         <Project
@@ -180,13 +150,10 @@ export default function App() {
           p={content.proj2}
           link="/projects/upc"
           isEven={true}
+          hasDemo={"https://impulsa.upc.edu/"}
         />
-        <Project
-          title={content.proj3Title}
-          img={"/media/placeholder.png"}
-          p={content.proj3}
-          link="/projects/goac"
-        />
+
+        {/* <Another upcoming project/> */}
       </section>
 
       <section

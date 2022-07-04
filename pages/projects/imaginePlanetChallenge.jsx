@@ -58,7 +58,7 @@ export default function App() {
             <div className="space-y-3">
               <Image
                 className="object-cover object-center w-full h-auto my-auto self-center"
-                src="/media/celebration.png"
+                src="/media/Celebration.png"
                 alt=""
                 layout="responsive"
                 width={1900}
@@ -102,15 +102,15 @@ export default function App() {
             image="/media/upc.jpg"
             title={content1.upcTitle}
             description={content1.upcDescription}
-            link="/upc"
+            link="/projects/upc"
           />
           <ProjectPrev
             aos="fade-left"
             aosDelay="250"
-            image="/media/placeholder.png"
-            title={content1.goacTitle}
-            description={content1.goacDescription}
-            link="/goac"
+            image="/media/ecoDeliver.jpg"
+            title={content1.ipcTitle}
+            description={content1.ipcDescription}
+            link="/projects/imaginePlanetChallenge"
           />
         </div>
       </div>

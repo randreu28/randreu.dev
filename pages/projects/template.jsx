@@ -10,14 +10,14 @@ export default function App() {
   return (
     <>
       <Head>
-        <title>Goac</title>
+        <title>Title</title>
         <link rel="shortcut icon" href="/media/logo.svg" />
         {/* SEO METADATA */}
       </Head>
       <SmNavbar isActive="Projects" />
       <div className="mx-5 md:mx-14 lg:mx-44 py-20">
         <h3 className="text-myPrimary font-semibold">Featured project</h3>
-        <h1 className="text-4xl font-bold pb-5">GOAC multimedia technician</h1>
+        <h1 className="text-4xl font-bold pb-5">Template for a project</h1>
 
         <div className="space-y-24">
           <span className="grid grid-cols-1 lg:grid-cols-2 lg:gap-10 space-y-10 lg:space-y-0">

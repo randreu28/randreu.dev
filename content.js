@@ -39,15 +39,23 @@ export const index = {
     ],
 
     introTitle: "Who am I",
-    intro1: "Hi, my name is ",
-    intro2:
-      "and I am a 20-year-old Multimedia college student, passionate about self-learning and building experiences for the web. I'm always looking for new oportunities for building accessible, inclusive products and digital experiences.",
-    intro3: "I've worked in ",
-    intro4: "universities",
-    intro5: "and in ",
-    intro6: "non-profit institutions",
-    intro7: ", all work related to design, technology and digital tools.",
-    intro8: "Here are a few technologies I've been learning recently:",
+    introText: (
+      <>
+        Hi, my name is{" "}
+        <span className="font-bold underline decoration-blue-400 decoration-wavy decoration-slice text-white">
+          Rubén Chiquin Font
+        </span>{" "}
+        and I am a designer and developer, passionate about self-learning and
+        building experiences for the web.
+        <br />
+        <br />
+        I've worked in startups, universities and in non-profit institutions,
+        all work related to design, technology and digital tools.
+        <br />
+        <br />
+        Here are a few technologies I've been learning recently:
+      </>
+    ),
     introBtn1: "Let's get in touch!",
     introBtn2: "My portfolio",
 
@@ -61,29 +69,46 @@ export const index = {
       <>
         In my early years of college I got involved in a startup called{" "}
         <span className="font-bold underline decoration-green-400 decoration-wavy decoration-slice text-white">
-          ecoDeliver,{" "}
-        </span>
-        where I had the fortune to help as a marketing consultant and designer,
-        as I had recently learned about design and marketing principles.
+          ecoDeliver,
+        </span>{" "}
+        where I had the opportunity to work as a marketing consultant and
+        developer, where I designed their{" "}
+        <a
+          className="underline text-blue-400 duration-200
+        hover:opacity-75 "
+          href="https://www.behance.net/gallery/125864213/ecoDeliver-Brand-Guidlines-20"
+          target="_blank"
+        >
+          identity manual
+        </a>{" "}
+        and webpage.
         <br />
         <br />
-        Later on we participated and won the Imagine Planet Challenge, a
-        challenge made for newborn sustainable startups, designed for tutoring
-        and networking.
+        Later on we participated and won the{" "}
+        <a
+          className="underline text-blue-400 duration-200
+        hover:opacity-75 "
+          href="https://imaginplanetchallenge.com/"
+          target="_blank"
+        >
+          Imagine Planet Challenge
+        </a>
+        , a challenge made for newborn sustainable startups, designed for
+        tutoring and networking.
       </>
     ),
 
-    proj2Title: "Scholarship in the UPC",
+    proj2Title: "Scholarship at UPC",
     proj2: (
       <>
-        In the third year of college I&apos;ve been working at the Vertex centre
-        at the UPC university, where I was tasked to work on the maintenance of
-        the multiple websites of the institution.
+        In the last years of my degree, I worked at the innovation and community
+        cabinet at the UPC university, where I was tasked to work as a developer
+        for the multiple websites of the cabinet.
         <br />
         <br />I was also tasked with setting up and monitoring all the data
         received from{" "}
         <span className="font-bold underline decoration-yellow-400 decoration-wavy decoration-slice text-white">
-          Google Analytics{" "}
+          Google Analytics
         </span>{" "}
         and making changes accordingly to ensure a good UX.{" "}
       </>
@@ -126,26 +151,34 @@ export const index = {
     formBtn2: "Sent",
   },
   es: {
-    title: "Hola, soy Rubén y ...",
+    title: "Hola, soy Rubén y",
     dynamicText: [
       "diseño experiencias",
       "pienso creativamente",
-      "adoro innovar",
+      "me gusta innovar",
       "resuelvo problemas",
     ],
 
     introTitle: "Quién soy",
-    intro1: "Hola! Mi nombre es ",
-    intro2:
-      " y soy un estudiante de Multimedia de 20 años, pasional en el auto-aprendizaje y la creación de experiencias para la web. Estoy constantem,ente buscando nuevas oportunidades para crear productos y experiencias digitales accesibles e inclusivas.",
-    intro3: "He trabajado en ",
-    intro4: "universidades",
-    intro5: "y en ",
-    intro6: "instituciones sin ánimo de lucro",
-    intro7:
-      ", siempre con temas relacionados con diseño, tecnología y herramientas digitales.",
-    intro8:
-      "Aquí hay algunas de las tecnologías que he estado estudiando recientemente:",
+    introText: (
+      <>
+        Hola! Mi nombre es{" "}
+        <span className="font-bold underline decoration-blue-400 decoration-wavy decoration-slice text-white">
+          Rubén Chiquin Font
+        </span>{" "}
+        y soy un diseñador y desarrollador, pasional en el auto-aprendizaje y la
+        creación de experiencias para la web.
+        <br />
+        <br />
+        He trabajado en startups, universidades y en instituciones sin ánimo de
+        lucro, siempre con temas relacionados con diseño, tecnología y
+        herramientas digitales.
+        <br />
+        <br />
+        Aquí hay algunas de las tecnologías que he estado estudiando
+        recientemente:
+      </>
+    ),
     introBtn1: "Concáctame!",
     introBtn2: "Mi portafolio",
 
@@ -157,33 +190,50 @@ export const index = {
     proj1Title: "Imagine Planet Challenge",
     proj1: (
       <>
-        En los años iniciales de mi carrera, me involucré en una startup llamada{" "}
+        En los primeros años de mi carrera, me involucré en una <i>startup</i>{" "}
+        llamada{" "}
         <span className="font-bold underline decoration-green-400 decoration-wavy decoration-slice text-white">
-          ecoDeliver,{" "}
-        </span>
-        donde tuve la oportundad de ayudar como consultor de marketing y
-        diseñador, ya que recientemente había aprendido acerca de diseño y
-        principios de marketing.
+          ecoDeliver,
+        </span>{" "}
+        donde tuve la oportunidad de trabajar como consultor de marketing, y
+        desarrollador, en donde diseñé su{" "}
+        <a
+          className="underline text-blue-400 duration-200
+        hover:opacity-75 "
+          href="https://www.behance.net/gallery/125864213/ecoDeliver-Brand-Guidlines-20"
+          target="_blank"
+        >
+          manual de identidad corporativa
+        </a>{" "}
+        y página web.
         <br />
         <br />
-        Después de un tiempo participamos y ganamos en Imagine Planet Challenge,
-        un concurso en el que participaban startups sostenibles recien nacidas,
-        diseñado para tutorizar y hacer networking.
+        Después de un tiempo participamos y ganamos el{" "}
+        <a
+          className="underline text-blue-400 duration-200
+        hover:opacity-75 "
+          href="https://imaginplanetchallenge.com/"
+          target="_blank"
+        >
+          Imagine Planet Challenge
+        </a>
+        , un concurso diseñado para tutorizar, hacer <i>networking</i> y en el
+        que participaban <i>startups</i> sostenibles, recién nacidas.
       </>
     ),
 
     proj2Title: "Beca de aprendizaje en la UPC",
     proj2: (
       <>
-        En el tercer año de mi carrera, estuve trabajando en el edificio Vertex
-        en la universidad de la UPC, en donde se me encargó mantener las
-        múltiples páginas web de la institución.
+        En mis últimos años de mi carrera, estuve trabajando en el gabinete de
+        la innovación y comunidad de la UPC, en donde se me encargó mantener las
+        múltiples páginas web del gabiente.
         <br />
         <br />
         También se me encargó configurar y monitorizar todos los flujos de datos
         que eran recividos desde{" "}
         <span className="font-bold underline decoration-yellow-400 decoration-wavy decoration-slice text-white">
-          Google Analytics{" "}
+          Google Analytics
         </span>{" "}
         y en hacer cambios conocorde a ellos para asegurar un buen UX.{" "}
       </>
@@ -235,17 +285,25 @@ export const index = {
     ],
 
     introTitle: "Qui soc",
-    intro1: "Hey! Em dic Rubén ",
-    intro2:
-      "i soc un estudiant d'universitat de multimèdia de 20 anys, apassionat per l'autoaprenentatge i la construcció de experiències per la web. Sempre busco noves oportunitats per dissenyar productes i experiències digitals accessibles i inclusius.",
-    intro3: "He treballat en ",
-    intro4: "universitats",
-    intro5: "i en ",
-    intro6: "institucions sense ànim de lucre",
-    intro7:
-      ", sempre en treball relacionat al disseny, la tecnologia i les eines digitals.",
-    intro8:
-      "Aqui hi son algunas de las tecnologies que he estat estudiant recentment:",
+    introText: (
+      <>
+        Hola! Eem dic{" "}
+        <span className="font-bold underline decoration-blue-400 decoration-wavy decoration-slice text-white">
+          Rubén Chiquin Font{" "}
+        </span>
+        i soc un dissenyador i desenvolupador, apassionat per l'autoaprenentatge
+        i la construcció de experiències per la web.
+        <br />
+        <br />
+        He treballat en startups, universitats i en institucions sense ànim de
+        lucre, sempre en treball relacionat al disseny, la tecnologia i les
+        eines digitals.
+        <br />
+        <br />
+        Aqui hi son algunas de las tecnologies que he estat estudiant
+        recentment:
+      </>
+    ),
     introBtn1: "Contacta'm!",
     introBtn2: "El meu portfoli",
 
@@ -260,62 +318,50 @@ export const index = {
         En els primers anys de la meva carrera, em vaig involucar amb una
         startup amb el nom de{" "}
         <span className="font-bold underline decoration-green-400 decoration-wavy decoration-slice text-white">
-          ecoDeliver,{" "}
-        </span>
-        on vaig tenir la oportunitat d'ajudar com a consultor de marketing i
-        dissenyador, ja que recentment habia après sobre disseny i dels
-        principis del marketing.
+          ecoDeliver,
+        </span>{" "}
+        on vaig tenir la oportundad de treballar com a consultor de màrqueting i
+        desenvolupador, on vaig dissenyar el seu{" "}
+        <a
+          className="underline text-blue-400 duration-200
+        hover:opacity-75 "
+          href="https://www.behance.net/gallery/125864213/ecoDeliver-Brand-Guidlines-20"
+          target="_blank"
+        >
+          manual d'identitat corporativa
+        </a>{" "}
+        i pàgina web.
         <br />
         <br />
-        Un temps desprès vem participar i guanyar el Imagine Planet Challenge,
-        una competició per a startups sostenibles recent nascudas, dissenyada
-        per a tutoritzar i fer networking.
+        Un temps desprès vem participar i guanyar el{" "}
+        <a
+          className="underline text-blue-400 duration-200
+        hover:opacity-75 "
+          href="https://imaginplanetchallenge.com/"
+          target="_blank"
+        >
+          Imagine Planet Challenge
+        </a>{" "}
+        un concurs dissenyat per a tutoritzar, fer <i>networking</i> i en el
+        qual participaven <i>startups</i> sostenibles, recent nascudes.
       </>
     ),
 
     proj2Title: "Beca d'aprenentatge a la UPC",
     proj2: (
       <>
-        En el tercer any de la meva carrera, vaig estar treballant en el edifici
-        Vertex a la universitat de la UPC, on se'm va encarregar el manteniment
-        de las multiples pàgines web de la institució.
+        En els meus últims anys de la meva carrera, vaig estar treballant en el
+        gabinet de la innovació i comunitat de la UPC, on se'm va encarregar
+        mantenir les múltiples pàgines web del gabient.
         <br />
         <br />
         També se'm va encarregar configurar i monitoritzar tot el fluxe de dades
         tretes de{" "}
         <span className="font-bold underline decoration-yellow-400 decoration-wavy decoration-slice text-white">
-          Google Analytics{" "}
+          Google Analytics
         </span>{" "}
         i de fer canvis en la forma corresponent a aquelles dades per a asegurar
         una bona UX.{" "}
-      </>
-    ),
-
-    proj3Title: "Tècnic multimedia GOAC",
-    proj3: (
-      <>
-        Contrari a altres carreras, un dels beneficis d'estudiar una carrera amb
-        una gran base de disseny es la oportunitat de ensenyar{" "}
-        <a
-          href="https://www.behance.net/RubenChiquin"
-          target="_blank"
-          rel="noreferrer"
-          className="underline text-blue-400 duration-200 hover:opacity-75 "
-        >
-          els teus projectes personals i treballs
-        </a>{" "}
-        als teus amics i familiars. Com a resultat d'això, un amic d'un amic, a
-        qui li vaig ensenyar el meu treball, em va contactar per a una
-        oportunidad de negocis.
-        <br />
-        <br />
-        Aquesta oportunitat va ser ser part de{" "}
-        <span className="font-bold underline decoration-cyan-400 decoration-wavy decoration-slice text-white">
-          la organització GOAC,{" "}
-        </span>
-        on se'm va encarregar gestionar totes les comptes de les xarxes socials,
-        com el canal de Youtube i el seu blog, aixi com també tascas de disseny,
-        com a banners, rollups i targetas de presentació.
       </>
     ),
 
@@ -692,27 +738,17 @@ export const upc = {
   ca: {},
 };
 
-export const goac = {
-  en: {},
-  es: {},
-  ca: {},
-};
-
 export const projPrev = {
   en: {
     title: "Other projects",
 
     upcTitle: "Schoolarship in the UPC",
     upcDescription:
-      "In the third year of college I've been working at the Vertex centre at the UPC university, where I was tasked to work on the maintenance of the multiple websites of the institution. I was also tasked with setting up and monitoring all the data received from Google Analytics and making changes accordingly to ensure a good UX...",
-
-    goacTitle: "GOAC",
-    goacDescription:
-      " A friend of mine saw my work and recommended me. Some time later I was invited to be part of the GOAC organisation, where I was tasked to manage the social media accounts such as their Youtube channel and their blog, as well as design tasks, such as banners, rollups and presentation cards...",
+      "In the last years of my degree, I worked at the innovation and community cabinet at the UPC university, where I was tasked to work as a developer for the multiple websites of the cabinet...",
 
     ipcTitle: "Imagine Planet Challenge",
     ipcDescription:
-      "In my early years of college I got involved in a startup called ecoDeliver, where I had the fortune to help as a marketing consultant and designer. Then I had the chance to participate on the Imagine Planet Challenge with them, alongside another...",
+      "In my early years of college I got involved in a startup called ecoDeliver, where I had the opportunity to work as a marketing consultant and developer, where I designed their identity manual and webpage...",
 
     featuredProject: "Featured project",
     readMore: "Read more",
@@ -722,15 +758,11 @@ export const projPrev = {
 
     upcTitle: "Beca de aprendizaje en la UPC",
     upcDescription:
-      "En el tercer año de la carrera estuve trabajando en el centro Vertex de la universidad UPC, donde me encargaron trabajar en el mantenimiento de los múltiples sitios web de la institución. También tuve la tarea de configurar y monitorear todos los datos recibidos de Google Analytics y hacer los cambios correspondientes para garantizar una buena UX...",
-
-    goacTitle: "GOAC",
-    goacDescription:
-      " Un amigo mío vio mi trabajo y me recomendó. Tiempo después me invitaron a formar parte de la organización GOAC, donde me encomendaron la gestión de las cuentas de redes sociales como su canal de Youtube y su blog, así como tareas de diseño, como banners, rollups y tarjetas de presentación...",
+      "En mis últimos años de mi carrera, estuve trabajando en el gabinete de la innovación y comunidad de la UPC, en donde se me encargó mantener las múltiples páginas web del gabiente...",
 
     ipcTitle: "Imagine Planet Challenge",
     ipcDescription:
-      "En mis primeros años de universidad me involucré en una startup llamada ecoDeliver, donde tuve la fortuna de ayudar como consultor de marketing y diseñador. Luego tuve la oportunidad de participar en el Imagine Planet Challenge con ellos, junto a otro...",
+      "En los primeros años de mi carrera, me involucré en una startup llamada ecoDeliver, donde tuve la oportunidad de trabajar como consultor de marketing, y desarrollador, en donde diseñé su manual de identidad corporativa y página web...",
 
     featuredProject: "Proyecto destacado",
     readMore: "Leer más",
@@ -740,13 +772,10 @@ export const projPrev = {
 
     upcTitle: "Beca d'apranantatge a l'UPC",
     upcDescription:
-      "A tercer curs de la universitat he estat treballant al centre Vertex de la UPC, on em van encarregar el manteniment de les múltiples webs de la institució. També em van encarregar la configuració i el seguiment de totes les dades rebudes de Google Analytics i fer els canvis en conseqüència per garantir una bona UX...",
-    goacTitle: "GOAC",
-    goacDescription:
-      "Un amic meu va veure la meva feina i em va recomanar. Temps després em van convidar a formar part de l'organització GOAC, on em van encarregar la gestió dels comptes de les xarxes socials com el seu canal de Youtube i el seu blog, així com tasques de disseny, com ara banners, rollups i targetes de presentació...",
+      "A tercer curs de la universitat he estat treballant al centre Vertex de la UPC, on em van encarregar el manteniment de les múltiples webs de la institució. També em van encarregar la configuració i el seguiment de totes les dades...",
     ipcTitle: "Imagine Planet Challenge",
     ipcDescription:
-      "En els meus primers anys a la universitat em vaig involucrar en una startup anomenada ecoDeliver, on vaig tenir la sort d'ajudar com a consultor de màrqueting i dissenyador. Després vaig tenir l'oportunitat de participar amb ells al Imagine Planet Challenge, al costat d'un altre...",
+      "En els primers anys de la meva carrera, em vaig involucar amb una startup amb el nom de ecoDeliver, on vaig tenir la oportundad de treballar com a consultor de màrqueting i desenvolupador, on vaig dissenyar el seu manual d'identitat corporativa i pàgina web...",
 
     featuredProject: "Projecte destacat",
     readMore: "Veure més",
@@ -899,7 +928,6 @@ export const portfolio = {
       },
     ],
     cta: "See more",
-    webHolder: "In developement",
   },
   es: {
     title: "Bienvenido a mi portafolio!",
@@ -1045,7 +1073,6 @@ export const portfolio = {
       },
     ],
     cta: "Ver más",
-    webHolder: "En construcción",
   },
   ca: {
     title: "Benvingut al meu portafoli!",
@@ -1193,7 +1220,19 @@ export const portfolio = {
       },
     ],
     cta: "Veure més",
-    webHolder: "En construcció",
   },
 };
+
+export const webHolder = {
+  en: {
+    text: "In construction",
+  },
+  es: {
+    text: "En construcción",
+  },
+  ca: {
+    text: "En construcció",
+  },
+};
+
 /* SEO content yet to be determined */
