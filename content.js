@@ -43,17 +43,17 @@ export const index = {
       <>
         Hi, my name is{" "}
         <span className="font-bold underline decoration-blue-400 decoration-wavy decoration-slice text-white">
-          Rubén Chiquin Font
+          Rubén Chiquin
         </span>{" "}
         and I am a designer and developer, passionate about self-learning and
-        building experiences for the web.
+        building experiences through technology.
         <br />
         <br />
-        I've worked in startups, universities and in non-profit institutions,
-        all work related to design, technology and digital tools.
+        I&apos;ve worked in startups, universities and in non-profit
+        institutions, all work related to design, technology and digital tools.
         <br />
         <br />
-        Here are a few technologies I've been learning recently:
+        Here are a few technologies I&apos;ve been using recently:
       </>
     ),
     introBtn1: "Let's get in touch!",
@@ -77,6 +77,7 @@ export const index = {
         hover:opacity-75 "
           href="https://www.behance.net/gallery/125864213/ecoDeliver-Brand-Guidlines-20"
           target="_blank"
+          rel="noreferrer"
         >
           identity manual
         </a>{" "}
@@ -89,6 +90,7 @@ export const index = {
         hover:opacity-75 "
           href="https://imaginplanetchallenge.com/"
           target="_blank"
+          rel="noreferrer"
         >
           Imagine Planet Challenge
         </a>
@@ -104,8 +106,8 @@ export const index = {
         <span className="font-bold underline decoration-yellow-400 decoration-wavy decoration-slice text-white">
           innovation and community cabinet
         </span>{" "}
-        at the UPC university, where I was tasked to work as a developer for the
-        multiple websites of the cabinet.
+        at the UPC university, where I was tasked to work as a developer for
+        different Vue and SpringBoot repositories. (such as the one on the demo)
         <br />
         <br />I was also tasked with setting up and monitoring all the data
         received from Google Analytics and making changes accordingly to ensure
@@ -163,7 +165,7 @@ export const index = {
       <>
         Hola! Mi nombre es{" "}
         <span className="font-bold underline decoration-blue-400 decoration-wavy decoration-slice text-white">
-          Rubén Chiquin Font
+          Rubén Chiquin
         </span>{" "}
         y soy un diseñador y desarrollador, pasional del auto-aprendizaje y la
         creación de experiencias para la web.
@@ -200,6 +202,7 @@ export const index = {
         hover:opacity-75 "
           href="https://www.behance.net/gallery/125864213/ecoDeliver-Brand-Guidlines-20"
           target="_blank"
+          rel="noreferrer"
         >
           manual de identidad corporativa
         </a>{" "}
@@ -212,6 +215,7 @@ export const index = {
         hover:opacity-75 "
           href="https://imaginplanetchallenge.com/"
           target="_blank"
+          rel="noreferrer"
         >
           Imagine Planet Challenge
         </a>
@@ -227,8 +231,8 @@ export const index = {
         <span className="font-bold underline decoration-yellow-400 decoration-wavy decoration-slice text-white">
           gabinete de la innovación y comunidad
         </span>{" "}
-        de la UPC, en donde se me encargó mantener las múltiples páginas web del
-        gabiente.
+        de la UPC, en donde se me encargó mantener repositorios con proyectos de
+        Vue y SpringBoot (Citado en la demo)
         <br />
         <br />
         También se me encargó configurar y monitorizar todos los flujos de datos
@@ -287,10 +291,10 @@ export const index = {
       <>
         Hola! Em dic{" "}
         <span className="font-bold underline decoration-blue-400 decoration-wavy decoration-slice text-white">
-          Rubén Chiquin Font{" "}
+          Rubén Chiquin{" "}
         </span>
-        i soc un dissenyador i desenvolupador, apassionat per l'autoaprenentatge
-        i la construcció de experiències per la web.
+        i soc un dissenyador i desenvolupador, apassionat per
+        l&apos;autoaprenentatge i la construcció de experiències per la web.
         <br />
         <br />
         He treballat en <i>startups</i>, universitats i en institucions sense
@@ -324,8 +328,9 @@ export const index = {
         hover:opacity-75 "
           href="https://www.behance.net/gallery/125864213/ecoDeliver-Brand-Guidlines-20"
           target="_blank"
+          rel="noreferrer"
         >
-          manual d'identitat corporativa
+          manual d&apos;identitat corporativa
         </a>{" "}
         i pàgina web.
         <br />
@@ -336,6 +341,7 @@ export const index = {
         hover:opacity-75 "
           href="https://imaginplanetchallenge.com/"
           target="_blank"
+          rel="noreferrer"
         >
           Imagine Planet Challenge
         </a>{" "}
@@ -351,13 +357,13 @@ export const index = {
         <span className="font-bold underline decoration-yellow-400 decoration-wavy decoration-slice text-white">
           gabinet de la innovació i comunitat
         </span>{" "}
-        de la UPC, on se'm va encarregar mantenir les múltiples pàgines web del
-        gabient.
+        de la UPC, on se&apos;m va va encarregar mantenir repositoris amb
+        projectes de Vue y SpringBoot (Citats a la demo)
         <br />
         <br />
-        També se'm va encarregar configurar i monitoritzar tot el fluxe de dades
-        tretes de Google Analytics i de fer canvis en la forma corresponent a
-        aquelles dades per a asegurar una bona UX.{" "}
+        També se&apos;m va encarregar configurar i monitoritzar tot el fluxe de
+        dades tretes de Google Analytics i de fer canvis en la forma
+        corresponent a aquelles dades per a asegurar una bona UX.{" "}
       </>
     ),
 
@@ -661,8 +667,8 @@ export const imaginePlanetChallenge = {
       <>
         <br />
         El projecte de la startup ecoDeliver consistia en un sistema de
-        paqueteria amigable a l'ambient i buscant maneres de tirar endavant el
-        projecte, ecoDeliver es va involucrar en un concurs anomenat{" "}
+        paqueteria amigable a l&apos;ambient i buscant maneres de tirar endavant
+        el projecte, ecoDeliver es va involucrar en un concurs anomenat{" "}
         <a
           className="text-blue-400 underline hover:opacity-75 duration-200"
           href="https://vimeo.com/570039624"
@@ -675,11 +681,12 @@ export const imaginePlanetChallenge = {
         i networking.
         <br />
         <br />
-        L'esdeveniment va constar de 10 startups, cadascuna amb l'oportunitat de
-        explicant les seves idees i objectius que podrien beneficiar el medi
-        ambient davant un públic i un jurat molt qualificat, que decidiria qui
-        es premiaria amb un viatge de 3 setmanes a Lanzarote, on es farien tot
-        tipus d'activitats planificades i mentoria per a l'equip guanyador.
+        L&apos;esdeveniment va constar de 10 startups, cadascuna amb
+        l&apos;oportunitat de explicant les seves idees i objectius que podrien
+        beneficiar el medi ambient davant un públic i un jurat molt qualificat,
+        que decidiria qui es premiaria amb un viatge de 3 setmanes a Lanzarote,
+        on es farien tot tipus d&apos;activitats planificades i mentoria per a
+        l&apos;equip guanyador.
       </>
     ),
 
@@ -687,7 +694,7 @@ export const imaginePlanetChallenge = {
       <>
         <p className="text-gray-400">
           Afortunadament, vam guanyar el repte nosaltres, juntament amb una
-          altra startup anomenada Kidalos i vam gaudir d'una{" "}
+          altra startup anomenada Kidalos i vam gaudir d&apos;una{" "}
           <a
             className="text-blue-400 underline hover:opacity-75 duration-200"
             href="https://vimeo.com/612344678"
@@ -709,7 +716,8 @@ export const imaginePlanetChallenge = {
         </p>
         <p className="text-gray-400">
           En acabar el viatge, vam haver de presentar una darrera vegada La idea
-          d'ecoDeliver davant de un públic. L'esdeveniment va tenir lloc a{" "}
+          d&apos;ecoDeliver davant de un públic. L&apos;esdeveniment va tenir
+          lloc a{" "}
           <a
             className="text-blue-400 underline hover:opacity-75 duration-200"
             href="https://vimeo.com/580269013"
@@ -721,7 +729,7 @@ export const imaginePlanetChallenge = {
           , un lloc turistic molt emblemàtic de Lanzarote, i allà vam compartir
           el nostre idea de negoci mentre ens gravan i miraven centenars de
           persones, entre els quals hi era en Benjamin Perdomo, director general
-          d'Art, Cultura i Centre de Turisme a Lanzarote.
+          d&apos;Art, Cultura i Centre de Turisme a Lanzarote.
         </p>
       </>
     ),
@@ -745,8 +753,8 @@ export const projPrev = {
         <span className="font-bold underline decoration-yellow-400 decoration-wavy decoration-slice text-white">
           innovation and community cabinet
         </span>{" "}
-        at the UPC university, where I was tasked to work as a developer for the
-        multiple websites of the cabinet...
+        at the UPC university, where I was tasked to work as a developer for
+        different Vue and SpringBoot repositories. (such as the one on the demo)
       </>
     ),
 
@@ -764,6 +772,7 @@ export const projPrev = {
         hover:opacity-75 "
           href="https://www.behance.net/gallery/125864213/ecoDeliver-Brand-Guidlines-20"
           target="_blank"
+          rel="noreferrer"
         >
           identity manual
         </a>{" "}
@@ -785,8 +794,8 @@ export const projPrev = {
         <span className="font-bold underline decoration-yellow-400 decoration-wavy decoration-slice text-white">
           gabinete de la innovación y comunidad
         </span>{" "}
-        de la UPC, en donde se me encargó mantener las múltiples páginas web del
-        gabiente...
+        de la UPC, en donde se me encargó mantener repositorios con proyectos de
+        Vue y SpringBoot
       </>
     ),
 
@@ -805,6 +814,7 @@ export const projPrev = {
         hover:opacity-75 "
           href="https://www.behance.net/gallery/125864213/ecoDeliver-Brand-Guidlines-20"
           target="_blank"
+          rel="noreferrer"
         >
           manual de identidad corporativa
         </a>{" "}
@@ -826,8 +836,8 @@ export const projPrev = {
         <span className="font-bold underline decoration-yellow-400 decoration-wavy decoration-slice text-white">
           gabinet de la innovació i comunitat
         </span>{" "}
-        de la UPC, on se'm va encarregar mantenir les múltiples pàgines web del
-        gabient...
+        de la UPC, on se&apos;m va encarregar mantenir repositoris amb projectes
+        de Vue y SpringBoot (Citats a la demo)
       </>
     ),
     ipcTitle: "Imagine Planet Challenge",
@@ -845,8 +855,9 @@ export const projPrev = {
         hover:opacity-75 "
           href="https://www.behance.net/gallery/125864213/ecoDeliver-Brand-Guidlines-20"
           target="_blank"
+          rel="noreferrer"
         >
-          manual d'identitat corporativa
+          manual d&apos;identitat corporativa
         </a>{" "}
         i pàgina web...
       </>
@@ -1213,7 +1224,7 @@ export const portfolio = {
           <>
             Aquest petit projecte consisteix en una llista de tasques, amb tots
             els elements comuns funcionalitats que cobreixen els estàndards
-            CRUD, i l'ús de la llibreria react-beautiful-dnd
+            CRUD, i l&apos;ús de la llibreria react-beautiful-dnd
           </>
         ),
         inDev: false,
@@ -1228,9 +1239,9 @@ export const portfolio = {
         tag3: "#Promeses de JS",
         text: (
           <>
-            El repte consistia en crear una galeria d'imatges infinita de gats,
-            amb l'ajuda d'un generador d'imatges de gats a l'atzar, amb la
-            intenció d'aprendre a fer servir una API.
+            El repte consistia en crear una galeria d&apos;imatges infinita de
+            gats, amb l&apos;ajuda d&apos;un generador d&apos;imatges de gats a
+            l&apos;atzar, amb la intenció d&apos;aprendre a fer servir una API.
           </>
         ),
         inDev: false,

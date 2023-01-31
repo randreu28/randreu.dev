@@ -76,10 +76,10 @@ export default function App() {
             <ul className="list-disc md:columns-2 ml-4 text-gray-400">
               <li>React</li>
               <li>TailwindCSS</li>
-              <li>Javascript (ES6+)</li>
+              <li>TypeScript (4.9)</li>
               <li>Three.js / R3F</li>
-              <li>Next.js</li>
-              <li>Google Analytics</li>
+              <li>Next.js 13</li>
+              <li>Flutter</li>
             </ul>
 
             <div className="flex flex-col md:flex-row items-start space-y-5 md:space-y-0 mt-6 -mx-2 md:space-x-5">
@@ -107,10 +107,10 @@ export default function App() {
               <div className="max-w-lg">
                 <Image
                   className="object-cover object-center w-full h-64 rounded-md shadow"
-                  src="/media/placeholder.png"
+                  src="/media/myself.jpg"
                   alt=""
-                  width={600}
-                  height={350}
+                  width={400}
+                  height={400}
                 />
               </div>
             </div>
@@ -141,7 +141,7 @@ export default function App() {
           img={"/media/ecoDeliver.jpg"}
           p={content.proj1}
           link="/projects/imaginePlanetChallenge"
-          //hasDemo={"http://www.ecodeliver.es/"}
+          hasDemo={"http://www.ecodeliver.es/"}
         />
 
         <Project
@@ -150,7 +150,7 @@ export default function App() {
           p={content.proj2}
           link="/projects/upc"
           isEven={true}
-          //hasDemo={"https://impulsa.upc.edu/"}
+          hasDemo={"https://impulsa.upc.edu/"}
         />
 
         {/* <Another upcoming project/> */}
