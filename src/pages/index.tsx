@@ -65,9 +65,12 @@ export default function Index() {
             </h2>
 
             <p className=" text-gray-400 lg:max-w-md text-lg">
-              Hi, my name is Rubén Chiquin and I am a designer and software
-              developer, passionate about learning new things and building
-              experiences through technology.
+              Hi, my name is{" "}
+              <span className="font-bold underline decoration-blue-400 decoration-wavy decoration-slice text-white">
+                Rubén Chiquin
+              </span>{" "}
+              and I am a designer and software developer, passionate about
+              learning new things and building experiences through technology.
               <br />
               <br />
               I've worked in startups, universities and in non-profit
