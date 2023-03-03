@@ -1,5 +1,7 @@
 # 🚀 My personal website
 
+![screenshot](/screenshot.png)
+
 > A door to know me and my work
 
 Hello! And welcome to the repository of my personal website. I created it as<br>
