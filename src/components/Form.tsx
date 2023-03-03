@@ -60,19 +60,19 @@ export default function Form() {
       <div />
 
       <span className="relative inline-flex rounded-md justify-self-end">
-        {!state.submitted && !state.submitting ? (
+        {!state.submitted && !state.submitting && (
           <button
             type="submit"
             className="items-center px-2 py-2 text-lg leading-6 font-medium rounded-md text-gray-300 bg-gray-800 hover:text-my-orange focus:border-my-orange transition ease-in-out duration-500"
           >
             Submit
           </button>
-        ) : null}
+        )}
 
-        {state.submitting ? (
+        {state.submitting && (
           <button
             type="button"
-            className="items-center flex px-4 py-2 border border-transparent text-base leading-6 font-medium rounded-md text-gray-300 bg-gray-800 hover:bg-my-orange focus:border-my-orange active:bg-my-orange transition ease-in-out duration-150 cursor-default hover:cursor-default"
+            className="items-center flex px-4 py-2 border border-transparent text-base leading-6 font-medium rounded-md text-gray-300 bg-gray-800 transition ease-in-out duration-150 cursor-default hover:cursor-default"
             disabled={true}
           >
             <svg
@@ -97,25 +97,25 @@ export default function Form() {
             </svg>
             Sending...
           </button>
-        ) : null}
-        {state.submitted ? (
+        )}
+        {state.submitted && (
           <button
             disabled
-            className="items-center px-2 py-2 text-lg leading-6 font-medium rounded-md text-gray-300 bg-gray-800 opacity-50 focus:border-my-orange transition ease-in-out duration-500"
+            className="items-center px-2 py-2 text-lg leading-6 font-medium rounded-md text-gray-300 bg-gray-800 opacity-50 transition ease-in-out duration-500"
           >
             Submitted
           </button>
-        ) : null}
+        )}
 
         <span
           className={
-            state.submitted && !state.submitting
+            state.submitted || state.submitting
               ? "hidden"
               : "flex absolute h-3 w-3 top-0 right-0 -mt-1 -mr-1"
           }
         >
-          <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-gradient-to-r from-my-orange to-my-pink opacity-75"></span>
-          <span className="relative inline-flex rounded-full h-3 w-3 bg-gradient-to-r from-my-pink to-my-orange"></span>
+          <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-gradient-to-r from-my-orange to-my-pink opacity-75" />
+          <span className="relative inline-flex rounded-full h-3 w-3 bg-gradient-to-r from-my-pink to-my-orange" />
         </span>
       </span>
     </form>
