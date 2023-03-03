@@ -10,6 +10,7 @@
   },
   "dependencies": {
     "@a7sc11u/scramble": "^0.0.6",
+    "@formcarry/react": "^1.0.4",
     "@headlessui/react": "^1.7.8",
     "@heroicons/react": "^2.0.14",
     "@next/font": "13.1.6",
