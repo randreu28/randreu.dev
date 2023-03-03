@@ -10,6 +10,7 @@ import { FolderIcon } from "@heroicons/react/24/outline";
 import Image from "next/image";
 import Form from "@/components/Form";
 import Footer from "@/components/Footer";
+import Head from "next/head";
 
 export default function Index() {
   const [activeSection, setActiveSection] = useState<string>(sections[0].href);
@@ -33,6 +34,9 @@ export default function Index() {
 
   return (
     <>
+      <Head>
+        <title>Randreu.dev</title>
+      </Head>
       <Navbar
         activeSection={activeSection}
         setActiveSection={setActiveSection}
