@@ -12,7 +12,6 @@ interface Props {
 export const sections = [
   { name: "Home", href: "home" },
   { name: "About me", href: "about-me" },
-  { name: "Projects", href: "projects" },
   { name: "Contact me", href: "contact-me" },
 ];
 

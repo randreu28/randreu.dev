@@ -87,7 +87,7 @@ export default function Index() {
 
             <div className="flex flex-col md:flex-row items-start space-y-5 md:space-y-0 mt-6 -mx-2 md:space-x-5">
               <a
-                href={"#" + sections[3].href}
+                href={"#" + sections[2].href}
                 className="bg-gradient-to-br from-my-pink to-my-orange rounded-lg px-3 py-2 font-bold ml-2 text-white"
               >
                 Let's get in touch!
@@ -124,13 +124,6 @@ export default function Index() {
         className="h-screen flex items-center justify-center text-5xl border-b"
       >
         {sections[2].name}
-      </section>
-
-      <section
-        id={sections[3].href}
-        className="h-screen flex items-center justify-center text-5xl border-b"
-      >
-        {sections[3].name}
       </section>
     </>
   );
