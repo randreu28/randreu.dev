@@ -189,7 +189,7 @@ export default function Buffer({ activeSection, tic }: Props) {
   const models = [king, lightBulb, rocket];
 
   let position: Vector3 =
-    window.innerWidth >= 640 ? new Vector3(2.5, 0, 0) : new Vector3(0, 0, 0);
+    window.innerWidth >= 1280 ? new Vector3(2.5, 0, 0) : new Vector3(0, 0, 0);
   return (
     <points
       ref={ref}
