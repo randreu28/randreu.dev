@@ -23,7 +23,6 @@ export default function Index() {
     }, 5000);
 
     window.addEventListener("keydown", (e) => {
-      console.log(e.altKey, e.key);
       if (e.altKey && e.key == "h") setHiddenControls(!hiddenControlls);
     });
 
