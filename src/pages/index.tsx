@@ -15,7 +15,7 @@ import Head from "next/head";
 export default function Index() {
   const [activeSection, setActiveSection] = useState<string>(sections[0].href);
   const [tic, setTic] = useState<number>(0);
-  const [hiddenControlls, setHiddenControls] = useState<boolean>(true);
+  const [hideControls, setHideControls] = useState<boolean>(true);
 
   useEffect(() => {
     let interval = setInterval(() => {
@@ -24,13 +24,13 @@ export default function Index() {
     }, 5000);
 
     window.addEventListener("keydown", (e) => {
-      if (e.altKey && e.key == "h") setHiddenControls(!hiddenControlls);
+      if (e.altKey && e.key == "h") setHideControls(!hideControls);
     });
 
     return () => {
       clearInterval(interval);
     };
-  }, [tic, hiddenControlls]);
+  }, [tic, hideControls]);
 
   return (
     <>
@@ -43,7 +43,7 @@ export default function Index() {
       />
 
       <div className="absolute left-10 top-20">
-        <Leva fill hidden={hiddenControlls} />
+        <Leva fill hidden={hideControls} />
       </div>
 
       <div className="h-screen w-screen fixed -z-10">
