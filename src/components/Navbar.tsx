@@ -1,4 +1,4 @@
-import { activeSectionAtom, sections } from "@/utils/store";
+import { ActiveSection, activeSectionAtom, sections } from "@/utils/store";
 import { Popover, Transition } from "@headlessui/react";
 import { Bars3Icon, XMarkIcon } from "@heroicons/react/24/outline";
 import { useAtom } from "jotai";
@@ -12,7 +12,7 @@ export default function Navbar() {
     const domSections = document.querySelectorAll("section");
     window.addEventListener("scroll", () => {
       domSections.forEach((section) => {
-        const sectionId = section.getAttribute("id");
+        const sectionId = section.getAttribute("id") as ActiveSection;
         const sectionTop = section.offsetTop - window.innerHeight * 0.5;
         const sectionBottom = sectionTop + section.offsetHeight;
         if (
