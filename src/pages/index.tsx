@@ -19,7 +19,7 @@ export default function Index() {
   const [hideControls, setHideControls] = useState<boolean>(true);
 
   useEffect(() => {
-    let interval = setInterval(() => {
+    const interval = setInterval(() => {
       if (tic == 3) setTic(0);
       else setTic(tic + 1);
     }, 5000);

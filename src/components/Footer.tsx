@@ -1,7 +1,4 @@
-import { useRouter } from "next/router";
-
 export default function Footer() {
-  const router = useRouter();
   return (
     <footer className="bg-gray-800">
       <div className="max-w-6xl m-auto flex flex-col sm:flex-row justify-between pt-2 px-3 text-gray-500">
