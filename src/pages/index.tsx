@@ -11,10 +11,12 @@ import Image from "next/image";
 import Form from "@/components/Form";
 import Footer from "@/components/Footer";
 import Head from "next/head";
+import { ticAtom } from "@/utils/store";
+import { useAtom } from "jotai";
 
 export default function Index() {
   const [activeSection, setActiveSection] = useState<string>(sections[0].href);
-  const [tic, setTic] = useState<number>(0);
+  const [tic, setTic] = useAtom(ticAtom);
   const [hideControls, setHideControls] = useState<boolean>(true);
 
   useEffect(() => {
@@ -30,7 +32,7 @@ export default function Index() {
     return () => {
       clearInterval(interval);
     };
-  }, [tic, hideControls]);
+  }, [tic, hideControls, setTic]);
 
   return (
     <>
@@ -50,13 +52,13 @@ export default function Index() {
         <Canvas>
           <PerspectiveCamera makeDefault position={[0, 0, 6]} />
 
-          <Buffer tic={tic} activeSection={activeSection} />
+          <Buffer activeSection={activeSection} />
         </Canvas>
       </div>
       <section id={sections[0].href} className="h-screen flex font-righteous">
         <h1 className="text-4xl md:text-5xl lg:text-6xl mx-auto mt-20 text-center p-10 z-10 xl:my-auto xl:ml-32 xl:text-left">
           Hello, my name is Rubén and I... <br />
-          <DynamicText tic={tic} />
+          <DynamicText />
         </h1>
       </section>
 

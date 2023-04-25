@@ -1,4 +1,6 @@
+import { ticAtom } from "@/utils/store";
 import { TextScramble } from "@a7sc11u/scramble";
+import { useAtomValue } from "jotai";
 
 const text: string[] = [
   "design experiences",
@@ -7,11 +9,8 @@ const text: string[] = [
   "solve problems",
 ];
 
-interface Props {
-  tic: number;
-}
-
-export default function DynamicText({ tic }: Props) {
+export default function DynamicText() {
+  const tic = useAtomValue(ticAtom);
   return (
     <TextScramble
       className="bg-[#ef079b] bg-gradient-to-br text-transparent from-[#f8665d] via-[#f8665d] bg-clip-text"
