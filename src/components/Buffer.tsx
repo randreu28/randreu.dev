@@ -8,9 +8,8 @@ import gsap from "gsap";
 import fragShader from "@/components/shaders/fragment.glsl";
 import vertShader from "@/components/shaders/vertex.glsl";
 import { Euler, Material, Points, Vector3 } from "three";
-import { sections } from "./Navbar";
 import { useAtomValue } from "jotai";
-import { ticAtom } from "@/utils/store";
+import { activeSectionAtom, sections, ticAtom } from "@/utils/store";
 
 //For uniforms type safety
 interface myUniforms extends Material {
@@ -30,13 +29,10 @@ interface myPoints extends Points {
   material: myUniforms;
 }
 
-interface Props {
-  activeSection: string;
-}
-
-export default function Buffer({ activeSection }: Props) {
+export default function Buffer() {
   const ref = useRef<myPoints>(null!);
   const tic = useAtomValue(ticAtom);
+  const activeSection = useAtomValue(activeSectionAtom);
 
   const [params, setParams] = useControls("Particles", () => ({
     bufferColor: "#f8665d",

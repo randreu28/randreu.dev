@@ -1,21 +1,13 @@
-import { useEffect, Fragment, Dispatch, SetStateAction } from "react";
+import { activeSectionAtom, sections } from "@/utils/store";
 import { Popover, Transition } from "@headlessui/react";
 import { Bars3Icon, XMarkIcon } from "@heroicons/react/24/outline";
+import { useAtom } from "jotai";
 import Image from "next/image";
 import Link from "next/link";
+import { Fragment, useEffect } from "react";
 
-interface Props {
-  activeSection: string;
-  setActiveSection: Dispatch<SetStateAction<string>>;
-}
-
-export const sections = [
-  { name: "Home", href: "home" },
-  { name: "About me", href: "about-me" },
-  { name: "Contact me", href: "contact-me" },
-];
-
-export default function Navbar({ activeSection, setActiveSection }: Props) {
+export default function Navbar() {
+  const [activeSection, setActiveSection] = useAtom(activeSectionAtom);
   useEffect(() => {
     const domSections = document.querySelectorAll("section");
     window.addEventListener("scroll", () => {

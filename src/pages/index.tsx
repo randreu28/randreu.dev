@@ -1,21 +1,20 @@
-import DynamicText from "@/components/DynamicText";
-import Navbar, { sections } from "@/components/Navbar";
-import { useEffect, useState } from "react";
 import Buffer from "@/components/Buffer";
-import { Canvas } from "@react-three/fiber";
-import { PerspectiveCamera } from "@react-three/drei";
-import { Leva } from "leva";
-import Link from "next/link";
-import { FolderIcon } from "@heroicons/react/24/outline";
-import Image from "next/image";
-import Form from "@/components/Form";
+import DynamicText from "@/components/DynamicText";
 import Footer from "@/components/Footer";
-import Head from "next/head";
-import { ticAtom } from "@/utils/store";
+import Form from "@/components/Form";
+import Navbar from "@/components/Navbar";
+import { sections, ticAtom } from "@/utils/store";
+import { FolderIcon } from "@heroicons/react/24/outline";
+import { PerspectiveCamera } from "@react-three/drei";
+import { Canvas } from "@react-three/fiber";
 import { useAtom } from "jotai";
+import { Leva } from "leva";
+import Head from "next/head";
+import Image from "next/image";
+import Link from "next/link";
+import { useEffect, useState } from "react";
 
 export default function Index() {
-  const [activeSection, setActiveSection] = useState<string>(sections[0].href);
   const [tic, setTic] = useAtom(ticAtom);
   const [hideControls, setHideControls] = useState<boolean>(true);
 
@@ -39,20 +38,14 @@ export default function Index() {
       <Head>
         <title>Randreu.dev</title>
       </Head>
-      <Navbar
-        activeSection={activeSection}
-        setActiveSection={setActiveSection}
-      />
-
+      <Navbar />
       <div className="absolute left-10 top-20">
         <Leva fill hidden={hideControls} />
       </div>
-
       <div className="h-screen w-screen fixed -z-10">
         <Canvas>
           <PerspectiveCamera makeDefault position={[0, 0, 6]} />
-
-          <Buffer activeSection={activeSection} />
+          <Buffer />
         </Canvas>
       </div>
       <section id={sections[0].href} className="h-screen flex font-righteous">
@@ -61,7 +54,6 @@ export default function Index() {
           <DynamicText />
         </h1>
       </section>
-
       <section id={sections[1].href} className="container px-6 py-8 mx-auto">
         <div className="items-center lg:flex">
           <div className="lg:w-1/2 space-y-5">
@@ -112,7 +104,6 @@ export default function Index() {
           </div>
         </div>
       </section>
-
       <section
         id={sections[2].href}
         className="space-y-10 container px-6 py-8 mx-auto"
