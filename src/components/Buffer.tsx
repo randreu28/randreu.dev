@@ -200,13 +200,18 @@ export default function Buffer() {
           name="position"
           compute={() => {
             const geometry1 = new THREE.BoxGeometry(1, 1, 1, 16, 16, 16);
-            const geometry1Attribute = new THREE.BufferAttribute(
-              //@ts-ignore
-              geometry1.attributes.position.array,
-              3
-            );
-
-            return geometry1Attribute;
+            if (
+              geometry1.attributes.position instanceof THREE.BufferAttribute
+            ) {
+              return new THREE.BufferAttribute(
+                geometry1.attributes.position.array,
+                3
+              );
+            } else {
+              throw Error(
+                `Buffer geometry named ${geometry1.name} expected buffer attribute object`
+              );
+            }
           }}
           usage={THREE.StaticReadUsage}
         />
@@ -233,12 +238,20 @@ export default function Buffer() {
               key={index}
               name={`position${index + 3}`}
               compute={() => {
-                const geometryAttribute = new THREE.BufferAttribute(
-                  //@ts-ignore: Types vary in each model
-                  model.nodes.targetModel.geometry.attributes.position.array,
-                  3
-                );
-                return geometryAttribute;
+                if (
+                  model.nodes.targetModel instanceof THREE.Mesh &&
+                  model.nodes.targetModel.geometry.attributes
+                    .position instanceof THREE.BufferAttribute
+                ) {
+                  return new THREE.BufferAttribute(
+                    model.nodes.targetModel.geometry.attributes.position.array,
+                    3
+                  );
+                } else {
+                  throw Error(
+                    `Buffer geometry named ${model.scene.name} expected buffer attribute object`
+                  );
+                }
               }}
               usage={THREE.StaticReadUsage}
             />
