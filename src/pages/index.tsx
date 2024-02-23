@@ -4,14 +4,12 @@ import Footer from "@/components/Footer";
 import Form from "@/components/Form";
 import Navbar from "@/components/Navbar";
 import { sections, ticAtom } from "@/utils/store";
-import { FolderIcon } from "@heroicons/react/24/outline";
 import { PerspectiveCamera } from "@react-three/drei";
 import { Canvas } from "@react-three/fiber";
 import { useAtom } from "jotai";
 import { Leva } from "leva";
 import Head from "next/head";
 import Image from "next/image";
-import Link from "next/link";
 import { useEffect, useState } from "react";
 
 export default function Index() {
@@ -58,7 +56,7 @@ export default function Index() {
         <div className="items-center lg:flex">
           <div className="lg:w-1/2 space-y-5">
             <h2 className="text-3xl font-bold text-gray-100 border-b-2 border-gray-500 pb-2">
-              Who I am
+              About me
             </h2>
 
             <p className=" text-gray-400 lg:max-w-md text-lg">
@@ -82,11 +80,6 @@ export default function Index() {
               <li>Next.js 13</li>
               <li>Flutter</li>
             </ul>
-
-            <div className="flex space-x-2 ring-gray-300 ring-2 text-gray-300 rounded-lg px-3 py-2 hover:text-my-orange hover:ring-my-orange duration-200 font-bold w-fit">
-              <Link href="/portfolio">My portfolio</Link>
-              <FolderIcon className="h-6 w-6 my-auto" />
-            </div>
           </div>
 
           <div className="mt-8 lg:mt-0 lg:w-1/2">

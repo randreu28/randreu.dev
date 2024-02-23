@@ -52,9 +52,6 @@ export default function Navbar() {
             </a>
           ))}
         </span>
-        <Link href="/portfolio" className="pl-8">
-          Portfolio
-        </Link>
       </li>
       <Popover className="md:hidden">
         <nav
@@ -121,13 +118,6 @@ export default function Navbar() {
                     </span>
                   </Popover.Button>
                 ))}
-
-                <Link
-                  className="block text-lg font-medium px-3 py-2 hover:opacity-75 duration-300"
-                  href="portfolio"
-                >
-                  Portfolio
-                </Link>
               </div>
             </div>
           </Popover.Panel>
