@@ -2,8 +2,9 @@ import { atom } from "jotai";
 
 export const sections = [
   { name: "Home", href: "home" },
-  { name: "About me", href: "about-me" },
-  { name: "Contact me", href: "contact-me" },
+  { name: "Background", href: "background" },
+  { name: "Experience", href: "experience"},
+  { name: "Get in touch", href: "get-in-touch" },
 ] as const;
 
 export type ActiveSection = (typeof sections)[number]["href"];
