@@ -15,13 +15,22 @@ export const Route = createRootRoute({
         content: "width=device-width, initial-scale=1",
       },
       {
-        title: "randreu.dev",
+        title: "Rubén Chiquin",
+      },
+      {
+        name: "description",
+        content: "I build software. Sometimes for work, sometimes because I can't sleep.",
       },
     ],
     links: [
       {
         rel: "stylesheet",
         href: appCss,
+      },
+      {
+        rel: "icon",
+        href: "/logo.svg",
+        type: "image/svg+xml",
       },
     ],
   }),
@@ -30,11 +39,11 @@ export const Route = createRootRoute({
 
 function RootDocument({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="en">
+    <html lang="en" className="dark">
       <head>
         <HeadContent />
       </head>
-      <body>
+      <body className="min-h-svh bg-background text-foreground">
         {children}
         <TanStackDevtools
           config={{
