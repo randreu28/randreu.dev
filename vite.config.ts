@@ -4,6 +4,8 @@ import { devtools } from "@tanstack/devtools-vite";
 import { tanstackStart } from "@tanstack/react-start/plugin/vite";
 import viteReact from "@vitejs/plugin-react";
 import { defineConfig } from "vite-plus";
+import typegpuLint from "eslint-plugin-typegpu";
+import typegpu from "unplugin-typegpu/vite";
 
 export default defineConfig({
   server: {
@@ -20,6 +22,7 @@ export default defineConfig({
         specifier: "vite-plus/oxlint-plugin",
       },
       "@shadcn/lint",
+      "eslint-plugin-typegpu",
     ],
     rules: {
       "vite-plus/prefer-vite-plus-imports": "error",
@@ -29,6 +32,7 @@ export default defineConfig({
       "shadcn/no-inline-styles": "error",
       "shadcn/require-static-classes": "error",
       "shadcn/no-unknown-classes": "error",
+      ...typegpuLint.configs.recommended.rules,
     },
     overrides: [
       {
@@ -49,6 +53,7 @@ export default defineConfig({
   plugins: [
     // Must be first — TanStack Devtools Vite plugin
     devtools(),
+    typegpu(),
     tailwindcss(),
     cloudflare({
       viteEnvironment: { name: "ssr" },

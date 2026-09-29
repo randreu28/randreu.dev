@@ -18,7 +18,7 @@
     "noUnusedParameters": true,
     "noFallthroughCasesInSwitch": true,
     "noUncheckedSideEffectImports": true,
-    "types": ["./.cloudflare/types/index.d.ts", "vite/client", "node"],
+    "types": ["./.cloudflare/types/index.d.ts", "vite/client", "node", "@webgpu/types"],
     "paths": {
       "@/*": ["./src/*"]
     }
