@@ -5,14 +5,11 @@ import { Ripple } from "@/components/ui/ripple";
 function LoadingFallback() {
   return (
     <main
-      className="relative z-10 flex min-h-svh items-center justify-center overflow-hidden px-6"
+      className="relative z-10 flex min-h-svh items-center justify-center overflow-hidden bg-background px-6 text-primary"
       aria-busy="true"
       aria-label="Loading"
     >
-      <div aria-hidden className="pointer-events-none absolute inset-0" />
-      <div className="relative text-primary">
-        <Ripple className="size-12" />
-      </div>
+      <Ripple className="size-12" />
     </main>
   );
 }
