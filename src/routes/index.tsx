@@ -1,15 +1,15 @@
 import { createFileRoute } from "@tanstack/react-router";
+import { WaterNoiseBackground } from "@/components/water-noise-background";
 import { Separator } from "@/components/ui/separator";
 import { site } from "@/data/site";
 
 export const Route = createFileRoute("/")({ component: Home });
 
-const rowSurfaceClassName =
-  "-mx-1.5 flex flex-col gap-0.5 rounded-md px-1.5 py-1 transition-colors group-hover:bg-muted/50 group-focus-visible:bg-muted/50";
-
 function Home() {
   return (
-    <main className="mx-auto flex w-full max-w-xl flex-col gap-6 px-6 py-10 sm:py-14">
+    <>
+      <WaterNoiseBackground />
+      <main className="relative z-10 mx-auto flex w-full max-w-xl flex-col gap-6 px-6 py-10 sm:py-14">
       <header className="flex flex-col gap-2">
         <h1 className="text-3xl font-medium tracking-tight text-foreground">{site.name}</h1>
         <p className="text-muted-foreground">{site.bio}</p>
@@ -30,9 +30,7 @@ function Home() {
                 rel="noreferrer"
                 className="group block py-2.5 focus-visible:outline-none"
               >
-                <span
-                  className={`${rowSurfaceClassName} sm:flex-row sm:items-baseline sm:justify-between sm:gap-6`}
-                >
+                <span className="-mx-1.5 flex flex-col gap-0.5 rounded-md px-1.5 py-1 transition-colors group-hover:bg-accent group-focus-visible:bg-accent sm:flex-row sm:items-baseline sm:justify-between sm:gap-6">
                   <span className="text-foreground">
                     {job.title} <span className="text-muted-foreground">@ {job.org}</span>
                   </span>
@@ -59,7 +57,7 @@ function Home() {
                 rel="noreferrer"
                 className="group block py-2.5 focus-visible:outline-none"
               >
-                <span className={rowSurfaceClassName}>
+                <span className="-mx-1.5 flex flex-col gap-0.5 rounded-md px-1.5 py-1 transition-colors group-hover:bg-accent group-focus-visible:bg-accent">
                   <span className="flex flex-col gap-0.5 sm:flex-row sm:items-baseline sm:justify-between sm:gap-6">
                     <span className="text-foreground">{project.title}</span>
                     <span className="shrink-0 text-sm text-muted-foreground">{project.dates}</span>
@@ -77,13 +75,14 @@ function Home() {
           <a
             key={link.label}
             href={link.href}
-            className="rounded-sm text-sm text-muted-foreground underline-offset-4 transition-colors hover:text-foreground hover:underline focus-visible:text-foreground focus-visible:underline"
+            className="rounded-sm text-sm text-muted-foreground underline-offset-4 transition-colors hover:text-primary hover:underline focus-visible:text-primary focus-visible:underline"
             {...(link.href.startsWith("http") ? { target: "_blank", rel: "noreferrer" } : {})}
           >
             {link.label}
           </a>
         ))}
       </nav>
-    </main>
+      </main>
+    </>
   );
 }
