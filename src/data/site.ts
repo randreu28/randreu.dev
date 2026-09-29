@@ -16,6 +16,7 @@ export const sites = {
         label: "LinkedIn",
         href: "https://www.linkedin.com/in/rubén-chiquin-0a153721a/",
       },
+      { label: "Behance", href: "https://behance.net/RubenChiquin" },
       { label: "v1", href: "https://v1.randreu.dev" },
     ],
     experience: [
@@ -72,6 +73,7 @@ export const sites = {
         label: "LinkedIn",
         href: "https://www.linkedin.com/in/rubén-chiquin-0a153721a/",
       },
+      { label: "Behance", href: "https://behance.net/RubenChiquin" },
       { label: "v1", href: "https://v1.randreu.dev" },
     ],
     experience: [

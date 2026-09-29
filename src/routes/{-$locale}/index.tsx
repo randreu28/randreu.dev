@@ -94,7 +94,7 @@ function Home() {
 
         <nav
           aria-label="Links"
-          className="flex flex-wrap items-center justify-between gap-x-3 gap-y-1"
+          className="flex flex-wrap items-center justify-between gap-x-3 gap-y-6"
         >
           <div className="flex flex-wrap gap-x-3 gap-y-1">
             {site.links.map((link) => (

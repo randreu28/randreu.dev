@@ -6,5 +6,6 @@ export default defineConfig({
     compatibilityDate: "2026-09-26",
     compatibilityFlags: ["nodejs_compat"],
     entrypoint: "@tanstack/react-start/server-entry",
+    domains: ["randreu.dev"],
   },
 });

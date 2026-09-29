@@ -1,1 +1,3 @@
-WIP
+# randreu.dev
+
+My personal website.
