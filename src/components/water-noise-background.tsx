@@ -11,42 +11,29 @@ import { perlin2d } from "@typegpu/noise";
 import { common, d, std } from "typegpu";
 
 export function WaterNoiseBackground({
-  trailLength = 32,
   dark = "#0a0b0c",
   accent = "#1a5257",
   soft = "#47525c",
   glow = "#0d1a1c",
 }: {
-  trailLength?: number;
   dark?: string;
   accent?: string;
   soft?: string;
   glow?: string;
 }) {
-  const length = Math.max(2, Math.floor(trailLength));
-
   return (
     <ClientOnly>
-      <WaterNoiseCanvas
-        key={length}
-        trailLength={length}
-        dark={dark}
-        accent={accent}
-        soft={soft}
-        glow={glow}
-      />
+      <WaterNoiseCanvas dark={dark} accent={accent} soft={soft} glow={glow} />
     </ClientOnly>
   );
 }
 
 function WaterNoiseCanvas({
-  trailLength,
   dark,
   accent,
   soft,
   glow,
 }: {
-  trailLength: number;
   dark: string;
   accent: string;
   soft: string;
@@ -55,26 +42,30 @@ function WaterNoiseCanvas({
   const root = useRoot();
   const time = useUniform(d.f32);
   const aspect = useUniform(d.f32, { initial: 1 });
-  const trail = useUniform(d.arrayOf(d.vec3f, trailLength), {
-    initial: Array.from({ length: trailLength }, () => d.vec3f(0.5, 0.5, 0)),
-  });
+  const mouse = useUniform(d.vec2f, { initial: d.vec2f(0.5, 0.5) });
+  const velocity = useUniform(d.vec2f, { initial: d.vec2f(0, 0) });
+  const wake = useUniform(d.f32, { initial: 0 });
   const darkColor = useMirroredUniform(d.vec3f, cssColorToVec3(dark));
   const accentColor = useMirroredUniform(d.vec3f, cssColorToVec3(accent));
   const softColor = useMirroredUniform(d.vec3f, cssColorToVec3(soft));
   const glowColor = useMirroredUniform(d.vec3f, cssColorToVec3(glow));
 
-  const mouse = useRef({
+  const pointer = useRef({
     x: 0.5,
     y: 0.5,
     smoothX: 0.5,
     smoothY: 0.5,
-    points: Array.from({ length: trailLength }, () => ({ x: 0.5, y: 0.5, life: 0 })),
+    prevX: 0.5,
+    prevY: 0.5,
+    velX: 0,
+    velY: 0,
+    wake: 0,
   });
 
   useEffect(() => {
     const onMove = (e: PointerEvent) => {
-      mouse.current.x = e.clientX / window.innerWidth;
-      mouse.current.y = e.clientY / window.innerHeight;
+      pointer.current.x = e.clientX / window.innerWidth;
+      pointer.current.y = e.clientY / window.innerHeight;
     };
     window.addEventListener("pointermove", onMove, { passive: true });
     return () => window.removeEventListener("pointermove", onMove);
@@ -88,28 +79,22 @@ function WaterNoiseCanvas({
       let pos = toShaderSpace(uv, aspect.$);
       const anim = time.$ * 0.08;
 
-      let displacement = d.vec2f(0, 0);
-      let trailGlow = d.f32(0);
-      for (const i of std.range(0, trailLength - 1)) {
-        const start = trail.$[i];
-        const end = trail.$[i + 1];
-        const age = (start.z + end.z) * 0.5;
-        const startPos = toShaderSpace(start.xy, aspect.$);
-        const endPos = toShaderSpace(end.xy, aspect.$);
-        const segment = endPos.sub(startPos);
-        const fromStart = pos.sub(startPos);
-        const segmentLenSq = std.max(std.dot(segment, segment), 0.00001);
-        const t = std.clamp(std.dot(fromStart, segment) / segmentLenSq, 0, 1);
-        const nearest = startPos.add(segment.mul(t));
-        const offset = pos.sub(nearest);
-        const distance = std.length(offset);
-        const strength = std.exp(distance * -6.5) * age;
-        const ripple = std.sin(distance * 18 - time.$ * 2.2 + t * 6) * 0.14 * strength;
-        const attract = strength * 0.45;
-        displacement = displacement.add(offset.mul(-attract + ripple / std.max(distance, 0.001)));
-        trailGlow = trailGlow + strength;
-      }
-      pos = pos.add(displacement);
+      // Soft velocity splat + lingering wake (decays when idle).
+      const cursor = toShaderSpace(mouse.$, aspect.$);
+      const toCursor = pos.sub(cursor);
+      const distSq = std.dot(toCursor, toCursor);
+      const influence = std.exp(distSq * -16);
+      const strength = wake.$ * influence;
+      pos = pos.add(velocity.$.mul(influence * 14));
+      pos = pos.add(toCursor.mul(strength * -1.8));
+      pos = pos.add(
+        d
+          .vec2f(
+            fbm(toCursor.mul(3).add(d.vec2f(anim * 2, 0))),
+            fbm(toCursor.mul(3).add(d.vec2f(4.1, anim * 2))),
+          )
+          .mul(strength * 0.55),
+      );
 
       const layerA = d.vec2f(
         fbm(pos.add(d.vec2f(anim, 0))),
@@ -147,7 +132,9 @@ function WaterNoiseCanvas({
         std.length(d.vec2f((uv.x - 0.5) * 1.1, uv.y - 0.5)),
       );
       color = color.mul(0.32 + vignette * 0.45 - textArea * 0.18);
-      color = color.add(glowColor.$.mul(std.min(trailGlow, 1.2) * 0.45));
+      color = std.mix(color, accentColor.$, strength * 0.32);
+      color = color.add(glowColor.$.mul(strength * 0.22));
+      color = color.add(accentColor.$.mul(strength * strength * 0.25));
 
       return d.vec4f(color, 1);
     },
@@ -159,20 +146,30 @@ function WaterNoiseCanvas({
     const ctx = ctxRef.current;
     if (!ctx) return;
     const canvas = ctx.canvas as HTMLCanvasElement;
-    const state = mouse.current;
+    const state = pointer.current;
+    const dt = Math.max(frame.deltaSeconds, 0.001);
 
     state.smoothX += (state.x - state.smoothX) * 0.18;
     state.smoothY += (state.y - state.smoothY) * 0.18;
 
-    state.points.pop();
-    state.points.unshift({ x: state.smoothX, y: state.smoothY, life: 1 });
-    for (let i = 0; i < trailLength; i++) {
-      state.points[i].life = Math.max(0, 1 - i / (trailLength - 1));
-    }
+    const rawVx = (state.smoothX - state.prevX) / dt;
+    const rawVy = (state.smoothY - state.prevY) / dt;
+    state.prevX = state.smoothX;
+    state.prevY = state.smoothY;
+
+    state.velX = state.velX * 0.92 + rawVx * 0.28;
+    state.velY = state.velY * 0.92 + rawVy * 0.28;
+    const speed = Math.hypot(state.velX, state.velY);
+    state.wake = Math.min(1.4, state.wake * 0.965 + speed * 0.045);
+    if (state.wake < 0.01) state.wake = 0;
+    if (Math.abs(state.velX) < 0.001) state.velX = 0;
+    if (Math.abs(state.velY) < 0.001) state.velY = 0;
 
     time.write(frame.elapsedSeconds);
     aspect.write(canvas.width / Math.max(canvas.height, 1));
-    trail.write(state.points.map((point) => d.vec3f(point.x, point.y, point.life)));
+    mouse.write(d.vec2f(state.smoothX, state.smoothY));
+    velocity.write(d.vec2f(state.velX * 0.08, state.velY * 0.08));
+    wake.write(state.wake);
     pipeline.withColorAttachment({ view: ctx }).draw(3);
   });
 
