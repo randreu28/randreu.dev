@@ -1,0 +1,31 @@
+{
+  "files.watcherExclude": {
+    "**/routeTree.gen.ts": true,
+    "**/.cloudflare/types/**": true
+  },
+  "search.exclude": {
+    "**/routeTree.gen.ts": true,
+    "**/.cloudflare/types/**": true
+  },
+  "files.readonlyInclude": {
+    "**/routeTree.gen.ts": true,
+    "**/.cloudflare/types/**": true
+  },
+  "editor.codeActionsOnSave": {
+    "source.fixAll.oxc": "always"
+  },
+  "editor.defaultFormatter": "oxc.oxc-vscode",
+  "editor.formatOnSave": true,
+  "[typescriptreact]": {
+    "editor.defaultFormatter": "oxc.oxc-vscode"
+  },
+  "[jsonc]": {
+    "editor.defaultFormatter": "oxc.oxc-vscode"
+  },
+  "[json]": {
+    "editor.defaultFormatter": "oxc.oxc-vscode"
+  },
+  "[markdown]": {
+    "editor.defaultFormatter": "oxc.oxc-vscode"
+  }
+}
