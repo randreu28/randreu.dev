@@ -1,6 +1,5 @@
 import { useEffect, useRef } from "react";
 import {
-  ClientOnly,
   useConfigureContext,
   useFrame,
   useMirroredUniform,
@@ -20,24 +19,6 @@ export function WaterNoiseBackground({
   accent?: string;
   soft?: string;
   glow?: string;
-}) {
-  return (
-    <ClientOnly>
-      <WaterNoiseCanvas dark={dark} accent={accent} soft={soft} glow={glow} />
-    </ClientOnly>
-  );
-}
-
-function WaterNoiseCanvas({
-  dark,
-  accent,
-  soft,
-  glow,
-}: {
-  dark: string;
-  accent: string;
-  soft: string;
-  glow: string;
 }) {
   const root = useRoot();
   const time = useUniform(d.f32);
@@ -76,11 +57,11 @@ function WaterNoiseCanvas({
     fragment: (input) => {
       "use gpu";
       const uv = input.uv;
-      let pos = toShaderSpace(uv, aspect.$);
+      let pos = d.vec2f((uv.x - 0.5) * aspect.$, uv.y - 0.5).mul(2.2);
       const anim = time.$ * 0.08;
 
       // Soft velocity splat + lingering wake (decays when idle).
-      const cursor = toShaderSpace(mouse.$, aspect.$);
+      const cursor = d.vec2f((mouse.$.x - 0.5) * aspect.$, mouse.$.y - 0.5).mul(2.2);
       const toCursor = pos.sub(cursor);
       const distSq = std.dot(toCursor, toCursor);
       const influence = std.exp(distSq * -16);
@@ -190,11 +171,6 @@ function fbm(sample: d.v2f): number {
     amp = amp * 0.5;
   }
   return sum;
-}
-
-function toShaderSpace(uv: d.v2f, aspect: number): d.v2f {
-  "use gpu";
-  return d.vec2f((uv.x - 0.5) * aspect, uv.y - 0.5).mul(2.2);
 }
 
 function cssColorToVec3(color: string) {

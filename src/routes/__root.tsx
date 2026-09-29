@@ -1,8 +1,14 @@
-import { HeadContent, Scripts, createRootRoute } from "@tanstack/react-router";
+import {
+  HeadContent,
+  Scripts,
+  createRootRoute,
+  useRouterState,
+} from "@tanstack/react-router";
 import { TanStackRouterDevtoolsPanel } from "@tanstack/react-router-devtools";
 import { TanStackDevtools } from "@tanstack/react-devtools";
 
 import appCss from "../styles.css?url";
+import { locales, type Locale } from "@/data/site";
 
 export const Route = createRootRoute({
   head: () => ({
@@ -16,10 +22,6 @@ export const Route = createRootRoute({
       },
       {
         title: "Rubén Chiquin",
-      },
-      {
-        name: "description",
-        content: "I build software. Sometimes for work, sometimes because I can't sleep.",
       },
     ],
     links: [
@@ -38,8 +40,12 @@ export const Route = createRootRoute({
 });
 
 function RootDocument({ children }: { children: React.ReactNode }) {
+  const pathname = useRouterState({ select: (s) => s.location.pathname });
+  const segment = pathname.split("/").filter(Boolean)[0];
+  const lang = locales.includes(segment as Locale) ? segment : "en";
+
   return (
-    <html lang="en" className="dark bg-background">
+    <html lang={lang} className="dark bg-background">
       <head>
         <HeadContent />
       </head>
