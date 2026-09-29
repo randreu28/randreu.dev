@@ -1,5 +1,5 @@
 import { Link, createFileRoute, notFound } from "@tanstack/react-router";
-import { ClientOnly } from "@typegpu/react";
+import { LoadingScreen } from "@/components/secondary-screens";
 import { WaterNoiseBackground } from "@/components/water-noise-background";
 import { Separator } from "@/components/ui/separator";
 import { defaultLocale, locales, sites, type Locale } from "@/data/site";
@@ -16,10 +16,7 @@ export const Route = createFileRoute("/{-$locale}/")({
   head: ({ match }) => {
     const site = sites[match.context.locale];
     return {
-      meta: [
-        { title: site.name },
-        { name: "description", content: site.description },
-      ],
+      meta: [{ title: site.name }, { name: "description", content: site.description }],
     };
   },
   component: Home,
@@ -30,10 +27,8 @@ function Home() {
   const site = sites[locale];
 
   return (
-    <>
-      <ClientOnly>
-        <WaterNoiseBackground />
-      </ClientOnly>
+    <LoadingScreen>
+      <WaterNoiseBackground />
       <main className="relative z-10 mx-auto flex w-full max-w-xl flex-col gap-6 px-6 py-10 sm:py-14">
         <header className="flex flex-col gap-2">
           <h1 className="text-3xl font-medium tracking-tight text-foreground">{site.name}</h1>
@@ -85,7 +80,9 @@ function Home() {
                   <span className="-mx-1.5 flex flex-col gap-0.5 rounded-md px-1.5 py-1 transition-colors group-hover:bg-accent group-focus-visible:bg-accent">
                     <span className="flex flex-col gap-0.5 sm:flex-row sm:items-baseline sm:justify-between sm:gap-6">
                       <span className="text-foreground">{project.title}</span>
-                      <span className="shrink-0 text-sm text-muted-foreground">{project.dates}</span>
+                      <span className="shrink-0 text-sm text-muted-foreground">
+                        {project.dates}
+                      </span>
                     </span>
                     <span className="text-sm text-muted-foreground">{project.description}</span>
                   </span>
@@ -95,7 +92,10 @@ function Home() {
           </ul>
         </section>
 
-        <nav aria-label="Links" className="flex flex-wrap items-center justify-between gap-x-3 gap-y-1">
+        <nav
+          aria-label="Links"
+          className="flex flex-wrap items-center justify-between gap-x-3 gap-y-1"
+        >
           <div className="flex flex-wrap gap-x-3 gap-y-1">
             {site.links.map((link) => (
               <a
@@ -111,7 +111,11 @@ function Home() {
           <div className="flex gap-x-3">
             {locales.map((target) =>
               target === locale ? (
-                <span key={target} className="rounded-sm text-sm text-foreground" aria-current="page">
+                <span
+                  key={target}
+                  className="rounded-sm text-sm text-foreground"
+                  aria-current="page"
+                >
                   {target.toUpperCase()}
                 </span>
               ) : (
@@ -128,6 +132,6 @@ function Home() {
           </div>
         </nav>
       </main>
-    </>
+    </LoadingScreen>
   );
 }
