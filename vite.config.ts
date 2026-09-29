@@ -16,7 +16,7 @@ export default defineConfig({
   },
   lint: {
     plugins: ["unicorn", "typescript", "oxc", "react"],
-    "categories": {"correctness": "error"},
+    categories: { correctness: "error" },
     jsPlugins: [
       {
         name: "vite-plus",
