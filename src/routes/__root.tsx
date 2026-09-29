@@ -6,8 +6,10 @@ import {
 } from "@tanstack/react-router";
 import { TanStackRouterDevtoolsPanel } from "@tanstack/react-router-devtools";
 import { TanStackDevtools } from "@tanstack/react-devtools";
+import { ClientOnly } from "@typegpu/react";
 
 import appCss from "../styles.css?url";
+import { WaterNoiseBackground } from "@/components/water-noise-background";
 import { locales, type Locale } from "@/data/site";
 
 export const Route = createRootRoute({
@@ -37,6 +39,26 @@ export const Route = createRootRoute({
     ],
   }),
   shellComponent: RootDocument,
+  notFoundComponent: () => (
+    <>
+      <ClientOnly>
+        <WaterNoiseBackground />
+      </ClientOnly>
+      <main className="relative z-10 flex min-h-svh items-center justify-center px-6">
+        <p className="text-sm text-muted-foreground">Not found</p>
+      </main>
+    </>
+  ),
+  errorComponent: () => (
+    <>
+      <ClientOnly>
+        <WaterNoiseBackground />
+      </ClientOnly>
+      <main className="relative z-10 flex min-h-svh items-center justify-center px-6">
+        <p className="text-sm text-muted-foreground">Something went wrong</p>
+      </main>
+    </>
+  ),
 });
 
 function RootDocument({ children }: { children: React.ReactNode }) {
