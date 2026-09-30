@@ -14,11 +14,13 @@ export function WaterNoiseBackground({
   accent = "#1a5257",
   soft = "#47525c",
   glow = "#0d1a1c",
+  maxPixels = 921_600,
 }: {
   dark?: string;
   accent?: string;
   soft?: string;
   glow?: string;
+  maxPixels?: number;
 }) {
   const root = useRoot();
   const time = useUniform(d.f32);
@@ -52,6 +54,30 @@ export function WaterNoiseBackground({
     return () => window.removeEventListener("pointermove", onMove);
   }, []);
 
+  const canvasRef = useRef<HTMLCanvasElement>(null);
+  const { ref: configureContext, ctxRef } = useConfigureContext({ alphaMode: "opaque" });
+
+  useEffect(() => {
+    const canvas = canvasRef.current;
+    if (!canvas) return;
+    configureContext(canvas);
+  }, [configureContext]);
+
+  useEffect(() => {
+    const canvas = canvasRef.current;
+    if (!canvas) return;
+
+    const ro = new ResizeObserver(([entry]) => {
+      const { width: cssW, height: cssH } = entry.contentRect;
+      const scale = Math.min(1, Math.sqrt(maxPixels / (cssW * cssH)));
+      canvas.width = Math.round(cssW * scale);
+      canvas.height = Math.round(cssH * scale);
+    });
+
+    ro.observe(canvas);
+    return () => ro.disconnect();
+  }, [maxPixels]);
+
   const pipeline = root.createRenderPipeline({
     vertex: common.fullScreenTriangle,
     fragment: (input) => {
@@ -60,21 +86,19 @@ export function WaterNoiseBackground({
       let pos = d.vec2f((uv.x - 0.5) * aspect.$, uv.y - 0.5).mul(2.2);
       const anim = time.$ * 0.08;
 
-      // Soft velocity splat + lingering wake (decays when idle).
       const cursor = d.vec2f((mouse.$.x - 0.5) * aspect.$, mouse.$.y - 0.5).mul(2.2);
       const toCursor = pos.sub(cursor);
       const distSq = std.dot(toCursor, toCursor);
       const influence = std.exp(distSq * -16);
       const strength = wake.$ * influence;
+
       pos = pos.add(velocity.$.mul(influence * 14));
       pos = pos.add(toCursor.mul(strength * -1.8));
       pos = pos.add(
-        d
-          .vec2f(
-            fbm(toCursor.mul(3).add(d.vec2f(anim * 2, 0))),
-            fbm(toCursor.mul(3).add(d.vec2f(4.1, anim * 2))),
-          )
-          .mul(strength * 0.55),
+        d.vec2f(
+          std.sin(anim * 3 + distSq * 5) * 0.08,
+          std.cos(anim * 2.7 + distSq * 4) * 0.08,
+        ).mul(strength),
       );
 
       const layerA = d.vec2f(
@@ -121,8 +145,6 @@ export function WaterNoiseBackground({
     },
   });
 
-  const { ref, ctxRef } = useConfigureContext({ alphaMode: "opaque" });
-
   useFrame((frame) => {
     const ctx = ctxRef.current;
     if (!ctx) return;
@@ -155,7 +177,7 @@ export function WaterNoiseBackground({
   });
 
   return (
-    <canvas ref={ref} className="pointer-events-none fixed inset-0 z-0 size-full" aria-hidden />
+    <canvas ref={canvasRef} className="pointer-events-none fixed inset-0 z-0 size-full" aria-hidden />
   );
 }
 
@@ -164,7 +186,7 @@ function fbm(sample: d.v2f): number {
   let sum = d.f32(0);
   let amp = d.f32(0.5);
   let coord = d.vec2f(sample);
-  for (const i of std.range(0, 4)) {
+  for (const i of std.range(0, 2)) {
     const octave = d.f32(i);
     sum = sum + amp * perlin2d.sample(coord.add(d.vec2f(octave * 0.1, octave * 0.17)));
     coord = coord.mul(2.03);
